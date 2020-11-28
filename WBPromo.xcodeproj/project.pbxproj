@@ -9,21 +9,31 @@
 /* Begin PBXBuildFile section */
 		0BC9BF2E2570BFF200445DFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC9BF2D2570BFF200445DFC /* AppDelegate.swift */; };
 		0BC9BF302570BFF200445DFC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC9BF2F2570BFF200445DFC /* SceneDelegate.swift */; };
-		0BC9BF322570BFF200445DFC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC9BF312570BFF200445DFC /* ViewController.swift */; };
+		0BC9BF322570BFF200445DFC /* PromoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC9BF312570BFF200445DFC /* PromoListViewController.swift */; };
 		0BC9BF352570BFF200445DFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BC9BF332570BFF200445DFC /* Main.storyboard */; };
 		0BC9BF372570BFF500445DFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BC9BF362570BFF500445DFC /* Assets.xcassets */; };
 		0BC9BF3A2570BFF500445DFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BC9BF382570BFF500445DFC /* LaunchScreen.storyboard */; };
+		0BC9BF522570C6B200445DFC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC9BF512570C6B200445DFC /* NetworkManager.swift */; };
+		0BC9BF572570CE6F00445DFC /* PromoListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC9BF562570CE6F00445DFC /* PromoListModel.swift */; };
+		0BC9BF5A2570DAF700445DFC /* PromoListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC9BF592570DAF700445DFC /* PromoListCell.swift */; };
+		0BC9BF632570EBEA00445DFC /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC9BF622570EBEA00445DFC /* NetworkError.swift */; };
+		0BC9BF672570EC9100445DFC /* PromoListNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC9BF662570EC9100445DFC /* PromoListNetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0BC9BF2A2570BFF200445DFC /* WBPromo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WBPromo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BC9BF2D2570BFF200445DFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0BC9BF2F2570BFF200445DFC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0BC9BF312570BFF200445DFC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0BC9BF312570BFF200445DFC /* PromoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromoListViewController.swift; sourceTree = "<group>"; };
 		0BC9BF342570BFF200445DFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0BC9BF362570BFF500445DFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0BC9BF392570BFF500445DFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0BC9BF3B2570BFF500445DFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0BC9BF512570C6B200445DFC /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		0BC9BF562570CE6F00445DFC /* PromoListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromoListModel.swift; sourceTree = "<group>"; };
+		0BC9BF592570DAF700445DFC /* PromoListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromoListCell.swift; sourceTree = "<group>"; };
+		0BC9BF622570EBEA00445DFC /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		0BC9BF662570EC9100445DFC /* PromoListNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromoListNetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +66,116 @@
 		0BC9BF2C2570BFF200445DFC /* WBPromo */ = {
 			isa = PBXGroup;
 			children = (
-				0BC9BF2D2570BFF200445DFC /* AppDelegate.swift */,
-				0BC9BF2F2570BFF200445DFC /* SceneDelegate.swift */,
-				0BC9BF312570BFF200445DFC /* ViewController.swift */,
-				0BC9BF332570BFF200445DFC /* Main.storyboard */,
-				0BC9BF362570BFF500445DFC /* Assets.xcassets */,
-				0BC9BF382570BFF500445DFC /* LaunchScreen.storyboard */,
-				0BC9BF3B2570BFF500445DFC /* Info.plist */,
+				0BC9BF422570C00E00445DFC /* Application */,
+				0BC9BF482570C50100445DFC /* Promo */,
+				0BC9BF462570C29500445DFC /* Supporting Files */,
 			);
 			path = WBPromo;
+			sourceTree = "<group>";
+		};
+		0BC9BF422570C00E00445DFC /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				0BC9BF452570C02500445DFC /* Model */,
+				0BC9BF442570C02000445DFC /* View */,
+				0BC9BF432570C01900445DFC /* Controller */,
+				0BC9BF502570C6B200445DFC /* NetworkManager */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		0BC9BF432570C01900445DFC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0BC9BF2D2570BFF200445DFC /* AppDelegate.swift */,
+				0BC9BF2F2570BFF200445DFC /* SceneDelegate.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0BC9BF442570C02000445DFC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0BC9BF332570BFF200445DFC /* Main.storyboard */,
+				0BC9BF382570BFF500445DFC /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0BC9BF452570C02500445DFC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0BC9BF622570EBEA00445DFC /* NetworkError.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0BC9BF462570C29500445DFC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0BC9BF362570BFF500445DFC /* Assets.xcassets */,
+				0BC9BF3B2570BFF500445DFC /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0BC9BF482570C50100445DFC /* Promo */ = {
+			isa = PBXGroup;
+			children = (
+				0BC9BF492570C50C00445DFC /* PromoList */,
+			);
+			path = Promo;
+			sourceTree = "<group>";
+		};
+		0BC9BF492570C50C00445DFC /* PromoList */ = {
+			isa = PBXGroup;
+			children = (
+				0BC9BF4C2570C52900445DFC /* Model */,
+				0BC9BF4B2570C52100445DFC /* View */,
+				0BC9BF4A2570C51A00445DFC /* Controller */,
+				0BC9BF652570EC9100445DFC /* PromoListNetworkManager */,
+			);
+			path = PromoList;
+			sourceTree = "<group>";
+		};
+		0BC9BF4A2570C51A00445DFC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0BC9BF312570BFF200445DFC /* PromoListViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0BC9BF4B2570C52100445DFC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0BC9BF592570DAF700445DFC /* PromoListCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0BC9BF4C2570C52900445DFC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0BC9BF562570CE6F00445DFC /* PromoListModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0BC9BF502570C6B200445DFC /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				0BC9BF512570C6B200445DFC /* NetworkManager.swift */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		0BC9BF652570EC9100445DFC /* PromoListNetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				0BC9BF662570EC9100445DFC /* PromoListNetworkManager.swift */,
+			);
+			path = PromoListNetworkManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +248,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0BC9BF322570BFF200445DFC /* ViewController.swift in Sources */,
+				0BC9BF572570CE6F00445DFC /* PromoListModel.swift in Sources */,
+				0BC9BF632570EBEA00445DFC /* NetworkError.swift in Sources */,
+				0BC9BF5A2570DAF700445DFC /* PromoListCell.swift in Sources */,
+				0BC9BF322570BFF200445DFC /* PromoListViewController.swift in Sources */,
 				0BC9BF2E2570BFF200445DFC /* AppDelegate.swift in Sources */,
+				0BC9BF522570C6B200445DFC /* NetworkManager.swift in Sources */,
+				0BC9BF672570EC9100445DFC /* PromoListNetworkManager.swift in Sources */,
 				0BC9BF302570BFF200445DFC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,7 +404,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XW29RT8E9D;
-				INFOPLIST_FILE = WBPromo/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/WBPromo/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,7 +423,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XW29RT8E9D;
-				INFOPLIST_FILE = WBPromo/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/WBPromo/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
