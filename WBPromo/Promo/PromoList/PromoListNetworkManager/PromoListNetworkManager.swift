@@ -1,20 +1,22 @@
 //
-//  CommentNetworkService.swift
-//  MVC-N
+//  PromoListNetworkManager.swift
+//  WBPromo
 //
-//  Created by Ivan Akulov on 21/10/2017.
-//  Copyright © 2017 Ivan Akulov. All rights reserved.
+//  Created by Timur Isaev on 27.11.2020.
 //
 
 import Foundation
 
 class PromoListNetworkManager {
+    
+    static let urlFeatchPromoList: String = "https://veradewa.site/ios/"
+    
     private init() {}
     
     static func getPromoList(completion: @escaping([PromoListModel]) -> ()) {
-        guard let url = URL(string: "https://veradewa.site/ios/") else { return }
+        guard let url = URL(string: urlFeatchPromoList) else { return }
         
-        NetworkManager.shared.getData(url: url) { (data) in
+        NetworkManager.shared.getData(metod: .get, url: url, parameters: nil) { (data) in
             do {
                 let decoder = JSONDecoder()
                 let dataModel = try decoder.decode([PromoListModel].self, from: data)

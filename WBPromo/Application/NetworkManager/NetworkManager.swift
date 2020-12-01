@@ -8,26 +8,53 @@
 
 import Foundation
 
+enum MetodRequest: String {
+    case get = "GET"
+    case post = "POST"
+}
 class NetworkManager {
     
     private init() {}
     
     static let shared = NetworkManager()
     
-    func getData(url: URL, completionHandler: @escaping (Data) -> ()) {
-        let session = URLSession.shared
+    //Создание HTTP POST запроса
+    func createPOSTRequest(metod: MetodRequest, url: URL, parameters: [[String: Any]]?) -> URLRequest {
+    
+        print("URL: \(url)")
+
+        var request = URLRequest(url: url, timeoutInterval: Double.infinity)
+        request.httpMethod = metod.rawValue
         
-        session.dataTask(with: url) { (data, response, error) in
-            guard let data = data else { return }
-            
+        if let parameters = parameters {
+            print(parameters)
             do {
-//                let json = try JSONSerialization.jsonObject(with: data, options: [])
-//                print(json)
-                
-                completionHandler(data)
+                request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
             } catch {
-                print(error)
+                print(error.localizedDescription)
             }
-        }.resume()
+        }
+        
+        //HTTP Headers
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+
+        return request
+    }
+    
+    func getData(metod: MetodRequest, url: URL, parameters: [[String: Any]]?, completionHandler: @escaping (Data) -> ()) {
+        
+        DispatchQueue.global(qos: .userInteractive).async
+        {
+            let session = URLSession.shared
+            let request = self.createPOSTRequest(metod: metod, url: url, parameters: parameters)
+            
+            session.dataTask(with: request) { (data, response, error) in
+                guard let data = data else { return }
+//                print(String(data: data, encoding: .utf8)!)
+                completionHandler(data)
+                
+            }.resume()
+        }
     }
 }

@@ -9,32 +9,29 @@ import UIKit
 
 class PromoListCell: UITableViewCell {
 
-    @IBOutlet weak var contractTimeLabel: UILabel!
+    @IBOutlet weak var viewCell: UIView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var saleLabel: UILabel!
     @IBOutlet weak var imagePromoView: UIImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var percentLabel: UILabel!
     
-    func configure(with comment: PromoListModel) {
-        let date = Date()
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd.MM.yyyy"
-        let result = formatter.string(from: date)
+    func configure(with itemCell: PromoListModel) {
         
-        let nextDate = Calendar.current.date(byAdding: .day, value: comment.controct_time, to: date)!
-        let resultNextDate = formatter.string(from: nextDate)
+        self.nameLabel.text = itemCell.name
         
-        self.contractTimeLabel.text = "\(result) - \(resultNextDate)"
-        self.nameLabel.text = comment.name
-        
-        let attributeString: NSMutableAttributedString =  NSMutableAttributedString(string: "\(getFormattMoney(withNUmber: comment.price))")
+        let attributeString: NSMutableAttributedString =  NSMutableAttributedString(string: "\(getFormattMoney(withNUmber: itemCell.price))")
         attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 2, range: NSMakeRange(0, attributeString.length))
         self.priceLabel.attributedText = attributeString;
 
-        self.saleLabel.text = "\(getFormattMoney(withNUmber: comment.sale))"
+        self.saleLabel.text = "\(getFormattMoney(withNUmber: itemCell.sale))"
+        self.percentLabel.text = "-\(itemCell.percent)%"
+        fetchImage(withURLString: itemCell.image)
         
-        fetchImage(withURLString: comment.image)
+        self.viewCell.layer.cornerRadius = 5
+        self.viewCell.layer.borderWidth = 1
+        self.viewCell.layer.borderColor = UIColor(red: 0.937, green: 0.937, blue: 0.957, alpha: 1).cgColor
     }
     
     fileprivate func fetchImage(withURLString urlString: String) {

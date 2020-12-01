@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nnp-gO-Cg9">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Bold.ttf">
+            <string>Roboto-Bold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Detail Promo View Controller-->
+        <scene sceneID="qT6-Il-w38">
+            <objects>
+                <viewController id="nnp-gO-Cg9" customClass="DetailPromoViewController" customModule="WBPromo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jjK-EZ-o21">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ziY-GY-ph3">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UzY-Hi-yU7">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="85"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Art Prime Time / Эпоксидная смола - Набор для творчества" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EPw-4c-bWp">
+                                                <rect key="frame" x="22" y="8" width="370" height="69"/>
+                                                <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="23"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="85" id="4NK-fs-c4r"/>
+                                            <constraint firstItem="EPw-4c-bWp" firstAttribute="top" secondItem="UzY-Hi-yU7" secondAttribute="top" constant="8" id="HVq-IQ-4rV"/>
+                                            <constraint firstAttribute="trailing" secondItem="EPw-4c-bWp" secondAttribute="trailing" constant="22" id="KPV-4H-YuB"/>
+                                            <constraint firstAttribute="bottom" secondItem="EPw-4c-bWp" secondAttribute="bottom" constant="8" id="clH-X5-ZU8"/>
+                                            <constraint firstItem="EPw-4c-bWp" firstAttribute="leading" secondItem="UzY-Hi-yU7" secondAttribute="leading" constant="22" id="y3y-NQ-MTD"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2ql-kv-gPv">
+                                        <rect key="frame" x="0.0" y="85" width="414" height="502"/>
+                                        <subviews>
+                                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Rx7-EI-g0t">
+                                                <rect key="frame" x="145.5" y="466" width="123" height="28"/>
+                                                <color key="pageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="currentPageIndicatorTintColor" red="0.01176470588" green="0.30196078430000001" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </pageControl>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="502" id="5Ke-Sp-tCS"/>
+                                            <constraint firstItem="Rx7-EI-g0t" firstAttribute="centerX" secondItem="2ql-kv-gPv" secondAttribute="centerX" id="Cg4-UX-UdP"/>
+                                            <constraint firstAttribute="bottom" secondItem="Rx7-EI-g0t" secondAttribute="bottom" constant="8" id="aAo-dI-XUL"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="2ql-kv-gPv" firstAttribute="leading" secondItem="ziY-GY-ph3" secondAttribute="leading" id="8Aa-O5-23F"/>
+                                    <constraint firstItem="UzY-Hi-yU7" firstAttribute="leading" secondItem="ziY-GY-ph3" secondAttribute="leading" id="Aaw-X6-Fhe"/>
+                                    <constraint firstItem="UzY-Hi-yU7" firstAttribute="top" secondItem="ziY-GY-ph3" secondAttribute="top" id="auU-42-JGX"/>
+                                    <constraint firstAttribute="trailing" secondItem="2ql-kv-gPv" secondAttribute="trailing" id="eWx-bq-OCv"/>
+                                    <constraint firstItem="2ql-kv-gPv" firstAttribute="top" secondItem="UzY-Hi-yU7" secondAttribute="bottom" id="hpa-28-ia0"/>
+                                    <constraint firstAttribute="trailing" secondItem="UzY-Hi-yU7" secondAttribute="trailing" id="onw-Nc-V2z"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hQ1-Y0-axF"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hQ1-Y0-axF" firstAttribute="trailing" secondItem="ziY-GY-ph3" secondAttribute="trailing" id="3ym-Xh-nEf"/>
+                            <constraint firstItem="ziY-GY-ph3" firstAttribute="leading" secondItem="hQ1-Y0-axF" secondAttribute="leading" id="DjA-fb-r3Z"/>
+                            <constraint firstItem="ziY-GY-ph3" firstAttribute="top" secondItem="hQ1-Y0-axF" secondAttribute="top" id="SHm-oy-C8Q"/>
+                            <constraint firstItem="hQ1-Y0-axF" firstAttribute="bottom" secondItem="ziY-GY-ph3" secondAttribute="bottom" id="rLJ-qG-MGh"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="suX-AP-7lz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="60.869565217391312" y="96.428571428571431"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
