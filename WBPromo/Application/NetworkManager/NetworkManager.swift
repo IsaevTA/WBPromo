@@ -19,7 +19,7 @@ class NetworkManager {
     static let shared = NetworkManager()
     
     //Создание HTTP POST запроса
-    func createPOSTRequest(metod: MetodRequest, url: URL, parameters: [[String: Any]]?) -> URLRequest {
+    func createPOSTRequest(metod: MetodRequest, url: URL, parameters: [String: Any]?) -> URLRequest {
     
         print("URL: \(url)")
 
@@ -42,7 +42,7 @@ class NetworkManager {
         return request
     }
     
-    func getData(metod: MetodRequest, url: URL, parameters: [[String: Any]]?, completionHandler: @escaping (Data) -> ()) {
+    func getData(metod: MetodRequest, url: URL, parameters: [String: Any]?, completionHandler: @escaping (Data) -> ()) {
         
         DispatchQueue.global(qos: .userInteractive).async
         {

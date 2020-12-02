@@ -35,6 +35,17 @@ class PromoListViewController: UIViewController {
             }
         }
     }
+    
+    // MARK: - Segues
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetail" {
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                let promo = promoListArrayVisable[indexPath.row]
+                let detailViewController = segue.destination as! DetailPromoViewController
+                detailViewController.promoWithListRpomo = promo
+            }
+        }
+    }
 }
 
 extension PromoListViewController: UITableViewDelegate {}

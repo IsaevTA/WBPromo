@@ -151,7 +151,7 @@
                                             <outlet property="priceLabel" destination="V7R-YQ-GDE" id="0nT-Im-Qfu"/>
                                             <outlet property="saleLabel" destination="fdP-FB-Ka8" id="HVf-yh-dgD"/>
                                             <outlet property="viewCell" destination="ESJ-eA-7hO" id="ZAd-4J-aVC"/>
-                                            <segue destination="ll3-Za-VRS" kind="show" id="zLb-sd-1C9"/>
+                                            <segue destination="ll3-Za-VRS" kind="show" identifier="showDetail" id="zLb-sd-1C9"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

@@ -18,10 +18,7 @@ struct InfoPromoModel: Codable {
     let urlWildberies: String
 
     enum CodingKeys: String, CodingKey {
-        case id, name, images, percent, price, sale, description
-        case equipment
-        case specification = "specification "
-        case comments
+        case id, name, images, percent, price, sale, description, equipment, specification, comments
         case urlWildberies = "url_wildberies"
     }
 }

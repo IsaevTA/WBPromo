@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B2FEBEE2577529A001EDC8E /* DetailPromoNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B83503A2576770A00C4C1FA /* DetailPromoNetworkManager.swift */; };
+		0B2FEBF425777C35001EDC8E /* ImageCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2FEBF325777C35001EDC8E /* ImageCollectionCell.swift */; };
 		0B451D34257363D900BAA54B /* DetailPromoStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B451D33257363D900BAA54B /* DetailPromoStoryboard.storyboard */; };
 		0B83502A2576460700C4C1FA /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B83501D2576460700C4C1FA /* Roboto-Medium.ttf */; };
 		0B83502B2576460700C4C1FA /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B83501E2576460700C4C1FA /* Roboto-Light.ttf */; };
@@ -53,6 +55,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B2FEBF325777C35001EDC8E /* ImageCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionCell.swift; sourceTree = "<group>"; };
 		0B451D33257363D900BAA54B /* DetailPromoStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailPromoStoryboard.storyboard; sourceTree = "<group>"; };
 		0B83501D2576460700C4C1FA /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		0B83501E2576460700C4C1FA /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
@@ -140,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				0B451D33257363D900BAA54B /* DetailPromoStoryboard.storyboard */,
+				0B2FEBF325777C35001EDC8E /* ImageCollectionCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -468,6 +472,8 @@
 				0BA94C102574CE2F00A94DB1 /* GlobalSettings.swift in Sources */,
 				0BC9BF572570CE6F00445DFC /* PromoListModel.swift in Sources */,
 				0BA94BF92574BF5700A94DB1 /* WKWebViewJavascriptBridge.swift in Sources */,
+				0B2FEBF425777C35001EDC8E /* ImageCollectionCell.swift in Sources */,
+				0B2FEBEE2577529A001EDC8E /* DetailPromoNetworkManager.swift in Sources */,
 				0BC9BF632570EBEA00445DFC /* NetworkError.swift in Sources */,
 				0BC9BF5A2570DAF700445DFC /* PromoListCell.swift in Sources */,
 				0BC9BF322570BFF200445DFC /* PromoListViewController.swift in Sources */,
