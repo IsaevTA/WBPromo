@@ -26,13 +26,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XTk-Pm-r9j" userLabel="CustomBar">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="127"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="113"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lRo-NT-hZN" userLabel="Conter View">
-                                        <rect key="frame" x="0.0" y="44" width="414" height="83"/>
+                                        <rect key="frame" x="0.0" y="30" width="414" height="83"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jY2-o7-ICI">
-                                                <rect key="frame" x="25" y="30.666666666666671" width="26.666666666666671" height="22"/>
+                                                <rect key="frame" x="25" y="30.666666666666664" width="26.666666666666671" height="22"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="22" id="Sdd-4G-4Rk"/>
                                                     <constraint firstAttribute="width" constant="26.5" id="hMI-4i-dJH"/>
@@ -74,7 +74,7 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.49019607843137253" green="0.0" blue="0.72156862745098038" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="127" id="Ojr-ZQ-wKW"/>
+                                    <constraint firstAttribute="height" constant="113" id="Ojr-ZQ-wKW"/>
                                     <constraint firstAttribute="trailing" secondItem="lRo-NT-hZN" secondAttribute="trailing" id="bc8-5y-iOV"/>
                                     <constraint firstItem="lRo-NT-hZN" firstAttribute="leading" secondItem="XTk-Pm-r9j" secondAttribute="leading" id="deb-gn-Dpa"/>
                                     <constraint firstAttribute="bottom" secondItem="lRo-NT-hZN" secondAttribute="bottom" id="fVw-SO-8P1"/>
@@ -94,7 +94,7 @@
                                 </connections>
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="59G-lz-DfS">
-                                <rect key="frame" x="0.0" y="127" width="414" height="684"/>
+                                <rect key="frame" x="0.0" y="113" width="414" height="698"/>
                                 <connections>
                                     <segue destination="HUu-0t-7Te" kind="embed" id="kmk-Zd-XsG"/>
                                 </connections>

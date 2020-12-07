@@ -10,7 +10,7 @@ import AppsFlyerLib
 
 class DetailViewController: UIViewController {
     
-    var promoWithListPromo: PromoListModel?
+    var idPromo: Int?
     var currentPromo: InfoPromoModel?
     
     @IBOutlet weak var backButton: UIButton!
@@ -35,9 +35,9 @@ class DetailViewController: UIViewController {
     }
     
     private func featchData() {
-        guard let promo = promoWithListPromo else { return }
+        guard let promo = idPromo else { return }
         
-        DetailPromoNetworkManager.getInfoPromo(withID: promo.id) { (infoPromo) in
+        DetailPromoNetworkManager.getInfoPromo(withID: promo) { (infoPromo) in
             DispatchQueue.main.async {
                 self.currentPromo = infoPromo
                 self.updateUI(infoPromo: infoPromo)

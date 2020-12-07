@@ -27,7 +27,7 @@ class PromoListCell: UITableViewCell {
 
         self.saleLabel.text = "\(getFormattMoney(withNUmber: itemCell.sale))"
         self.percentLabel.text = "-\(itemCell.percent)%"
-        fetchImage(withURLString: itemCell.image)
+//        fetchImage(withURLString: itemCell.image)
         
         self.viewCell.layer.cornerRadius = 5
         self.viewCell.layer.borderWidth = 1

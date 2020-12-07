@@ -13,7 +13,10 @@ class PromoListViewController: UIViewController {
     
     var promoListArray = [PromoListModel]()
     var promoListArrayVisable = [PromoListModel]()
-    lazy var searchBar = UISearchBar(frame: CGRect.zero)
+    var searchBar = UISearchBar(frame: CGRect.zero)
+    
+    var openPromoIndex = -1
+    var imageLoader = ImageLoader()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +27,15 @@ class PromoListViewController: UIViewController {
         navigationItem.titleView = searchBar
 
         featchData()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(openPromo(notification:)), name: NSNotification.Name(rawValue: "OpenPromo"), object: nil)
+    }
+    
+    @objc func openPromo(notification: Notification) {
+        if let promo = notification.userInfo?["idPromo"] as? Int {
+            openPromoIndex = promo
+            self.performSegue(withIdentifier: "showDetail", sender: self)
+        }
     }
     
     private func featchData() {
@@ -39,11 +51,16 @@ class PromoListViewController: UIViewController {
     // MARK: - Segues
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
-            if let indexPath = self.tableView.indexPathForSelectedRow {
-                let promo = promoListArrayVisable[indexPath.row]
-                //let detailViewController = segue.destination as! DetailPromoViewController
+            if openPromoIndex == -1 {
+                if let indexPath = self.tableView.indexPathForSelectedRow {
+                    let promo = promoListArrayVisable[indexPath.row]
+                    let detailViewController = segue.destination as! DetailViewController
+                    detailViewController.idPromo = promo.id
+                }
+            } else {
                 let detailViewController = segue.destination as! DetailViewController
-                detailViewController.promoWithListPromo = promo
+                detailViewController.idPromo = openPromoIndex
+                openPromoIndex = -1
             }
         }
     }
@@ -58,8 +75,17 @@ extension PromoListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PromoCell", for: indexPath) as! PromoListCell
+        cell.activityIndicator.isHidden = false
+        cell.activityIndicator.startAnimating()
         let promo = promoListArrayVisable[indexPath.row]
         cell.configure(with: promo)
+        imageLoader.obtainImageWithPath(imagePath: promo.image) { (image) in
+            if let updateCell = tableView.cellForRow(at: indexPath) as? PromoListCell {
+                updateCell.imagePromoView.image = image
+                updateCell.activityIndicator.isHidden = true
+                updateCell.activityIndicator.stopAnimating()
+            }
+        }
         return cell
     }
 }
@@ -67,6 +93,24 @@ extension PromoListViewController: UITableViewDataSource {
 extension PromoListViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         filterContentForSearchText(searchText: searchText)
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = true
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = false
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
+        searchBar.text = ""
+        filterContentForSearchText(searchText: "")
     }
     
     private func filterContentForSearchText(searchText: String?) {
