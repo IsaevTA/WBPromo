@@ -9,9 +9,7 @@ import Foundation
 
 struct PromoListModel: Decodable {
     let id: Int
-    let name: String
-    let image: String
+    let name, image: String
     let percent: Int
-    let price: Int
-    let sale: Int
+    let price, sale: Float
 }

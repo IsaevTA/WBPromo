@@ -1,48 +1,11 @@
 //
-//  DetailPromoViewController.swift
+//  DetailPromoViewController+Slide.swift
 //  WBPromo
 //
-//  Created by Timur Isaev on 30.11.2020.
+//  Created by Timur Isaev on 03.12.2020.
 //
 
 import UIKit
-
-class DetailPromoViewController: UIViewController {
-
-    var promoWithListRpomo: PromoListModel?
-    var currentPromo: InfoPromoModel?
-    var imageNameArray = [String]()
-    
-    @IBOutlet weak var nameLebel: UILabel!
-    @IBOutlet weak var sliderCollectionView: UICollectionView!
-    @IBOutlet weak var pageControl: UIPageControl!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        featchData()
-    }
-    
-    private func featchData() {
-        guard let promo = promoWithListRpomo else { return }
-        
-        DetailPromoNetworkManager.getInfoPromo(withID: promo.id) { (infoPromo) in
-            DispatchQueue.main.async {
-                self.currentPromo = infoPromo
-                self.imageNameArray = infoPromo.images
-                self.sliderCollectionView.reloadData()
-                self.updateUI(infoPromo: infoPromo)
-            }
-        }
-    }
-    
-    private func updateUI(infoPromo item: InfoPromoModel) {
-        nameLebel.text = item.name
-        
-        pageControl.numberOfPages = imageNameArray.count
-        pageControl.currentPage = 0
-    }
-}
 
 extension DetailPromoViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -55,14 +18,6 @@ extension DetailPromoViewController: UICollectionViewDelegate, UICollectionViewD
         cell.configure(with: promo)
         return cell
     }
-    
-//    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-//        for cell in sliderCollectionView.visibleCells {
-//            if let indexPath = sliderCollectionView.indexPath(for: cell) {
-//                pageControl.currentPage = indexPath.row
-//            }
-//        }
-//    }
     
     func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if collectionView == sliderCollectionView {

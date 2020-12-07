@@ -21,13 +21,13 @@ class NetworkManager {
     //Создание HTTP POST запроса
     func createPOSTRequest(metod: MetodRequest, url: URL, parameters: [String: Any]?) -> URLRequest {
     
-        print("URL: \(url)")
+        //print("URL: \(url)")
 
         var request = URLRequest(url: url, timeoutInterval: Double.infinity)
         request.httpMethod = metod.rawValue
         
         if let parameters = parameters {
-            print(parameters)
+            //print(parameters)
             do {
                 request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
             } catch {

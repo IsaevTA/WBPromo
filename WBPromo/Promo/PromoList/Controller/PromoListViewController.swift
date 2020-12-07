@@ -41,8 +41,9 @@ class PromoListViewController: UIViewController {
         if segue.identifier == "showDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let promo = promoListArrayVisable[indexPath.row]
-                let detailViewController = segue.destination as! DetailPromoViewController
-                detailViewController.promoWithListRpomo = promo
+                //let detailViewController = segue.destination as! DetailPromoViewController
+                let detailViewController = segue.destination as! DetailViewController
+                detailViewController.promoWithListPromo = promo
             }
         }
     }

@@ -50,7 +50,7 @@ class PromoListCell: UITableViewCell {
         }
     }
 
-    private func getFormattMoney(withNUmber number: Int) -> String {
+    private func getFormattMoney(withNUmber number: Float) -> String {
         return "\(number) руб."
     }
 }

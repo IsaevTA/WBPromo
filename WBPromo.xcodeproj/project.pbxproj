@@ -7,9 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B2C03FF2577EFFA0037083B /* RatingStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2C03FE2577EFFA0037083B /* RatingStackView.swift */; };
 		0B2FEBEE2577529A001EDC8E /* DetailPromoNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B83503A2576770A00C4C1FA /* DetailPromoNetworkManager.swift */; };
 		0B2FEBF425777C35001EDC8E /* ImageCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2FEBF325777C35001EDC8E /* ImageCollectionCell.swift */; };
+		0B4462AA257924D000A484BF /* DetailPromoViewController+SliderImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4462A9257924D000A484BF /* DetailPromoViewController+SliderImages.swift */; };
 		0B451D34257363D900BAA54B /* DetailPromoStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B451D33257363D900BAA54B /* DetailPromoStoryboard.storyboard */; };
+		0B53D304257A3F7D00649CD2 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B53D303257A3F7D00649CD2 /* DetailTableViewController.swift */; };
+		0B771AD0257CAC8D008ADD69 /* CommentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B771ACF257CAC8D008ADD69 /* CommentsView.swift */; };
+		0B771AD3257CB5F1008ADD69 /* CommentStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B771AD2257CB5F1008ADD69 /* CommentStackView.swift */; };
+		0B788801257B933F007DF3D9 /* Comment.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B788800257B933F007DF3D9 /* Comment.xib */; };
+		0B7B9842257E1193005D504C /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7B9841257E1193005D504C /* NotificationService.swift */; };
+		0B7B9846257E1193005D504C /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0B7B983F257E1193005D504C /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		0B7B9852257E11C4005D504C /* OneSignal in Frameworks */ = {isa = PBXBuildFile; productRef = 0B7B9851257E11C4005D504C /* OneSignal */; };
 		0B83502A2576460700C4C1FA /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B83501D2576460700C4C1FA /* Roboto-Medium.ttf */; };
 		0B83502B2576460700C4C1FA /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B83501E2576460700C4C1FA /* Roboto-Light.ttf */; };
 		0B83502C2576460700C4C1FA /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B83501F2576460700C4C1FA /* Roboto-Regular.ttf */; };
@@ -23,11 +32,11 @@
 		0B8350352576460700C4C1FA /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B8350282576460700C4C1FA /* Roboto-Thin.ttf */; };
 		0B8350362576460700C4C1FA /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B8350292576460700C4C1FA /* Roboto-Black.ttf */; };
 		0B83503E25767BA600C4C1FA /* InfoPromoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B83503D25767BA600C4C1FA /* InfoPromoModel.swift */; };
+		0B9187A5257A253D00467C8B /* SliderImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9187A4257A253D00467C8B /* SliderImageViewController.swift */; };
+		0B9187A9257A255400467C8B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9187A8257A255400467C8B /* DetailViewController.swift */; };
 		0BA94BBD25749F1000A94DB1 /* PromoListStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BA94BBC25749F1000A94DB1 /* PromoListStoryboard.storyboard */; };
 		0BA94BC12574B08700A94DB1 /* DetailPromoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA94BC02574B08700A94DB1 /* DetailPromoViewController.swift */; };
 		0BA94BC72574B11400A94DB1 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BA94BC52574B11400A94DB1 /* iAd.framework */; };
-		0BA94BCD2574B18600A94DB1 /* AppDelegate+AppsFlyer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA94BCC2574B18600A94DB1 /* AppDelegate+AppsFlyer.swift */; };
-		0BA94BD22574B31800A94DB1 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = 0BA94BD12574B31800A94DB1 /* FacebookCore */; };
 		0BA94BD62574B49400A94DB1 /* OneSignal in Frameworks */ = {isa = PBXBuildFile; productRef = 0BA94BD52574B49400A94DB1 /* OneSignal */; };
 		0BA94BEC2574BE5800A94DB1 /* SettingsAD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA94BEB2574BE5800A94DB1 /* SettingsAD.swift */; };
 		0BA94BF82574BF5700A94DB1 /* main_start.js in Resources */ = {isa = PBXBuildFile; fileRef = 0BA94BF12574BF5700A94DB1 /* main_start.js */; };
@@ -54,9 +63,43 @@
 		0BC9BF672570EC9100445DFC /* PromoListNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC9BF662570EC9100445DFC /* PromoListNetworkManager.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		0B7B9844257E1193005D504C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0BC9BF222570BFF200445DFC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0B7B983E257E1193005D504C;
+			remoteInfo = OneSignalNotificationServiceExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0B7B984A257E1193005D504C /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				0B7B9846257E1193005D504C /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		0B2C03FE2577EFFA0037083B /* RatingStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingStackView.swift; sourceTree = "<group>"; };
 		0B2FEBF325777C35001EDC8E /* ImageCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionCell.swift; sourceTree = "<group>"; };
+		0B4462A9257924D000A484BF /* DetailPromoViewController+SliderImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailPromoViewController+SliderImages.swift"; sourceTree = "<group>"; };
 		0B451D33257363D900BAA54B /* DetailPromoStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailPromoStoryboard.storyboard; sourceTree = "<group>"; };
+		0B53D303257A3F7D00649CD2 /* DetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
+		0B771ACF257CAC8D008ADD69 /* CommentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsView.swift; sourceTree = "<group>"; };
+		0B771AD2257CB5F1008ADD69 /* CommentStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentStackView.swift; sourceTree = "<group>"; };
+		0B788800257B933F007DF3D9 /* Comment.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Comment.xib; sourceTree = "<group>"; };
+		0B7B983F257E1193005D504C /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B7B9841257E1193005D504C /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		0B7B9843257E1193005D504C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0B7B9857257E12D1005D504C /* WBPromo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WBPromo.entitlements; sourceTree = "<group>"; };
 		0B83501D2576460700C4C1FA /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		0B83501E2576460700C4C1FA /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
 		0B83501F2576460700C4C1FA /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
@@ -71,11 +114,12 @@
 		0B8350292576460700C4C1FA /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
 		0B83503A2576770A00C4C1FA /* DetailPromoNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPromoNetworkManager.swift; sourceTree = "<group>"; };
 		0B83503D25767BA600C4C1FA /* InfoPromoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPromoModel.swift; sourceTree = "<group>"; };
+		0B9187A4257A253D00467C8B /* SliderImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderImageViewController.swift; sourceTree = "<group>"; };
+		0B9187A8257A255400467C8B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		0BA94BBC25749F1000A94DB1 /* PromoListStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PromoListStoryboard.storyboard; sourceTree = "<group>"; };
 		0BA94BC02574B08700A94DB1 /* DetailPromoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPromoViewController.swift; sourceTree = "<group>"; };
 		0BA94BC42574B11400A94DB1 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		0BA94BC52574B11400A94DB1 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
-		0BA94BCC2574B18600A94DB1 /* AppDelegate+AppsFlyer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+AppsFlyer.swift"; sourceTree = "<group>"; };
 		0BA94BEB2574BE5800A94DB1 /* SettingsAD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsAD.swift; sourceTree = "<group>"; };
 		0BA94BF12574BF5700A94DB1 /* main_start.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = main_start.js; sourceTree = "<group>"; };
 		0BA94BF22574BF5700A94DB1 /* WKWebViewJavascriptBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKWebViewJavascriptBridge.swift; sourceTree = "<group>"; };
@@ -103,16 +147,24 @@
 		0BC9BF592570DAF700445DFC /* PromoListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromoListCell.swift; sourceTree = "<group>"; };
 		0BC9BF622570EBEA00445DFC /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		0BC9BF662570EC9100445DFC /* PromoListNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromoListNetworkManager.swift; sourceTree = "<group>"; };
+		0BDC2B15257A3AAA00FCD67F /* DetailStoryboard_copy.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailStoryboard_copy.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0B7B983C257E1193005D504C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B7B9852257E11C4005D504C /* OneSignal in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0BC9BF272570BFF200445DFC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				0BA94BD62574B49400A94DB1 /* OneSignal in Frameworks */,
 				0BA94BC72574B11400A94DB1 /* iAd.framework in Frameworks */,
-				0BA94BD22574B31800A94DB1 /* FacebookCore in Frameworks */,
 				0BA94C032574C17800A94DB1 /* AppsFlyerLib.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -120,9 +172,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B2C03F82577EB600037083B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		0B451D2E2573632D00BAA54B /* DetailPromo */ = {
 			isa = PBXGroup;
 			children = (
+				0B7B9837257E0512005D504C /* Deleted */,
 				0B451D32257363C100BAA54B /* Model */,
 				0B451D31257363B800BAA54B /* View */,
 				0B451D2F2573633A00BAA54B /* Controller */,
@@ -134,7 +194,8 @@
 		0B451D2F2573633A00BAA54B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				0BA94BC02574B08700A94DB1 /* DetailPromoViewController.swift */,
+				0B9187A3257A250A00467C8B /* SliderImageView */,
+				0B7B9838257E0534005D504C /* DetailPromo */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -142,8 +203,10 @@
 		0B451D31257363B800BAA54B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0B771ACD257CAC2F008ADD69 /* Comments */,
 				0B451D33257363D900BAA54B /* DetailPromoStoryboard.storyboard */,
 				0B2FEBF325777C35001EDC8E /* ImageCollectionCell.swift */,
+				0B2C03FE2577EFFA0037083B /* RatingStackView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -154,6 +217,44 @@
 				0B83503D25767BA600C4C1FA /* InfoPromoModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		0B771ACD257CAC2F008ADD69 /* Comments */ = {
+			isa = PBXGroup;
+			children = (
+				0B788800257B933F007DF3D9 /* Comment.xib */,
+				0B771ACF257CAC8D008ADD69 /* CommentsView.swift */,
+				0B771AD2257CB5F1008ADD69 /* CommentStackView.swift */,
+			);
+			path = Comments;
+			sourceTree = "<group>";
+		};
+		0B7B9837257E0512005D504C /* Deleted */ = {
+			isa = PBXGroup;
+			children = (
+				0BDC2B15257A3AAA00FCD67F /* DetailStoryboard_copy.storyboard */,
+				0BA94BC02574B08700A94DB1 /* DetailPromoViewController.swift */,
+				0B4462A9257924D000A484BF /* DetailPromoViewController+SliderImages.swift */,
+			);
+			path = Deleted;
+			sourceTree = "<group>";
+		};
+		0B7B9838257E0534005D504C /* DetailPromo */ = {
+			isa = PBXGroup;
+			children = (
+				0B9187A8257A255400467C8B /* DetailViewController.swift */,
+				0B53D303257A3F7D00649CD2 /* DetailTableViewController.swift */,
+			);
+			path = DetailPromo;
+			sourceTree = "<group>";
+		};
+		0B7B9840257E1193005D504C /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXGroup;
+			children = (
+				0B7B9841257E1193005D504C /* NotificationService.swift */,
+				0B7B9843257E1193005D504C /* Info.plist */,
+			);
+			path = OneSignalNotificationServiceExtension;
 			sourceTree = "<group>";
 		};
 		0B83501B257645F600C4C1FA /* Fonts */ = {
@@ -191,6 +292,14 @@
 			path = DetailPromoNetworkManager;
 			sourceTree = "<group>";
 		};
+		0B9187A3257A250A00467C8B /* SliderImageView */ = {
+			isa = PBXGroup;
+			children = (
+				0B9187A4257A253D00467C8B /* SliderImageViewController.swift */,
+			);
+			path = SliderImageView;
+			sourceTree = "<group>";
+		};
 		0BA94BC32574B11300A94DB1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -206,7 +315,6 @@
 			children = (
 				0BA94BEB2574BE5800A94DB1 /* SettingsAD.swift */,
 				0BA94C052574C95500A94DB1 /* AnalyticsManager.swift */,
-				0BA94BCC2574B18600A94DB1 /* AppDelegate+AppsFlyer.swift */,
 			);
 			path = AD;
 			sourceTree = "<group>";
@@ -240,6 +348,7 @@
 			isa = PBXGroup;
 			children = (
 				0BC9BF2C2570BFF200445DFC /* WBPromo */,
+				0B7B9840257E1193005D504C /* OneSignalNotificationServiceExtension */,
 				0BC9BF2B2570BFF200445DFC /* Products */,
 				0BA94BC32574B11300A94DB1 /* Frameworks */,
 			);
@@ -249,6 +358,7 @@
 			isa = PBXGroup;
 			children = (
 				0BC9BF2A2570BFF200445DFC /* WBPromo.app */,
+				0B7B983F257E1193005D504C /* OneSignalNotificationServiceExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -256,6 +366,8 @@
 		0BC9BF2C2570BFF200445DFC /* WBPromo */ = {
 			isa = PBXGroup;
 			children = (
+				0B7B9857257E12D1005D504C /* WBPromo.entitlements */,
+				0B2C03F82577EB600037083B /* Helpers */,
 				0BC9BF422570C00E00445DFC /* Application */,
 				0BC9BF482570C50100445DFC /* Promo */,
 				0BA94BEF2574BF4000A94DB1 /* WebView */,
@@ -377,6 +489,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0B7B983E257E1193005D504C /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0B7B9847257E1193005D504C /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */;
+			buildPhases = (
+				0B7B983B257E1193005D504C /* Sources */,
+				0B7B983C257E1193005D504C /* Frameworks */,
+				0B7B983D257E1193005D504C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OneSignalNotificationServiceExtension;
+			packageProductDependencies = (
+				0B7B9851257E11C4005D504C /* OneSignal */,
+			);
+			productName = OneSignalNotificationServiceExtension;
+			productReference = 0B7B983F257E1193005D504C /* OneSignalNotificationServiceExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		0BC9BF292570BFF200445DFC /* WBPromo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0BC9BF3E2570BFF500445DFC /* Build configuration list for PBXNativeTarget "WBPromo" */;
@@ -384,14 +516,15 @@
 				0BC9BF262570BFF200445DFC /* Sources */,
 				0BC9BF272570BFF200445DFC /* Frameworks */,
 				0BC9BF282570BFF200445DFC /* Resources */,
+				0B7B984A257E1193005D504C /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				0B7B9845257E1193005D504C /* PBXTargetDependency */,
 			);
 			name = WBPromo;
 			packageProductDependencies = (
-				0BA94BD12574B31800A94DB1 /* FacebookCore */,
 				0BA94BD52574B49400A94DB1 /* OneSignal */,
 			);
 			productName = WBPromo;
@@ -407,6 +540,9 @@
 				LastSwiftUpdateCheck = 1220;
 				LastUpgradeCheck = 1220;
 				TargetAttributes = {
+					0B7B983E257E1193005D504C = {
+						CreatedOnToolsVersion = 12.2;
+					};
 					0BC9BF292570BFF200445DFC = {
 						CreatedOnToolsVersion = 12.2;
 					};
@@ -422,7 +558,6 @@
 			);
 			mainGroup = 0BC9BF212570BFF200445DFC;
 			packageReferences = (
-				0BA94BD02574B31800A94DB1 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
 				0BA94BD42574B49400A94DB1 /* XCRemoteSwiftPackageReference "OneSignal-iOS-SDK" */,
 			);
 			productRefGroup = 0BC9BF2B2570BFF200445DFC /* Products */;
@@ -430,11 +565,19 @@
 			projectRoot = "";
 			targets = (
 				0BC9BF292570BFF200445DFC /* WBPromo */,
+				0B7B983E257E1193005D504C /* OneSignalNotificationServiceExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0B7B983D257E1193005D504C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0BC9BF282570BFF200445DFC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -446,6 +589,7 @@
 				0B8350302576460700C4C1FA /* Roboto-BoldItalic.ttf in Resources */,
 				0BA94BFB2574BF5700A94DB1 /* main_finish.js in Resources */,
 				0B8350322576460700C4C1FA /* Roboto-Italic.ttf in Resources */,
+				0B788801257B933F007DF3D9 /* Comment.xib in Resources */,
 				0B8350352576460700C4C1FA /* Roboto-Thin.ttf in Resources */,
 				0B83502B2576460700C4C1FA /* Roboto-Light.ttf in Resources */,
 				0B83502D2576460700C4C1FA /* Roboto-MediumItalic.ttf in Resources */,
@@ -465,35 +609,57 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0B7B983B257E1193005D504C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B7B9842257E1193005D504C /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0BC9BF262570BFF200445DFC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				0BA94C102574CE2F00A94DB1 /* GlobalSettings.swift in Sources */,
 				0BC9BF572570CE6F00445DFC /* PromoListModel.swift in Sources */,
+				0B9187A9257A255400467C8B /* DetailViewController.swift in Sources */,
 				0BA94BF92574BF5700A94DB1 /* WKWebViewJavascriptBridge.swift in Sources */,
 				0B2FEBF425777C35001EDC8E /* ImageCollectionCell.swift in Sources */,
+				0B771AD0257CAC8D008ADD69 /* CommentsView.swift in Sources */,
 				0B2FEBEE2577529A001EDC8E /* DetailPromoNetworkManager.swift in Sources */,
 				0BC9BF632570EBEA00445DFC /* NetworkError.swift in Sources */,
 				0BC9BF5A2570DAF700445DFC /* PromoListCell.swift in Sources */,
 				0BC9BF322570BFF200445DFC /* PromoListViewController.swift in Sources */,
+				0B2C03FF2577EFFA0037083B /* RatingStackView.swift in Sources */,
 				0BC9BF2E2570BFF200445DFC /* AppDelegate.swift in Sources */,
 				0BC9BF522570C6B200445DFC /* NetworkManager.swift in Sources */,
 				0BC9BF672570EC9100445DFC /* PromoListNetworkManager.swift in Sources */,
+				0B4462AA257924D000A484BF /* DetailPromoViewController+SliderImages.swift in Sources */,
 				0BA94BFA2574BF5700A94DB1 /* WKWebViewJavascriptBridgeJS.swift in Sources */,
-				0BA94BCD2574B18600A94DB1 /* AppDelegate+AppsFlyer.swift in Sources */,
 				0BA94BFC2574BF5700A94DB1 /* WKWebViewJavascriptBridgeBase.swift in Sources */,
 				0BA94BEC2574BE5800A94DB1 /* SettingsAD.swift in Sources */,
+				0B9187A5257A253D00467C8B /* SliderImageViewController.swift in Sources */,
 				0BA94C062574C95500A94DB1 /* AnalyticsManager.swift in Sources */,
 				0BA94BC12574B08700A94DB1 /* DetailPromoViewController.swift in Sources */,
 				0B83503E25767BA600C4C1FA /* InfoPromoModel.swift in Sources */,
+				0B53D304257A3F7D00649CD2 /* DetailTableViewController.swift in Sources */,
 				0BA94C132575097300A94DB1 /* WebView.swift in Sources */,
 				0BA94C0D2574CD8900A94DB1 /* WebViewViewController.swift in Sources */,
 				0BC9BF302570BFF200445DFC /* SceneDelegate.swift in Sources */,
+				0B771AD3257CB5F1008ADD69 /* CommentStackView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0B7B9845257E1193005D504C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0B7B983E257E1193005D504C /* OneSignalNotificationServiceExtension */;
+			targetProxy = 0B7B9844257E1193005D504C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0BC9BF332570BFF200445DFC /* Main.storyboard */ = {
@@ -515,6 +681,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		0B7B9848257E1193005D504C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = XW29RT8E9D;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ru.isaevtimur.WBPromo.OneSignalNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		0B7B9849257E1193005D504C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = XW29RT8E9D;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ru.isaevtimur.WBPromo.OneSignalNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
 		0BC9BF3C2570BFF500445DFC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -566,7 +772,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -621,7 +827,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -634,9 +840,12 @@
 		0BC9BF3F2570BFF500445DFC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WBPromo/WBPromo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = XW29RT8E9D;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -650,16 +859,19 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ru.isaevtimur.WBPromo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		0BC9BF402570BFF500445DFC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WBPromo/WBPromo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = XW29RT8E9D;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -673,13 +885,22 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ru.isaevtimur.WBPromo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0B7B9847257E1193005D504C /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0B7B9848257E1193005D504C /* Debug */,
+				0B7B9849257E1193005D504C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		0BC9BF252570BFF200445DFC /* Build configuration list for PBXProject "WBPromo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -701,14 +922,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		0BA94BD02574B31800A94DB1 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/facebook/facebook-ios-sdk.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 8.2.0;
-			};
-		};
 		0BA94BD42574B49400A94DB1 /* XCRemoteSwiftPackageReference "OneSignal-iOS-SDK" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/OneSignal/OneSignal-iOS-SDK";
@@ -720,10 +933,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0BA94BD12574B31800A94DB1 /* FacebookCore */ = {
+		0B7B9851257E11C4005D504C /* OneSignal */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 0BA94BD02574B31800A94DB1 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
-			productName = FacebookCore;
+			package = 0BA94BD42574B49400A94DB1 /* XCRemoteSwiftPackageReference "OneSignal-iOS-SDK" */;
+			productName = OneSignal;
 		};
 		0BA94BD52574B49400A94DB1 /* OneSignal */ = {
 			isa = XCSwiftPackageProductDependency;
