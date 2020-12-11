@@ -23,13 +23,13 @@ class CommentsView: UIView {
         
         nameUserLabel.text = comment.name
         cityUserLabel.text = comment.city
+        ratingStackView.starsRating = comment.rating
+
         commentLabel.text = comment.body
         commentLabel.sizeToFit()
         commentLabel.heightAnchor.constraint(equalToConstant: commentLabel.frame.size.height).isActive = true
-        
-        ratingStackView.starsRating = comment.rating
-        
-        getImage(withURLString: comment.user_avatar, andImageView: avatarImage)
+                
+        getImage(withURLString: comment.userAvatar, andImageView: avatarImage)
         
         var heightImage: CGFloat = 0.0
         if comment.image != "" {

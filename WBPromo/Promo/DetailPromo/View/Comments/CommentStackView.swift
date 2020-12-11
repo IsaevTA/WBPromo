@@ -17,7 +17,13 @@ class CommentStackView: UIStackView {
         commentView.configurationView(wihtComment: comment, andView: self)
         commentView.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height)
         commentView.addSubview(view)
+        commentView.translatesAutoresizingMaskIntoConstraints = false
+        
         addArrangedSubview(commentView)
+        
+        commentView.heightAnchor.constraint(equalToConstant: view.frame.size.height).isActive = true
+        commentView.widthAnchor.constraint(equalToConstant: view.frame.size.width).isActive = true
+        
         self.frame.size.height += view.frame.size.height + self.spacing
     }
 

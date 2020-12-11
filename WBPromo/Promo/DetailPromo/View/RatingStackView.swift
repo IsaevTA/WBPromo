@@ -19,13 +19,14 @@ class RatingStackView: UIStackView {
     let starFillImage = UIImage(systemName: "star.fill")
     
     override func draw(_ rect: CGRect) {
-        
-        for starTag in 1...5 {
-            let imageView = UIImageView(image: UIImage(named: "star"))
-            imageView.tag = starTag
-            imageView.tintColor = UIColor(red: 1, green: 0.914, blue: 0.204, alpha: 1)
-            
-            addArrangedSubview(imageView)
+        if arrangedSubviews.count != 5 {
+            for starTag in 1...5 {
+                let imageView = UIImageView(image: UIImage(named: "star"))
+                imageView.tag = starTag
+                imageView.tintColor = UIColor(red: 1, green: 0.914, blue: 0.204, alpha: 1)
+                
+                addArrangedSubview(imageView)
+            }
         }
         setStarsRating()
     }

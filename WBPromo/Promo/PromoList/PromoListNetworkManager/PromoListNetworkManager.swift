@@ -9,7 +9,7 @@ import Foundation
 
 class PromoListNetworkManager {
     
-    static let urlFeatchPromoList: String = "https://veradewa.site/ios/"
+    static let urlFeatchPromoList: String = "https://wtapp.ru/api/application/product-list/"
     
     private init() {}
     

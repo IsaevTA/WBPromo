@@ -14,7 +14,8 @@ struct InfoPromoModel: Codable {
     let images: [String]
     let percent: Int
     let price, sale: Float
-    let description, equipment, specification: String
+    let description: String
+    let equipment, specification: [NameValueType]
     let comments: [Comments]
     let urlWildberies: String
     let rating: Int
@@ -30,6 +31,19 @@ struct InfoPromoModel: Codable {
 struct Comments: Codable {
     let name, city: String
     let rating: Int
-    let user_avatar, body: String
+    let userAvatar: String
+    let body: String
     let image: String
+
+    enum CodingKeys: String, CodingKey {
+        case name, city, rating
+        case userAvatar = "user_avatar"
+        case body, image
+    }
 }
+
+// MARK: - Equipment
+struct NameValueType: Codable {
+    let name, value: String
+}
+

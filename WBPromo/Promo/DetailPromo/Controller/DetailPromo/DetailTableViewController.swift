@@ -47,13 +47,17 @@ class DetailTableViewController: UITableViewController {
 
         ratingStackView.starsRating = item.rating
         
-        descriptionLabel.text = item.description
+//        descriptionLabel.text = item.description
+        descriptionLabel.attributedText = setAttributeLineSpacingForLabel(withString: item.description, andSpacing: 4)
         descriptionLabel.sizeToFit()
 
-        equipmentLabel.text = item.equipment
+//        equipmentLabel.text = convertDictionaryToString(withDictionary: item.equipment) //item.equipment
+        equipmentLabel.attributedText = setAttributeLineSpacingForLabel(withString: convertDictionaryToString(withDictionary: item.equipment), andSpacing: 5)
         equipmentLabel.sizeToFit()
         
-        specificationLabel.text = item.specification
+//        specificationLabel.text = convertDictionaryToString(withDictionary: item.specification) //item.specification
+        specificationLabel.attributedText = setAttributeLineSpacingForLabel(withString: convertDictionaryToString(withDictionary: item.specification), andSpacing: 5)
+        
         specificationLabel.sizeToFit()
         
         commentsStackView.frame.size.height = 0
@@ -63,6 +67,24 @@ class DetailTableViewController: UITableViewController {
         heightStackView = commentsStackView.frame.size.height
 
         tableView.reloadData()
+    }
+    
+    private func convertDictionaryToString(withDictionary dictionary: [NameValueType]) -> String {
+        var arrayString = [String]()
+        for item in dictionary {
+            arrayString.append("\(item.name): \(item.value)")
+        }
+        
+        return arrayString.joined(separator: "\n")
+    }
+    
+    private func setAttributeLineSpacingForLabel(withString string: String, andSpacing spacing: CGFloat) -> NSAttributedString {
+        let attributedString = NSMutableAttributedString(string: string)
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = spacing
+        attributedString.addAttribute(NSAttributedString.Key.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, attributedString.length))
+        
+        return attributedString
     }
     
     func instanceFromNib() -> UIView {

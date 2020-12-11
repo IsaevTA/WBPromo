@@ -39,7 +39,7 @@
                value = "commentView.frame.size">
             </PersistentString>
             <PersistentString
-               value = "view.frame.height">
+               value = "view.frame.size">
             </PersistentString>
             <PersistentString
                value = "self.frame.size">
@@ -50,13 +50,13 @@
          contextName = "DetailTableViewController.tableView(_:heightForRowAt:):DetailTableViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "commentsStackView.frame">
+               value = "heightStackView">
             </PersistentString>
             <PersistentString
                value = "(children[0] as? SliderImageViewController)!.heightFrame">
             </PersistentString>
             <PersistentString
-               value = "heightStackView">
+               value = "commentsStackView.frame">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
