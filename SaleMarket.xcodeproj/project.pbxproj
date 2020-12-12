@@ -87,7 +87,6 @@
 		0B7B983F257E1193005D504C /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B7B9841257E1193005D504C /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		0B7B9843257E1193005D504C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0B7B9857257E12D1005D504C /* WBPromo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WBPromo.entitlements; sourceTree = "<group>"; };
 		0B83501D2576460700C4C1FA /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		0B83501E2576460700C4C1FA /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
 		0B83501F2576460700C4C1FA /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
@@ -109,7 +108,8 @@
 		0BA94BC52574B11400A94DB1 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		0BA94BEB2574BE5800A94DB1 /* SettingsAnalist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsAnalist.swift; sourceTree = "<group>"; };
 		0BA94C052574C95500A94DB1 /* AnalyticsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsManager.swift; sourceTree = "<group>"; };
-		0BC9BF2A2570BFF200445DFC /* WBPromo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WBPromo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0BBA99CE2583AF62002E7A7F /* WBPromo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WBPromo.entitlements; sourceTree = "<group>"; };
+		0BC9BF2A2570BFF200445DFC /* SaleMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SaleMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BC9BF2D2570BFF200445DFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0BC9BF2F2570BFF200445DFC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0BC9BF312570BFF200445DFC /* PromoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromoListViewController.swift; sourceTree = "<group>"; };
@@ -286,32 +286,33 @@
 		0BC9BF212570BFF200445DFC = {
 			isa = PBXGroup;
 			children = (
-				0BC9BF2C2570BFF200445DFC /* WBPromo */,
+				0BBA99CE2583AF62002E7A7F /* WBPromo.entitlements */,
+				0BC9BF2C2570BFF200445DFC /* SaleMarket */,
 				0B7B9840257E1193005D504C /* OneSignalNotificationServiceExtension */,
 				0BC9BF2B2570BFF200445DFC /* Products */,
 				0BA94BC32574B11300A94DB1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		0BC9BF2B2570BFF200445DFC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0BC9BF2A2570BFF200445DFC /* WBPromo.app */,
+				0BC9BF2A2570BFF200445DFC /* SaleMarket.app */,
 				0B7B983F257E1193005D504C /* OneSignalNotificationServiceExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0BC9BF2C2570BFF200445DFC /* WBPromo */ = {
+		0BC9BF2C2570BFF200445DFC /* SaleMarket */ = {
 			isa = PBXGroup;
 			children = (
-				0B7B9857257E12D1005D504C /* WBPromo.entitlements */,
 				0B2C03F82577EB600037083B /* Helpers */,
 				0BC9BF422570C00E00445DFC /* Application */,
 				0BC9BF482570C50100445DFC /* Promo */,
 				0BC9BF462570C29500445DFC /* Supporting Files */,
 			);
-			path = WBPromo;
+			path = SaleMarket;
 			sourceTree = "<group>";
 		};
 		0BC9BF422570C00E00445DFC /* Application */ = {
@@ -446,9 +447,9 @@
 			productReference = 0B7B983F257E1193005D504C /* OneSignalNotificationServiceExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
-		0BC9BF292570BFF200445DFC /* WBPromo */ = {
+		0BC9BF292570BFF200445DFC /* SaleMarket */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0BC9BF3E2570BFF500445DFC /* Build configuration list for PBXNativeTarget "WBPromo" */;
+			buildConfigurationList = 0BC9BF3E2570BFF500445DFC /* Build configuration list for PBXNativeTarget "SaleMarket" */;
 			buildPhases = (
 				0BC9BF262570BFF200445DFC /* Sources */,
 				0BC9BF272570BFF200445DFC /* Frameworks */,
@@ -460,12 +461,12 @@
 			dependencies = (
 				0B7B9845257E1193005D504C /* PBXTargetDependency */,
 			);
-			name = WBPromo;
+			name = SaleMarket;
 			packageProductDependencies = (
 				0BA94BD52574B49400A94DB1 /* OneSignal */,
 			);
 			productName = WBPromo;
-			productReference = 0BC9BF2A2570BFF200445DFC /* WBPromo.app */;
+			productReference = 0BC9BF2A2570BFF200445DFC /* SaleMarket.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -485,7 +486,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 0BC9BF252570BFF200445DFC /* Build configuration list for PBXProject "Salearket" */;
+			buildConfigurationList = 0BC9BF252570BFF200445DFC /* Build configuration list for PBXProject "SaleMarket" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -501,7 +502,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0BC9BF292570BFF200445DFC /* WBPromo */,
+				0BC9BF292570BFF200445DFC /* SaleMarket */,
 				0B7B983E257E1193005D504C /* OneSignalNotificationServiceExtension */,
 			);
 		};
@@ -611,7 +612,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = XW29RT8E9D;
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -619,7 +620,8 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ru.isaevtimur.WBPromoTest.OneSignalNotificationServiceExtension;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.isaevtimur.SaleMarket.OneSignalNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -631,7 +633,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = XW29RT8E9D;
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -639,7 +641,8 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ru.isaevtimur.WBPromoTest.OneSignalNotificationServiceExtension;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.isaevtimur.SaleMarket.OneSignalNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -769,21 +772,24 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = WBPromo/WBPromo.entitlements;
+				CODE_SIGN_ENTITLEMENTS = WBPromo.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = XW29RT8E9D;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/WBPromo/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/SaleMarket/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ru.isaevtimur.WBPromoTest;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.isaevtimur.SaleMarket;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -795,21 +801,24 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = WBPromo/WBPromo.entitlements;
+				CODE_SIGN_ENTITLEMENTS = WBPromo.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = XW29RT8E9D;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/WBPromo/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/SaleMarket/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ru.isaevtimur.WBPromoTest;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.isaevtimur.SaleMarket;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -827,7 +836,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0BC9BF252570BFF200445DFC /* Build configuration list for PBXProject "Salearket" */ = {
+		0BC9BF252570BFF200445DFC /* Build configuration list for PBXProject "SaleMarket" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0BC9BF3C2570BFF500445DFC /* Debug */,
@@ -836,7 +845,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0BC9BF3E2570BFF500445DFC /* Build configuration list for PBXNativeTarget "WBPromo" */ = {
+		0BC9BF3E2570BFF500445DFC /* Build configuration list for PBXNativeTarget "SaleMarket" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0BC9BF3F2570BFF500445DFC /* Debug */,

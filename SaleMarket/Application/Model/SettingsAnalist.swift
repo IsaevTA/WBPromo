@@ -11,11 +11,11 @@ class SettingsAnalist {
     static let shared = SettingsAnalist()
 
     //For OneSignal
-    let appId = "8b32ed7c-8a12-44e7-a671-a9d6bc1ed32d"
+    let appId = "6f60d0a1-0b1c-4166-a75e-f169d99b37f3"
     
     //For Appsflyer
     let appsFlyerDevKey = "n26SE4JxyJMmjgoPBWTR4A"
-    let appleAppID = "id1543203177"
+    let appleAppID = "id1544444742"
     
     var wbInstalled: Bool {
         get { return UserDefaults.standard.bool(forKey: "WB_PROMO_INSTALLED") }

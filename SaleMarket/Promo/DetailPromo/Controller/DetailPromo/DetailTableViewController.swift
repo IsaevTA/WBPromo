@@ -72,7 +72,11 @@ class DetailTableViewController: UITableViewController {
     private func convertDictionaryToString(withDictionary dictionary: [NameValueType]) -> String {
         var arrayString = [String]()
         for item in dictionary {
-            arrayString.append("\(item.name): \(item.value)")
+            if item.name == "" {
+                arrayString.append("\(item.value)")
+            } else {
+                arrayString.append("\(item.name): \(item.value)")
+            }
         }
         
         return arrayString.joined(separator: "\n")
