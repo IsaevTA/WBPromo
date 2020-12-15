@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Bold.ttf">
+            <string>Roboto-Bold</string>
+        </array>
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FovaritesNavigationBarView" customModule="SaleMarket" customModuleProvider="target">
+            <connections>
+                <outlet property="counLabel" destination="41U-Ie-qlq" id="iOW-Y7-GKX"/>
+                <outlet property="view" destination="iN0-l3-epB" id="Plp-im-9jD"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="96"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Избранные товары" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xy1-Ew-fmS">
+                    <rect key="frame" x="10" y="24.5" width="210.5" height="27"/>
+                    <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="23"/>
+                    <color key="textColor" red="0.14509803921568626" green="0.14509803921568626" blue="0.14509803921568626" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="товаров в Избранном:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lMb-6g-TcQ">
+                    <rect key="frame" x="10" y="50" width="147" height="16.5"/>
+                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
+                    <color key="textColor" red="0.14509803921568626" green="0.14509803921568626" blue="0.14509803921568626" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="41U-Ie-qlq">
+                    <rect key="frame" x="165" y="50" width="8" height="16.5"/>
+                    <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="14"/>
+                    <color key="textColor" red="0.49019607840000001" green="0.0" blue="0.72156862749999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Xy1-Ew-fmS" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-10" id="9Cg-6R-ruk"/>
+                <constraint firstItem="41U-Ie-qlq" firstAttribute="centerY" secondItem="lMb-6g-TcQ" secondAttribute="centerY" id="9uk-I8-xWR"/>
+                <constraint firstItem="41U-Ie-qlq" firstAttribute="leading" secondItem="lMb-6g-TcQ" secondAttribute="trailing" constant="8" symbolic="YES" id="JLs-S3-WMi"/>
+                <constraint firstItem="lMb-6g-TcQ" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="10" id="Mvz-4e-taV"/>
+                <constraint firstItem="Xy1-Ew-fmS" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="VmK-Bg-aNh"/>
+                <constraint firstItem="lMb-6g-TcQ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="g2C-6w-7ed"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="133" y="132"/>
+        </view>
+    </objects>
+</document>

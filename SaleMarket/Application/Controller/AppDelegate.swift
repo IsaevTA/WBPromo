@@ -8,6 +8,7 @@
 import UIKit
 import OneSignal
 import AppsFlyerLib
+import CoreData
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     let settingAnalyst = SettingsAnalist.shared
+    var coreDataStack = CoreDataStack()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
@@ -43,6 +45,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if !settingAnalyst.wbInstalled { checkInstallWB() } // Проверка установлено ли приложение на телефоне
         
+        CoreDataManager.shared.context = (UIApplication.shared.delegate as? AppDelegate)?.coreDataStack.persistentContainer.viewContext
+        
         return true
     }
     
@@ -58,7 +62,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
-        // Start the SDK (start the IDFA timeout set above, for iOS 14 or later)
         AppsFlyerLib.shared().start()
     }
 

@@ -1,9 +1,8 @@
 //
-//  NetworkService.swift
-//  MVC-N
+//  NetworkManager.swift
+//  WBPromo
 //
-//  Created by Ivan Akulov on 19/01/2018.
-//  Copyright © 2018 Ivan Akulov. All rights reserved.
+//  Created by Timur Isaev on 27.11.2020.
 //
 
 import Foundation
@@ -12,6 +11,7 @@ enum MetodRequest: String {
     case get = "GET"
     case post = "POST"
 }
+
 class NetworkManager {
     
     private init() {}
@@ -20,9 +20,7 @@ class NetworkManager {
     
     //Создание HTTP POST запроса
     func createPOSTRequest(metod: MetodRequest, url: URL, parameters: [String: Any]?) -> URLRequest {
-    
 //        print("URL: \(url)")
-
         var request = URLRequest(url: url, timeoutInterval: Double.infinity)
         request.httpMethod = metod.rawValue
         
