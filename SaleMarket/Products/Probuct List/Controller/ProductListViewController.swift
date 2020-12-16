@@ -11,6 +11,8 @@ import NVActivityIndicatorView
 class ProductListViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var topView: UIView!
+    @IBOutlet weak var topViewConstraint: NSLayoutConstraint!
     
     var activityIndicatorView: NVActivityIndicatorView! = nil
     
@@ -18,7 +20,7 @@ class ProductListViewController: UIViewController {
     var productListArrayVisable = [ProductListModel]()
     var searchBar = UISearchBar(frame: CGRect.zero)
     
-    var openPromoIndex = -1
+    var openProductIndex = -1
     var imageLoader = ImageLoader()
     
     var isFovatites: Bool = false
@@ -31,21 +33,21 @@ class ProductListViewController: UIViewController {
         activityIndicatorView = NVActivityIndicatorView(frame: frame, type: .ballPulse, color: UIColor(red: 0.491, green: 0, blue: 0.722, alpha: 1))
         self.view.addSubview(activityIndicatorView)
         activityIndicatorView.startAnimating()
-
+        
         NotificationCenter.default.addObserver(self, selector: #selector(openPromo(notification:)), name: NSNotification.Name(rawValue: "OpenPromo"), object: nil)
     }
     
     func createNavigationBar() {
         
+        topView.isHidden = !isFovatites
         if isFovatites {
-
-            let screenWidth = UIScreen.main.bounds.size.width
-            let viewWidth = 200.0
-            let rect = CGRect(x: (Double)(screenWidth/2)-(Double)(viewWidth/2), y: 0, width: viewWidth, height: 110)
-            let view = FovaritesNavigationBarView(frame: rect, count: 0)
-            
-            navigationItem.titleView = view
-            navigationItem.titleView?.sizeToFit()
+            if (topView.subviews.first as? FavoritesNavigationBarView) == nil {
+                topViewConstraint.constant = 96
+                
+                let rect = CGRect(x: 0, y: 0, width: topView.frame.size.width, height: 90)
+                let view = FavoritesNavigationBarView(frame: rect, count: 0)
+                topView.addSubview(view)
+            }
         } else {
             searchBar.placeholder = "Я ищу"
             searchBar.delegate = self
@@ -55,25 +57,22 @@ class ProductListViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
         tabBarController?.tabBar.isHidden = false
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
-        if tabBarController?.selectedIndex == 1 {
-            isFovatites = true
-        }
         
+        isFovatites = tabBarController?.selectedIndex == 1 ? true : false
+        navigationController?.setNavigationBarHidden(isFovatites, animated: animated)
         createNavigationBar()
-    
         featchData(wihtFavoriteUse: isFovatites)
     }
     
     @objc func openPromo(notification: Notification) {
-        if let promo = notification.userInfo?["idPromo"] as? Int {
-            openPromoIndex = promo
+        if let promo = notification.userInfo?["idProduct"] as? Int {
+            openProductIndex = promo
             self.performSegue(withIdentifier: "showProduct", sender: self)
         }
     }
@@ -86,15 +85,14 @@ class ProductListViewController: UIViewController {
                 if favorite {
                     let arrayFavorite = FavoritesManager.shared.favoritesProduct
                     self.productListArrayVisable = productListArray.filter({arrayFavorite.contains($0.id)})
-                    let navigator = navigationItem.titleView as? FovaritesNavigationBarView
-                    navigator?.counLabel.text = String(self.productListArrayVisable.count)
+                    NotificationCenter.default.post(name: NSNotification.Name("UpdateCountFavorite"),
+                                                    object: nil,
+                                                    userInfo: ["count": self.productListArrayVisable.count])
                 } else {
                     self.productListArrayVisable = self.productListArray
-                    
                 }
                 
                 self.tableView.reloadData()
-
                 self.activityIndicatorView.stopAnimating()
             }
         }
@@ -103,16 +101,16 @@ class ProductListViewController: UIViewController {
     // MARK: - Segues
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showProduct" {
-            if openPromoIndex == -1 {
+            if openProductIndex == -1 {
                 if let indexPath = self.tableView.indexPathForSelectedRow {
                     let product = productListArrayVisable[indexPath.row]
                     let detailViewController = segue.destination as! ProductViewController
-                    detailViewController.idPromo = product.id
+                    detailViewController.idProduct = product.id
                 }
             } else {
                 let detailViewController = segue.destination as! ProductViewController
-                detailViewController.idPromo = openPromoIndex
-                openPromoIndex = -1
+                detailViewController.idProduct = openProductIndex
+                openProductIndex = -1
             }
         }
     }

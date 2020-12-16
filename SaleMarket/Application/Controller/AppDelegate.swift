@@ -111,7 +111,7 @@ extension AppDelegate: AppsFlyerLibDelegate{
         }
 
         if let idProduct = installData["id_wb_product"] as? Int {
-            NotificationCenter.default.post(name: NSNotification.Name("OpenPromo"), object: nil, userInfo: ["idPromo": idProduct])
+            NotificationCenter.default.post(name: NSNotification.Name("OpenPromo"), object: nil, userInfo: ["idProduct": idProduct])
         }
     }
     

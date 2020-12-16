@@ -11,7 +11,7 @@ import NVActivityIndicatorView
 
 class ProductViewController: UIViewController {
     
-    var idPromo: Int?
+    var idProduct: Int?
     var currentPromo: ProductModel?
     
     var activityIndicatorView: NVActivityIndicatorView! = nil
@@ -19,6 +19,7 @@ class ProductViewController: UIViewController {
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var titleNameLabel: UILabel!
     @IBOutlet weak var titleSaleLabel: UILabel!
+    @IBOutlet weak var heightCustomBarConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +46,7 @@ class ProductViewController: UIViewController {
     }
     
     private func featchData() {
-        guard let promo = idPromo else { return }
+        guard let promo = idProduct else { return }
         
         ProductNetworkManager.getInfoPromo(withID: promo) { (infoPromo) in
             DispatchQueue.main.async {
