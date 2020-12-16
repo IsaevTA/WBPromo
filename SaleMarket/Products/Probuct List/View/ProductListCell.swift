@@ -1,6 +1,6 @@
 //
 //  PromoListCell.swift
-//  WBPromo
+//  SaleMarket
 //
 //  Created by Timur Isaev on 27.11.2020.
 //
@@ -16,22 +16,16 @@ class ProductListCell: UITableViewCell {
     @IBOutlet weak var saleLabel: UILabel!
     @IBOutlet weak var imagePromoView: UIImageView!
     @IBOutlet weak var percentLabel: UILabel!
-    @IBOutlet weak var favoriteImage: UIImageView!
+    @IBOutlet weak var favoritesImage: UIImageView!
     
-    var activityIndicatorView: NVActivityIndicatorView! = nil
-    
-    let starImage = UIImage(named: "heart")
-    let starFillImage = UIImage(named: "heartfill")
+    var activityIndicator: NVActivityIndicatorView!
     
     func configure(with itemCell: ProductListModel) {
         
-        if self.activityIndicatorView == nil {
-            let viewCenter = self.imagePromoView.center
-            let frame = CGRect(x: viewCenter.x - 10, y: viewCenter.y - 10, width: 20, height: 20)
-            activityIndicatorView = NVActivityIndicatorView(frame: frame, type: .ballClipRotateMultiple, color: UIColor(red: 0.491, green: 0, blue: 0.722, alpha: 1))
-            activityIndicatorView.tag = itemCell.id
-            self.addSubview(activityIndicatorView)
+        if self.activityIndicator == nil {
+            self.activityIndicator = createActivitiIndicator(view: self, viewCenter: self.imagePromoView.center, widhtHeight: 20, typeActivity: .ballClipRotateMultiple)
         }
+        activityIndicator.startAnimating()
         
         self.nameLabel.text = itemCell.name
         
@@ -47,12 +41,10 @@ class ProductListCell: UITableViewCell {
         self.viewCell.layer.borderColor = UIColor(red: 0.937, green: 0.937, blue: 0.957, alpha: 1).cgColor
         
         if FavoritesManager.shared.checkFovarite(withId: itemCell.id) {
-            self.favoriteImage.image = starFillImage
+            self.favoritesImage.image = UIImage.returnImageStarFill()
         } else {
-            self.favoriteImage.image = starImage
+            self.favoritesImage.image = UIImage.returnImageStar()
         }
-        
-        activityIndicatorView.startAnimating()
     }
 
     private func getFormattMoney(withNUmber number: Float) -> String {

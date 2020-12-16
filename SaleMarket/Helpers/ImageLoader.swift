@@ -1,6 +1,6 @@
 //
 //  ImageLoader.swift
-//  WBPromo
+//  SaleMarket
 //
 //  Created by Timur Isaev on 07.12.2020.
 //

@@ -1,6 +1,6 @@
 //
 //  DetailPromoNetworkManager.swift
-//  WBPromo
+//  SaleMarket
 //
 //  Created by Timur Isaev on 27.11.2020.
 //

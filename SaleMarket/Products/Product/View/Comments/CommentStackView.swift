@@ -1,6 +1,6 @@
 //
 //  CommentStackView.swift
-//  WBPromo
+//  SaleMarket
 //
 //  Created by Timur Isaev on 06.12.2020.
 //

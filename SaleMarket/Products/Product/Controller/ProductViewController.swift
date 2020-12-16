@@ -1,6 +1,6 @@
 //
 //  DetailViewController.swift
-//  WBPromo
+//  SaleMarket
 //
 //  Created by Timur Isaev on 04.12.2020.
 //
@@ -13,23 +13,18 @@ class ProductViewController: UIViewController {
     
     var idProduct: Int?
     var currentPromo: ProductModel?
-    
-    var activityIndicatorView: NVActivityIndicatorView! = nil
+    var activityIndicator: NVActivityIndicatorView!
     
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var titleNameLabel: UILabel!
     @IBOutlet weak var titleSaleLabel: UILabel!
     @IBOutlet weak var heightCustomBarConstraint: NSLayoutConstraint!
-    @IBOutlet var swipeRight: UISwipeGestureRecognizer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let viewCenter = self.view.center
-        let frame = CGRect(x: viewCenter.x - 50, y: viewCenter.y - 50, width: 100, height: 100)
-        activityIndicatorView = NVActivityIndicatorView(frame: frame, type: .ballPulse, color: UIColor(red: 0.491, green: 0, blue: 0.722, alpha: 1))
-        self.view.addSubview(activityIndicatorView)
-        activityIndicatorView.startAnimating()
+
+        activityIndicator = createActivitiIndicator(view: self.view, viewCenter: self.view.center, widhtHeight: 100, typeActivity: .ballPulse)
+        activityIndicator.startAnimating()
         
         NotificationCenter.default.addObserver(self, selector: #selector(backController), name: NSNotification.Name(rawValue: "BackProductList"), object: nil)
         
@@ -56,7 +51,7 @@ class ProductViewController: UIViewController {
                 self.currentPromo = infoPromo
                 self.updateUI(infoPromo: infoPromo)
                 
-                self.activityIndicatorView.stopAnimating()
+                self.activityIndicator.stopAnimating()
 
                 NotificationCenter.default.post(name: NSNotification.Name("FeatchPromo"), object: nil, userInfo: ["promo": infoPromo])
             }

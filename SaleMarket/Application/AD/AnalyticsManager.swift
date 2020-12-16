@@ -1,6 +1,6 @@
 //
 //  AnalyticsManadger.swift
-//  WBPromo
+//  SaleMarket
 //
 //  Created by Timur Isaev on 30.11.2020.
 //

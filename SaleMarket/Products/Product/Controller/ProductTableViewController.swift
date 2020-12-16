@@ -1,6 +1,6 @@
 //
 //  DetailTableViewController.swift
-//  WBPromo
+//  SaleMarket
 //
 //  Created by Timur Isaev on 04.12.2020.
 //
@@ -99,17 +99,15 @@ class ProductTableViewController: UITableViewController {
         equipmentLabel.sizeToFit()
 
         specificationLabel.attributedText = setAttributeLineSpacingForLabel(withString: convertDictionaryToString(withDictionary: item.specification), andSpacing: 5)
-        
         specificationLabel.sizeToFit()
         
         commentsStackView.frame.size.height = 0
         for itemComment in item.comments {
             commentsStackView.addItem(wihtComment: itemComment)
         }
+        
         heightStackView = commentsStackView.frame.size.height
-        
         updateFavoriteButton()
-        
         tableView.reloadData()
     }
     
@@ -144,15 +142,6 @@ class ProductTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        if indexPath.row == 0 {
-            return (children[0] as? SliderImageViewController)!.heightFrame
-        } else if indexPath.row == 1 {
-            return 125
-        } else if indexPath.row == 2 {
-            return UITableView.automaticDimension
-        }
-        
         switch indexPath.row {
         case 0: return (children[0] as? SliderImageViewController)!.heightFrame
         case 1: return 125

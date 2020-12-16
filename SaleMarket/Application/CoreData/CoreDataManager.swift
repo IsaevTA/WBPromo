@@ -1,6 +1,6 @@
 //
-//  CoreDat.swift
-//  WBPromo
+//  CoreDataManager.swift
+//  SaleMarket
 //
 //  Created by Timur Isaev on 27.11.2020.
 //
@@ -50,7 +50,7 @@ class CoreDataManager {
                 let arrayItems = results.map({ProductListModel(wihtProductListItem: $0)})
                 return arrayItems
             }
-        } catch let error as NSError {
+        } catch {
             print(error.localizedDescription)
         }
         
@@ -60,10 +60,9 @@ class CoreDataManager {
     func searchFovorite(withName name: String) -> Bool {
         
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Favorite")
-
         fetchRequest.predicate = NSPredicate(format: "name = %@", name)
 
-        do{
+        do {
             let results = try context.fetch(fetchRequest)
             if results.isEmpty {
                 return false

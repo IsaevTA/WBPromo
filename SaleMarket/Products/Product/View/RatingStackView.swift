@@ -1,6 +1,6 @@
 //
 //  RatingStackView.swift
-//  WBPromo
+//  SaleMarket
 //
 //  Created by Timur Isaev on 02.12.2020.
 //

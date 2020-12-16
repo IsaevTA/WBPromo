@@ -208,7 +208,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="favoriteImage" destination="dQ1-Tr-GrO" id="0Ba-uO-SKU"/>
+                                            <outlet property="favoritesImage" destination="dQ1-Tr-GrO" id="0Ba-uO-SKU"/>
                                             <outlet property="imagePromoView" destination="UPV-kf-U5U" id="u90-QM-KZT"/>
                                             <outlet property="nameLabel" destination="aMM-nq-diE" id="gx0-rJ-kRy"/>
                                             <outlet property="percentLabel" destination="9lZ-7o-VQ8" id="ygl-Tt-zdy"/>
@@ -916,7 +916,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eEu-Jf-BY3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5852" y="-377"/>
+            <point key="canvasLocation" x="5816" y="-345"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  WBPromo
+//  SaleMarket
 //
 //  Created by Timur Isaev on 27.11.2020.
 //
@@ -14,31 +14,24 @@ class ProductListViewController: UIViewController {
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var topViewConstraint: NSLayoutConstraint!
     
-    var activityIndicatorView: NVActivityIndicatorView! = nil
-    
+    var activityIndicator: NVActivityIndicatorView!
     var productListArray = [ProductListModel]()
     var productListArrayVisable = [ProductListModel]()
     var searchBar = UISearchBar(frame: CGRect.zero)
-    
     var openProductIndex = -1
     var imageLoader = ImageLoader()
-    
     var isFovatites: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let viewCenter = self.view.center
-        let frame = CGRect(x: viewCenter.x - 50, y: viewCenter.y - 50, width: 100, height: 100)
-        activityIndicatorView = NVActivityIndicatorView(frame: frame, type: .ballPulse, color: UIColor(red: 0.491, green: 0, blue: 0.722, alpha: 1))
-        self.view.addSubview(activityIndicatorView)
-        activityIndicatorView.startAnimating()
+        activityIndicator = createActivitiIndicator(view: self.view, viewCenter: self.view.center, widhtHeight: 100, typeActivity: .ballPulse)
+        activityIndicator.startAnimating()
         
         NotificationCenter.default.addObserver(self, selector: #selector(openProduct(notification:)), name: NSNotification.Name(rawValue: "OpenProduct"), object: nil)
     }
     
     func createNavigationBar() {
-        
         topView.isHidden = !isFovatites
         if isFovatites {
             if (topView.subviews.first as? FavoritesNavigationBarView) == nil {
@@ -85,16 +78,16 @@ class ProductListViewController: UIViewController {
                 
                 if favorite {
                     let arrayFavorite = FavoritesManager.shared.favoritesProduct
-                    self.productListArrayVisable = productListArray.filter({arrayFavorite.contains($0.id)})
+                    productListArrayVisable = productListArray.filter({arrayFavorite.contains($0.id)})
                     NotificationCenter.default.post(name: NSNotification.Name("UpdateCountFavorite"),
                                                     object: nil,
-                                                    userInfo: ["count": self.productListArrayVisable.count])
+                                                    userInfo: ["count": productListArrayVisable.count])
                 } else {
-                    self.productListArrayVisable = self.productListArray
+                    productListArrayVisable = productListArray
                 }
                 
-                self.tableView.reloadData()
-                self.activityIndicatorView.stopAnimating()
+                tableView.reloadData()
+                activityIndicator.stopAnimating()
             }
         }
     }
@@ -131,7 +124,7 @@ extension ProductListViewController: UITableViewDataSource {
         imageLoader.obtainImageWithPath(imagePath: promo.image) { (image) in
             if let updateCell = tableView.cellForRow(at: indexPath) as? ProductListCell {
                 updateCell.imagePromoView.image = image
-                updateCell.activityIndicatorView?.stopAnimating()
+                updateCell.activityIndicator?.stopAnimating()
             }
         }
         return cell

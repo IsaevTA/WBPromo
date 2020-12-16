@@ -11,12 +11,10 @@ class TabBarViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
 
     override func viewWillLayoutSubviews() {
         let numberOfItems = CGFloat(tabBar.items!.count)
-        
         let tabBarItemSize = CGSize(width: tabBar.frame.width / numberOfItems, height: tabBar.frame.height)
         
         tabBar.selectionIndicatorImage = UIImage.imageWithColor(color: UIColor.white, size: tabBarItemSize).resizableImage(withCapInsets: .zero)
@@ -33,20 +31,5 @@ class TabBarViewController: UITabBarController {
             appearance.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor(red: 0.491, green: 0, blue: 0.722, alpha: 1)],
                                               for: .selected)
         }
-
-    }
-}
-
-extension UIImage
-{
-    class func imageWithColor(color: UIColor, size: CGSize) -> UIImage
-    {
-        let rect: CGRect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
-        UIGraphicsBeginImageContextWithOptions(size, false, 0)
-        color.setFill()
-        UIRectFill(rect)
-        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-        UIGraphicsEndImageContext()
-        return image
     }
 }

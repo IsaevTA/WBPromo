@@ -1,6 +1,6 @@
 //
 //  ModelInfoPromo.swift
-//  WBPromo
+//  SaleMarket
 //
 //  Created by Timur Isaev on 01.12.2020.
 //

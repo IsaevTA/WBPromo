@@ -2,7 +2,7 @@
 //  FovaritesNavigationBarView.swift
 //  SaleMarket
 //
-//  Created by UserDev on 15.12.2020.
+//  Created by Timur Isaev on 15.12.2020.
 //
 
 import UIKit
@@ -20,7 +20,6 @@ class FavoritesNavigationBarView: UIView {
         counLabel.text = String(count)
 
         NotificationCenter.default.addObserver(self, selector: #selector(updateCount(notification:)), name: NSNotification.Name(rawValue: "UpdateCountFavorite"), object: nil)
-
     }
     
     @objc func updateCount(notification: Notification) {

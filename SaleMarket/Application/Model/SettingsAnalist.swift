@@ -1,6 +1,6 @@
 //
 //  SettingsAnalist.swift
-//  WBPromo
+//  SaleMarket
 //
 //  Created by Timur Isaev on 30.11.2020.
 //
@@ -18,7 +18,7 @@ class SettingsAnalist {
     let appleAppID = "id1544444742"
     
     var wbInstalled: Bool {
-        get { return UserDefaults.standard.bool(forKey: "WB_PROMO_INSTALLED") }
-        set(newCenter) { UserDefaults.standard.set(newCenter, forKey: "WB_PROMO_INSTALLED") }
+        get { return UserDefaults.standard.bool(forKey: "WB_PRODUCT_INSTALLED") }
+        set(newCenter) { UserDefaults.standard.set(newCenter, forKey: "WB_PRODUCT_INSTALLED") }
     }
 }
