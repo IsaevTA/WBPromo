@@ -9,12 +9,12 @@ import Foundation
 
 class ProductListNetworkManager {
     
-    static let urlFeatchPromoList: String = "https://wtapp.ru/api/application/product-list/"
+    static let urlFeatchProductList: String = "https://wtapp.ru/api/application/product-list/"
     
     private init() {}
     
-    static func getPromoList(completion: @escaping([ProductListModel]) -> ()) {
-        guard let url = URL(string: urlFeatchPromoList) else { return }
+    static func getProductList(completion: @escaping([ProductListModel]) -> ()) {
+        guard let url = URL(string: urlFeatchProductList) else { return }
         
         NetworkManager.shared.getData(metod: .get, url: url, parameters: nil) { (data) in
             do {

@@ -20,6 +20,7 @@ class ProductViewController: UIViewController {
     @IBOutlet weak var titleNameLabel: UILabel!
     @IBOutlet weak var titleSaleLabel: UILabel!
     @IBOutlet weak var heightCustomBarConstraint: NSLayoutConstraint!
+    @IBOutlet var swipeRight: UISwipeGestureRecognizer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +30,9 @@ class ProductViewController: UIViewController {
         activityIndicatorView = NVActivityIndicatorView(frame: frame, type: .ballPulse, color: UIColor(red: 0.491, green: 0, blue: 0.722, alpha: 1))
         self.view.addSubview(activityIndicatorView)
         activityIndicatorView.startAnimating()
-
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(backController), name: NSNotification.Name(rawValue: "BackProductList"), object: nil)
+        
         featchData()
     }
     
@@ -48,7 +51,7 @@ class ProductViewController: UIViewController {
     private func featchData() {
         guard let promo = idProduct else { return }
         
-        ProductNetworkManager.getInfoPromo(withID: promo) { (infoPromo) in
+        ProductNetworkManager.getInfoProduct(withID: promo) { (infoPromo) in
             DispatchQueue.main.async {
                 self.currentPromo = infoPromo
                 self.updateUI(infoPromo: infoPromo)
@@ -65,8 +68,12 @@ class ProductViewController: UIViewController {
         titleSaleLabel.text = "\(getFormattMoney(withNUmber: item.sale))"
     }
     
-    @IBAction func actionBackButton(_ sender: UIButton) {
+    @objc private func backController() {
         navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func actionBackButton(_ sender: UIButton) {
+        backController()
     }
     
     @IBAction func inStoreButton(_ sender: UIButton) {

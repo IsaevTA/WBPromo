@@ -34,7 +34,7 @@ class ProductListViewController: UIViewController {
         self.view.addSubview(activityIndicatorView)
         activityIndicatorView.startAnimating()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(openPromo(notification:)), name: NSNotification.Name(rawValue: "OpenPromo"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(openProduct(notification:)), name: NSNotification.Name(rawValue: "OpenProduct"), object: nil)
     }
     
     func createNavigationBar() {
@@ -58,6 +58,7 @@ class ProductListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
+        navigationController?.setNavigationBarHidden(isFovatites, animated: animated)
         tabBarController?.tabBar.isHidden = false
     }
     
@@ -70,15 +71,15 @@ class ProductListViewController: UIViewController {
         featchData(wihtFavoriteUse: isFovatites)
     }
     
-    @objc func openPromo(notification: Notification) {
-        if let promo = notification.userInfo?["idProduct"] as? Int {
-            openProductIndex = promo
+    @objc func openProduct(notification: Notification) {
+        if let idProduct = notification.userInfo?["idProduct"] as? Int {
+            openProductIndex = idProduct
             self.performSegue(withIdentifier: "showProduct", sender: self)
         }
     }
     
     private func featchData(wihtFavoriteUse favorite: Bool) {
-        ProductListNetworkManager.getPromoList { (promoArray) in
+        ProductListNetworkManager.getProductList { (promoArray) in
             DispatchQueue.main.async { [unowned self] in
                 self.productListArray = promoArray
                 

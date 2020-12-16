@@ -25,18 +25,30 @@ class ProductTableViewController: UITableViewController {
     var heightStackView: CGFloat = 0
     var product: ProductModel?
     
-    let starImage = UIImage(named: "heart")
-    let starFillImage = UIImage(named: "heartfill")
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        settingsController()
+    }
+    
+    private func settingsController() {
+        //Настройки для ячеек
         tableView.estimatedRowHeight = 800.0
         tableView.rowHeight = UITableView.automaticDimension
         
+        //настройка свайпа назад
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(respondToSwipeGesture))
+        swipeRight.direction = UISwipeGestureRecognizer.Direction.right
+        self.view.addGestureRecognizer(swipeRight)
+        
+        //настройка наблюдателя при получение кода товара
         NotificationCenter.default.addObserver(self, selector: #selector(updateUI(notification:)), name: NSNotification.Name(rawValue: "FeatchPromo"), object: nil)
     }
 
+    @objc func respondToSwipeGesture(gesture: UIGestureRecognizer) {
+        NotificationCenter.default.post(name: NSNotification.Name("BackProductList"), object: nil)
+    }
+    
     @objc func updateUI(notification: Notification) {
         if let product = notification.userInfo?["promo"] as? ProductModel {
             self.product = product
@@ -55,6 +67,9 @@ class ProductTableViewController: UITableViewController {
     }
     
     private func updateFavoriteButton() {
+        let starImage = UIImage(named: "heart")
+        let starFillImage = UIImage(named: "heartfill")
+        
         let favoriteCheck = favoriteManager.checkFovarite(withId: product!.id)
         if favoriteCheck {
             favoriteImageButton.setImage(starFillImage, for: .normal)

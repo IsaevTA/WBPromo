@@ -19,7 +19,7 @@ class AnalyticsManager {
         print(data)
         
         if let idProduct = data["id_wb_product"] as? Int {
-            NotificationCenter.default.post(name: NSNotification.Name("OpenPromo"), object: nil, userInfo: ["idProduct": idProduct])
+            NotificationCenter.default.post(name: NSNotification.Name("OpenProduct"), object: nil, userInfo: ["idProduct": idProduct])
         }
         
 //        if let status = data["af_status"] as? String {

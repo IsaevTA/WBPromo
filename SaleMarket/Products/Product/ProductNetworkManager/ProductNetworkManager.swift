@@ -9,13 +9,13 @@ import Foundation
 
 class ProductNetworkManager {
     
-    static let urlFeatchInfoPromo: String = "https://eigannen.website/api/application/product/"
+    static let urlFeatchInfoProduct: String = "https://eigannen.website/api/application/product/"
     
     private init() {}
     
-    static func getInfoPromo(withID id: Int, completion: @escaping(ProductModel) -> ()) {
+    static func getInfoProduct(withID id: Int, completion: @escaping(ProductModel) -> ()) {
         
-        guard let url = URL(string: "\(urlFeatchInfoPromo)\(id)") else { return }
+        guard let url = URL(string: "\(urlFeatchInfoProduct)\(id)") else { return }
         
         NetworkManager.shared.getData(metod: .get, url: url, parameters: nil) { (data) in
             do {
