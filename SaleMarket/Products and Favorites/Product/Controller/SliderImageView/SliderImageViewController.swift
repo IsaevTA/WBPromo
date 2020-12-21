@@ -9,7 +9,7 @@ import UIKit
 
 class SliderImageViewController: UIViewController {
 
-    var currentPromo: ProductModel?
+//    var currentPromo: ProductModel?
     var imageNameArray = [String]()
     var heightFrame: CGFloat = 0.0
     
@@ -19,12 +19,12 @@ class SliderImageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(updateUI(notification:)), name: NSNotification.Name(rawValue: "FeatchPromo"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateUI(notification:)), name: NSNotification.Name(rawValue: "FeatchProduct"), object: nil)
     }
 
     @objc func updateUI(notification: Notification) {
-        if let promo = notification.userInfo?["promo"] as? ProductModel {
-            imageNameArray = promo.images
+        if let product = notification.userInfo?["product"] as? ProductModel {
+            imageNameArray = product.images
             
             pageControl.numberOfPages = imageNameArray.count
             pageControl.currentPage = 0

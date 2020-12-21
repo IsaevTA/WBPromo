@@ -26,4 +26,8 @@ extension UIImage {
     class func returnImageStarFill() -> UIImage {
         return UIImage(named: "heartfill")!
     }
+    
+    class func returnImageBasket() -> UIImage {
+        return UIImage(named: "basket")!
+    }
 }

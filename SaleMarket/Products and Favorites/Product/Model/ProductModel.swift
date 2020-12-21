@@ -14,15 +14,16 @@ struct ProductModel: Codable {
     let images: [String]
     let percent: Int
     let price, sale: Float
+    let available: Bool
     let description: String
     let equipment, specification: [NameValueType]
     let comments: [Comments]
     let urlWildberies: String
-    let rating: Int
+    let rating: Float
     
     enum CodingKeys: String, CodingKey {
-        case id, name, images, percent, price, sale, description, equipment, specification, comments
-        case urlWildberies = "url_wildberies"
+        case id, name, images, percent, price, sale, available, description, equipment, specification, comments
+        case urlWildberies = "link"
         case rating
     }
 }

@@ -11,8 +11,8 @@ class CommentStackView: UIStackView {
     
     func addItem(wihtComment comment: Comments) {
         let bundle = Bundle(for: type(of: self))
-        let nib = UINib(nibName: "Comment", bundle: bundle)
-        let commentView = CommentsView()
+        let nib = UINib(nibName: "CommentView", bundle: bundle)
+        let commentView = CommentView()
         let view = nib.instantiate(withOwner: commentView, options: nil).first as! UIView
         commentView.configurationView(wihtComment: comment, andView: self)
         commentView.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height)

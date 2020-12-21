@@ -40,7 +40,7 @@ class NetworkManager {
         return request
     }
     
-    func getData(metod: MetodRequest, url: URL, parameters: [String: Any]?, completionHandler: @escaping (Data) -> ()) {
+    func getData(metod: MetodRequest, url: URL, parameters: [String: Any]?, completionHandler: @escaping (Data?, Error?) -> ()) {
         
         DispatchQueue.global(qos: .userInteractive).async
         {
@@ -48,10 +48,12 @@ class NetworkManager {
             let request = self.createPOSTRequest(metod: metod, url: url, parameters: parameters)
             
             session.dataTask(with: request) { (data, response, error) in
+                if let error = error {
+                    completionHandler(nil, error)
+                }
                 guard let data = data else { return }
 //                print(String(data: data, encoding: .utf8)!)
-                completionHandler(data)
-                
+                completionHandler(data, nil)
             }.resume()
         }
     }

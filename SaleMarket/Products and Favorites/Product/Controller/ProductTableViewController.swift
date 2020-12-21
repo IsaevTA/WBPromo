@@ -42,7 +42,7 @@ class ProductTableViewController: UITableViewController {
         self.view.addGestureRecognizer(swipeRight)
         
         //настройка наблюдателя при получение кода товара
-        NotificationCenter.default.addObserver(self, selector: #selector(updateUI(notification:)), name: NSNotification.Name(rawValue: "FeatchPromo"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateUI(notification:)), name: NSNotification.Name(rawValue: "FeatchProduct"), object: nil)
     }
 
     @objc func respondToSwipeGesture(gesture: UIGestureRecognizer) {
@@ -50,7 +50,7 @@ class ProductTableViewController: UITableViewController {
     }
     
     @objc func updateUI(notification: Notification) {
-        if let product = notification.userInfo?["promo"] as? ProductModel {
+        if let product = notification.userInfo?["product"] as? ProductModel {
             self.product = product
             self.updateUI(infoPromo: product)
         }
@@ -90,7 +90,7 @@ class ProductTableViewController: UITableViewController {
 
         percentLabel.text = "-\(item.percent)%"
 
-        ratingStackView.starsRating = item.rating
+        ratingStackView.starsRating = Int(item.rating)
 
         descriptionLabel.attributedText = setAttributeLineSpacingForLabel(withString: item.description, andSpacing: 4)
         descriptionLabel.sizeToFit()

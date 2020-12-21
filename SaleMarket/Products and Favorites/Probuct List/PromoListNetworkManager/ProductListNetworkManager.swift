@@ -13,16 +13,22 @@ class ProductListNetworkManager {
     
     private init() {}
     
-    static func getProductList(completion: @escaping([ProductListModel]) -> ()) {
+    static func getProductList(completion: @escaping([ProductListModel]?) -> ()) {
         guard let url = URL(string: urlFeatchProductList) else { return }
         
-        NetworkManager.shared.getData(metod: .get, url: url, parameters: nil) { (data) in
+        NetworkManager.shared.getData(metod: .get, url: url, parameters: nil) { (data, error) in
+            if error != nil {
+                completion(nil)
+            }
+            
+            guard let data = data else { return }
             do {
                 let decoder = JSONDecoder()
                 let dataModel = try decoder.decode([ProductListModel].self, from: data)
                 completion(dataModel)
             } catch {
                 print(error)
+                completion(nil)
             }
         }
     }

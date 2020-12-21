@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CommentsView: UIView {
+class CommentView: UIView {
     @IBOutlet weak var avatarImage: UIImageView!
     @IBOutlet weak var nameUserLabel: UILabel!
     @IBOutlet weak var cityUserLabel: UILabel!

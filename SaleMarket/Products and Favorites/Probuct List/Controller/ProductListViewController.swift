@@ -13,6 +13,8 @@ class ProductListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var topViewConstraint: NSLayoutConstraint!
+    @IBOutlet weak var newsView: UIView!
+    @IBOutlet weak var newsViewConstraint: NSLayoutConstraint!
     
     var activityIndicator: NVActivityIndicatorView!
     var productListArray = [ProductListModel]()
@@ -27,6 +29,13 @@ class ProductListViewController: UIViewController {
         
         activityIndicator = createActivitiIndicator(view: self.view, viewCenter: self.view.center, widhtHeight: 100, typeActivity: .ballPulse)
         activityIndicator.startAnimating()
+        
+        newsViewConstraint.constant = 140
+        
+        let rect = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 140)
+        let view = NewsCollectionView(frame: rect, arrayNews: ["Test 1", "Test 2", "Test 3", "Test 4", "Test 5", "Test 6", "Test 7", "Test 8", "Test 9", "Test 10"])
+        newsView.addSubview(view)
+    
         
         NotificationCenter.default.addObserver(self, selector: #selector(openProduct(notification:)), name: NSNotification.Name(rawValue: "OpenProduct"), object: nil)
     }
@@ -72,9 +81,15 @@ class ProductListViewController: UIViewController {
     }
     
     private func featchData(wihtFavoriteUse favorite: Bool) {
-        ProductListNetworkManager.getProductList { (promoArray) in
+        ProductListNetworkManager.getProductList { (productArray) in
+            guard let productArray = productArray else {
+                self.showAlert(withTitle: "Ошибка", withMessage: "Ошибка при получении данных. Повторите попытку позже.")
+                self.activityIndicator.stopAnimating()
+                return
+            }
+            
             DispatchQueue.main.async { [unowned self] in
-                self.productListArray = promoArray
+                self.productListArray = productArray
                 
                 if favorite {
                     let arrayFavorite = FavoritesManager.shared.favoritesProduct
@@ -106,59 +121,6 @@ class ProductListViewController: UIViewController {
                 detailViewController.idProduct = openProductIndex
                 openProductIndex = -1
             }
-        }
-    }
-}
-
-extension ProductListViewController: UITableViewDelegate {  }
-
-extension ProductListViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return productListArrayVisable.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ProductListCell", for: indexPath) as! ProductListCell
-        let promo = productListArrayVisable[indexPath.row]
-        cell.configure(with: promo)
-        imageLoader.obtainImageWithPath(imagePath: promo.image) { (image) in
-            if let updateCell = tableView.cellForRow(at: indexPath) as? ProductListCell {
-                updateCell.imagePromoView.image = image
-                updateCell.activityIndicator?.stopAnimating()
-            }
-        }
-        return cell
-    }
-}
-
-extension ProductListViewController: UISearchBarDelegate {
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        filterContentForSearchText(searchText: searchText)
-    }
-    
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        searchBar.showsCancelButton = true
-    }
-    
-    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        searchBar.showsCancelButton = false
-    }
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.endEditing(true)
-    }
-    
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.endEditing(true)
-        searchBar.text = ""
-        filterContentForSearchText(searchText: "")
-    }
-    
-    private func filterContentForSearchText(searchText: String?) {
-        if productListArray.count == 0 { return }
-        if let searchText = searchText {
-            productListArrayVisable = searchText.isEmpty ? productListArray : productListArray.filter  { ($0.name.localizedCaseInsensitiveContains(searchText)) }
-            tableView.reloadData()
         }
     }
 }

@@ -87,6 +87,13 @@
                                     <constraint firstAttribute="height" id="XBb-um-Kf7"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gJ9-RB-vTW">
+                                <rect key="frame" x="0.0" y="44" width="414" height="0.0"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" id="py1-qp-Nci"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xan-tO-Nfm">
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -228,17 +235,22 @@
                         <viewLayoutGuide key="safeArea" id="Kv5-FB-2Ko"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="xan-tO-Nfm" firstAttribute="top" secondItem="5IN-uV-93B" secondAttribute="bottom" id="1D7-ea-1XW"/>
+                            <constraint firstItem="gJ9-RB-vTW" firstAttribute="leading" secondItem="Kv5-FB-2Ko" secondAttribute="leading" id="1mT-kW-BiJ"/>
                             <constraint firstItem="Kv5-FB-2Ko" firstAttribute="trailing" secondItem="5IN-uV-93B" secondAttribute="trailing" id="9iL-io-Abb"/>
                             <constraint firstItem="5IN-uV-93B" firstAttribute="top" secondItem="Kv5-FB-2Ko" secondAttribute="top" id="ETy-5b-ilH"/>
+                            <constraint firstItem="gJ9-RB-vTW" firstAttribute="top" secondItem="5IN-uV-93B" secondAttribute="bottom" id="Ikx-wX-Tf1"/>
                             <constraint firstItem="Kv5-FB-2Ko" firstAttribute="trailing" secondItem="xan-tO-Nfm" secondAttribute="trailing" id="JEW-I6-Ga9"/>
                             <constraint firstItem="5IN-uV-93B" firstAttribute="leading" secondItem="Kv5-FB-2Ko" secondAttribute="leading" id="LTk-QN-Mrh"/>
+                            <constraint firstItem="Kv5-FB-2Ko" firstAttribute="trailing" secondItem="gJ9-RB-vTW" secondAttribute="trailing" id="LzJ-yL-tHz"/>
                             <constraint firstItem="Kv5-FB-2Ko" firstAttribute="bottom" secondItem="xan-tO-Nfm" secondAttribute="bottom" id="SHJ-Ab-qL4"/>
                             <constraint firstItem="xan-tO-Nfm" firstAttribute="leading" secondItem="Kv5-FB-2Ko" secondAttribute="leading" id="fgJ-ql-Onb"/>
+                            <constraint firstItem="xan-tO-Nfm" firstAttribute="top" secondItem="gJ9-RB-vTW" secondAttribute="bottom" id="xpE-Lc-KyB"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7rc-Ze-iNr"/>
                     <connections>
+                        <outlet property="newsView" destination="gJ9-RB-vTW" id="ihF-2c-tqy"/>
+                        <outlet property="newsViewConstraint" destination="py1-qp-Nci" id="2ev-7J-K5M"/>
                         <outlet property="tableView" destination="xan-tO-Nfm" id="CKF-r8-IHu"/>
                         <outlet property="topView" destination="5IN-uV-93B" id="dwM-2g-2tn"/>
                         <outlet property="topViewConstraint" destination="XBb-um-Kf7" id="I3H-5A-ikH"/>
@@ -317,7 +329,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="51" id="MR8-WU-v5O"/>
                                 </constraints>
-                                <state key="normal" title="  В МАГАЗИН" image="basket">
+                                <state key="normal">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -351,6 +363,7 @@
                     <connections>
                         <outlet property="backButton" destination="xXL-7y-YuK" id="Q9b-2B-VO5"/>
                         <outlet property="heightCustomBarConstraint" destination="zM5-gx-zHd" id="X4F-dI-0mY"/>
+                        <outlet property="inStoreButton" destination="Oab-ow-Zf6" id="nE9-h8-HAv"/>
                         <outlet property="titleNameLabel" destination="bha-fI-DY8" id="vhr-7X-7cR"/>
                         <outlet property="titleSaleLabel" destination="gv7-UF-1gI" id="IVN-pI-SlU"/>
                     </connections>
@@ -924,7 +937,6 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="back" width="26.666666030883789" height="15.333333015441895"/>
-        <image name="basket" width="30.666666030883789" height="24.666666030883789"/>
         <image name="heart" width="23" height="21"/>
         <image name="home" width="25" height="24"/>
         <image name="home_active" width="25" height="24"/>
