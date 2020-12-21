@@ -50,12 +50,16 @@
 		0BF0B3EF257E8A48000B0CAB /* AppsFlyerLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BF0B3EE257E8A48000B0CAB /* AppsFlyerLib.framework */; };
 		CE3449B12588B166002E0101 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3449B02588B166002E0101 /* TabBarViewController.swift */; };
 		CE3449B52588B9FC002E0101 /* FavoritesNavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE3449B42588B9FC002E0101 /* FavoritesNavigationBar.xib */; };
-		CE3449B92588BB69002E0101 /* FavoritesNavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3449B82588BB69002E0101 /* FavoritesNavigationBarView.swift */; };
+		CE3449B92588BB69002E0101 /* FavoritesNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3449B82588BB69002E0101 /* FavoritesNavigationBar.swift */; };
 		CE3D12BF2587842100921FD9 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3D12B92587842100921FD9 /* CoreDataManager.swift */; };
 		CE3D12C02587842100921FD9 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3D12BA2587842100921FD9 /* CoreDataStack.swift */; };
 		CE3D12C92587849A00921FD9 /* Products.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE3D12C72587849A00921FD9 /* Products.xcdatamodeld */; };
 		CE4887C92587175B0023D5B8 /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = CE4887C82587175B0023D5B8 /* NVActivityIndicatorView */; };
+		CE4EC31F2590568D00DBCE85 /* SearchNavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4EC31E2590568D00DBCE85 /* SearchNavigationBar.xib */; };
+		CE4EC3232590569F00DBCE85 /* SearchNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4EC3222590569F00DBCE85 /* SearchNavigationBar.swift */; };
+		CE4EC3272590705000DBCE85 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4EC3262590705000DBCE85 /* UIView+.swift */; };
 		CE68AAA6258871B900C0EBA6 /* FavoritesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE68AAA5258871B900C0EBA6 /* FavoritesManager.swift */; };
+		CE84D8F92590C1A200802BD2 /* SearchProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE84D8F82590C1A200802BD2 /* SearchProductListViewController.swift */; };
 		CE88A202258A0D7B00092010 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88A201258A0D7B00092010 /* UIImage+.swift */; };
 		CE88A206258A1C5E00092010 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88A205258A1C5E00092010 /* ActivityIndicator.swift */; };
 		CE8FADD4258B0F8100D00CC5 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8FADD3258B0F8100D00CC5 /* UIViewController+.swift */; };
@@ -140,11 +144,15 @@
 		0BF0B3EE257E8A48000B0CAB /* AppsFlyerLib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppsFlyerLib.framework; sourceTree = "<group>"; };
 		CE3449B02588B166002E0101 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		CE3449B42588B9FC002E0101 /* FavoritesNavigationBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoritesNavigationBar.xib; sourceTree = "<group>"; };
-		CE3449B82588BB69002E0101 /* FavoritesNavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesNavigationBarView.swift; sourceTree = "<group>"; };
+		CE3449B82588BB69002E0101 /* FavoritesNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesNavigationBar.swift; sourceTree = "<group>"; };
 		CE3D12B92587842100921FD9 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		CE3D12BA2587842100921FD9 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		CE3D12C82587849A00921FD9 /* Products.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Products.xcdatamodel; sourceTree = "<group>"; };
+		CE4EC31E2590568D00DBCE85 /* SearchNavigationBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchNavigationBar.xib; sourceTree = "<group>"; };
+		CE4EC3222590569F00DBCE85 /* SearchNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNavigationBar.swift; sourceTree = "<group>"; };
+		CE4EC3262590705000DBCE85 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		CE68AAA5258871B900C0EBA6 /* FavoritesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesManager.swift; sourceTree = "<group>"; };
+		CE84D8F82590C1A200802BD2 /* SearchProductListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchProductListViewController.swift; sourceTree = "<group>"; };
 		CE88A201258A0D7B00092010 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		CE88A205258A1C5E00092010 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		CE8FADD3258B0F8100D00CC5 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
@@ -418,6 +426,7 @@
 		0BC9BF4A2570C51A00445DFC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				CE84D8F82590C1A200802BD2 /* SearchProductListViewController.swift */,
 				0BC9BF312570BFF200445DFC /* ProductListViewController.swift */,
 			);
 			path = Controller;
@@ -426,6 +435,7 @@
 		0BC9BF4B2570C52100445DFC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CE4EC31B2590560C00DBCE85 /* SearchNavigationBar */,
 				CE3449BC2588BB73002E0101 /* FavoritesNavigationBar */,
 				CE9032CE258C720100107810 /* NewsView */,
 				0BC9BF592570DAF700445DFC /* ProductListCell.swift */,
@@ -463,7 +473,7 @@
 			isa = PBXGroup;
 			children = (
 				CE3449B42588B9FC002E0101 /* FavoritesNavigationBar.xib */,
-				CE3449B82588BB69002E0101 /* FavoritesNavigationBarView.swift */,
+				CE3449B82588BB69002E0101 /* FavoritesNavigationBar.swift */,
 			);
 			path = FavoritesNavigationBar;
 			sourceTree = "<group>";
@@ -478,11 +488,21 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		CE4EC31B2590560C00DBCE85 /* SearchNavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				CE4EC31E2590568D00DBCE85 /* SearchNavigationBar.xib */,
+				CE4EC3222590569F00DBCE85 /* SearchNavigationBar.swift */,
+			);
+			path = SearchNavigationBar;
+			sourceTree = "<group>";
+		};
 		CE88A200258A0D5400092010 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				CE88A201258A0D7B00092010 /* UIImage+.swift */,
 				CE8FADD3258B0F8100D00CC5 /* UIViewController+.swift */,
+				CE4EC3262590705000DBCE85 /* UIView+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -630,6 +650,7 @@
 				CEBE7288258C94B700798DA4 /* NewCollectionViewCell.xib in Resources */,
 				CE9032C7258C71E500107810 /* NewsCollectionView.xib in Resources */,
 				0B8350352576460700C4C1FA /* Roboto-Thin.ttf in Resources */,
+				CE4EC31F2590568D00DBCE85 /* SearchNavigationBar.xib in Resources */,
 				0B83502B2576460700C4C1FA /* Roboto-Light.ttf in Resources */,
 				0B83502D2576460700C4C1FA /* Roboto-MediumItalic.ttf in Resources */,
 				0B8350362576460700C4C1FA /* Roboto-Black.ttf in Resources */,
@@ -667,12 +688,14 @@
 				0B771AD0257CAC8D008ADD69 /* CommentView.swift in Sources */,
 				0B2FEBEE2577529A001EDC8E /* ProductNetworkManager.swift in Sources */,
 				CEBE72A5258CB35200798DA4 /* NotFoundView.swift in Sources */,
+				CE4EC3272590705000DBCE85 /* UIView+.swift in Sources */,
 				0BC9BF5A2570DAF700445DFC /* ProductListCell.swift in Sources */,
 				CE9032CB258C71FD00107810 /* NewsCollectionView.swift in Sources */,
 				0BC9BF322570BFF200445DFC /* ProductListViewController.swift in Sources */,
 				0B2C03FF2577EFFA0037083B /* RatingStackView.swift in Sources */,
 				CE88A202258A0D7B00092010 /* UIImage+.swift in Sources */,
 				CE68AAA6258871B900C0EBA6 /* FavoritesManager.swift in Sources */,
+				CE4EC3232590569F00DBCE85 /* SearchNavigationBar.swift in Sources */,
 				0BC9BF2E2570BFF200445DFC /* AppDelegate.swift in Sources */,
 				0BC9BF522570C6B200445DFC /* NetworkManager.swift in Sources */,
 				CE3D12C92587849A00921FD9 /* Products.xcdatamodeld in Sources */,
@@ -682,12 +705,13 @@
 				0BF0B3DD257E56F3000B0CAB /* ImageLoader.swift in Sources */,
 				CE88A206258A1C5E00092010 /* ActivityIndicator.swift in Sources */,
 				0BA94BEC2574BE5800A94DB1 /* SettingsAnalist.swift in Sources */,
+				CE84D8F92590C1A200802BD2 /* SearchProductListViewController.swift in Sources */,
 				CE3449B12588B166002E0101 /* TabBarViewController.swift in Sources */,
 				0B9187A5257A253D00467C8B /* SliderImageViewController.swift in Sources */,
 				0BA94C062574C95500A94DB1 /* AnalyticsManager.swift in Sources */,
 				0B83503E25767BA600C4C1FA /* ProductModel.swift in Sources */,
 				0B53D304257A3F7D00649CD2 /* ProductTableViewController.swift in Sources */,
-				CE3449B92588BB69002E0101 /* FavoritesNavigationBarView.swift in Sources */,
+				CE3449B92588BB69002E0101 /* FavoritesNavigationBar.swift in Sources */,
 				0BC9BF302570BFF200445DFC /* SceneDelegate.swift in Sources */,
 				CE3D12BF2587842100921FD9 /* CoreDataManager.swift in Sources */,
 				0B771AD3257CB5F1008ADD69 /* CommentStackView.swift in Sources */,

@@ -7,15 +7,15 @@
 
 import UIKit
 
-class FavoritesNavigationBarView: UIView {
-    @IBOutlet var view: UIView!
+class FavoritesNavigationBar: UIView {
+    @IBOutlet var contentView: UIView!
     @IBOutlet weak var counLabel: UILabel!
     
     init(frame: CGRect, count: Int) {
         super.init(frame: frame)
         UINib(nibName: "FavoritesNavigationBar", bundle: nil).instantiate(withOwner: self, options: nil)
-        addSubview(view)
-        view.frame = self.bounds
+        addSubview(contentView)
+        contentView.frame = self.bounds
 
         counLabel.text = String(count)
 

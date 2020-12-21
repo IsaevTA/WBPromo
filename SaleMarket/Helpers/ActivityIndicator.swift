@@ -2,7 +2,7 @@
 //  ActivityIndicator.swift
 //  SaleMarket
 //
-//  Created by UserDev on 16.12.2020.
+//  Created by Timur Isaev on 16.12.2020.
 //
 
 import UIKit

@@ -19,7 +19,7 @@ class ProductListViewController: UIViewController {
     var activityIndicator: NVActivityIndicatorView!
     var productListArray = [ProductListModel]()
     var productListArrayVisable = [ProductListModel]()
-    var searchBar = UISearchBar(frame: CGRect.zero)
+//    var searchBar = UISearchBar(frame: CGRect.zero)
     var openProductIndex = -1
     var imageLoader = ImageLoader()
     var isFovatites: Bool = false
@@ -41,26 +41,33 @@ class ProductListViewController: UIViewController {
     }
     
     func createNavigationBar() {
-        topView.isHidden = !isFovatites
+//        topView.isHidden = !isFovatites
+        topView.removeAllSubView()
         if isFovatites {
-            if (topView.subviews.first as? FavoritesNavigationBarView) == nil {
-                topViewConstraint.constant = 96
-                
+//            if (topView.subviews.first as? FavoritesNavigationBar) == nil {
+                topViewConstraint.constant = 90
                 let rect = CGRect(x: 0, y: 0, width: topView.frame.size.width, height: 90)
-                let view = FavoritesNavigationBarView(frame: rect, count: 0)
+                let view = FavoritesNavigationBar(frame: rect, count: 0)
                 topView.addSubview(view)
-            }
+//            }
         } else {
-            searchBar.placeholder = "Я ищу"
-            searchBar.delegate = self
-            navigationItem.titleView = searchBar
+            
+            topViewConstraint.constant = 80
+            let rect = CGRect(x: 0, y: 0, width: topView.frame.size.width, height: 80)
+            let view = SearchNavigationBar(frame: rect)
+            view.delegate = self
+            topView.addSubview(view)
+            
+//            searchBar.placeholder = "Я ищу"
+//            searchBar.delegate = self
+//            navigationItem.titleView = searchBar
         }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        navigationController?.setNavigationBarHidden(isFovatites, animated: animated)
+//        navigationController?.setNavigationBarHidden(isFovatites, animated: animated)
         tabBarController?.tabBar.isHidden = false
     }
     
@@ -68,7 +75,7 @@ class ProductListViewController: UIViewController {
         super.viewDidAppear(animated)
         
         isFovatites = tabBarController?.selectedIndex == 1 ? true : false
-        navigationController?.setNavigationBarHidden(isFovatites, animated: animated)
+//        navigationController?.setNavigationBarHidden(isFovatites, animated: animated)
         createNavigationBar()
         featchData(wihtFavoriteUse: isFovatites)
     }
@@ -120,6 +127,45 @@ class ProductListViewController: UIViewController {
                 let detailViewController = segue.destination as! ProductViewController
                 detailViewController.idProduct = openProductIndex
                 openProductIndex = -1
+            }
+        } else if segue.identifier == "showSearch" {
+            
+        }
+    }
+}
+
+extension ProductListViewController: SearchNavigationBarDelegat {
+    func backToHome() {
+        filterContentForSearchText(searchText: "")
+    }
+    
+    func searchNavigationBar(searchText: String) {
+        self.performSegue(withIdentifier: "showSearch", sender: self)
+        //filterContentForSearchText(searchText: searchText)
+    }
+    
+    private func showNotFoundView() {
+        let rect = CGRect(x: 0, y: 0, width: self.tableView.frame.size.width, height: self.tableView.frame.size.height)
+        let view = NotFoundView(frame: rect)
+        self.view.addSubview(view)
+    }
+
+    private func hideNotFoundView() {
+        let notFoundViews = self.view.subviews.filter{$0 is NotFoundView}
+        for view in notFoundViews {
+            view.removeFromSuperview()
+        }
+    }
+    
+    private func filterContentForSearchText(searchText: String?) {
+        if productListArray.count == 0 { return }
+        if let searchText = searchText {
+            productListArrayVisable = searchText.isEmpty ? productListArray : productListArray.filter  { ($0.name.localizedCaseInsensitiveContains(searchText)) }
+            tableView.reloadData()
+            if productListArrayVisable.count == 0 {
+                showNotFoundView()
+            } else {
+                hideNotFoundView()
             }
         }
     }

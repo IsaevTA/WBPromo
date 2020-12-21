@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchNavigationBar" customModule="SaleMarket" customModuleProvider="target">
+            <connections>
+                <outlet property="backToHomeButton" destination="pUj-K5-9Cs" id="bSM-a9-Q5g"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="PVj-e0-Lpp"/>
+                <outlet property="resultSearchLabel" destination="VEm-3b-uAG" id="yms-UF-oLr"/>
+                <outlet property="searchTextField" destination="YEL-hi-RuN" id="Jkz-dT-dna"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Я ищу" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YEL-hi-RuN">
+                    <rect key="frame" x="101.5" y="23" width="302.5" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                            <integer key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="Kz2-1I-TAY"/>
+                    </connections>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mno-UO-EJG">
+                    <rect key="frame" x="364" y="30" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="Dv6-ul-d2b"/>
+                        <constraint firstAttribute="width" constant="20" id="T5e-AY-qdZ"/>
+                    </constraints>
+                    <state key="normal" image="search"/>
+                    <connections>
+                        <action selector="actionSearchButton:" destination="-1" eventType="touchUpInside" id="f3x-aF-uLF"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pUj-K5-9Cs">
+                    <rect key="frame" x="10" y="29" width="26.5" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="22" id="h0w-pK-PKi"/>
+                        <constraint firstAttribute="width" constant="26.5" id="ux2-i7-fia"/>
+                    </constraints>
+                    <state key="normal" image="backGray"/>
+                    <connections>
+                        <action selector="actionBackToHomeButton:" destination="-1" eventType="touchUpInside" id="ksB-RM-g2X"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Поиск:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VEm-3b-uAG">
+                    <rect key="frame" x="46.5" y="31.5" width="45" height="17"/>
+                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
+                    <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <constraints>
+                <constraint firstItem="YEL-hi-RuN" firstAttribute="leading" secondItem="VEm-3b-uAG" secondAttribute="trailing" constant="10" id="0hz-2F-b8S"/>
+                <constraint firstItem="Mno-UO-EJG" firstAttribute="centerY" secondItem="YEL-hi-RuN" secondAttribute="centerY" id="4hb-3h-Xcf"/>
+                <constraint firstItem="pUj-K5-9Cs" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="FIx-dg-VsI"/>
+                <constraint firstItem="VEm-3b-uAG" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="NNt-fi-gXF"/>
+                <constraint firstItem="YEL-hi-RuN" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Qbv-Ui-Ucw"/>
+                <constraint firstItem="pUj-K5-9Cs" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="RG4-Ql-iW3"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Mno-UO-EJG" secondAttribute="trailing" constant="30" id="kMJ-3C-Px2"/>
+                <constraint firstItem="VEm-3b-uAG" firstAttribute="leading" secondItem="pUj-K5-9Cs" secondAttribute="trailing" constant="10" id="liX-Mr-sWR"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="YEL-hi-RuN" secondAttribute="trailing" constant="10" id="zA0-x4-2ke"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-223.18840579710147" y="-139.95535714285714"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="backGray" width="26.5" height="15"/>
+        <image name="search" width="21" height="21"/>
+    </resources>
+</document>
