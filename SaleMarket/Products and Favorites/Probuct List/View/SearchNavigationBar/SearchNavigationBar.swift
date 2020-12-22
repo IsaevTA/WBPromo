@@ -7,11 +7,6 @@
 
 import UIKit
 
-protocol SearchNavigationBarDelegat: class {
-    func searchNavigationBar(searchText: String)
-    func backToHome()
-}
-
 class SearchNavigationBar: UIView {
     
     enum StatusBorder {
@@ -25,7 +20,7 @@ class SearchNavigationBar: UIView {
     @IBOutlet weak var backToHomeButton: UIButton!
     @IBOutlet weak var resultSearchLabel: UILabel!
     
-    weak var delegate: SearchNavigationBarDelegat?
+    weak var delegate: CustomNavigationBarDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -42,11 +37,7 @@ class SearchNavigationBar: UIView {
     @IBAction func actionSearchButton(_ sender: UIButton) {
         contentView.endEditing(true)
     }
-    
-    @IBAction func actionBackToHomeButton(_ sender: UIButton) {
-        delegate?.backToHome()
-    }
-    
+
     private func setupSearchButton(wihtSelected selected: StatusBorder) {
         
         var colorBorder: UIColor = .clear
@@ -68,12 +59,12 @@ extension SearchNavigationBar: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         setupSearchButton(wihtSelected: .standart)
-        delegate?.searchNavigationBar(searchText: textField.text ?? "")
+        delegate?.searchNavigationBar!(searchText: textField.text ?? "")
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         setupSearchButton(wihtSelected: .standart)
-        delegate?.searchNavigationBar(searchText: textField.text ?? "")
+        delegate?.searchNavigationBar!(searchText: textField.text ?? "")
         
         return true
     }

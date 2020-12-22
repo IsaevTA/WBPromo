@@ -15,20 +15,52 @@ class ProductTableViewController: UITableViewController {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var percentLabel: UILabel!
     @IBOutlet weak var ratingStackView: RatingStackView!
+    
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var showHideDescriptionButton: UIButton!
+    @IBOutlet weak var showHideDescriptionButtonConstraint: NSLayoutConstraint!
+    
     @IBOutlet weak var equipmentLabel: UILabel!
+    @IBOutlet weak var showHideEquipmentButton: UIButton!
+    @IBOutlet weak var showHideEquipmentButtonConstraint: NSLayoutConstraint!
+    
     @IBOutlet weak var specificationLabel: UILabel!
+    @IBOutlet weak var showHideSpecificationButton: UIButton!
+    @IBOutlet weak var showHideSpecificationButtonConstraint: NSLayoutConstraint!
+    
     @IBOutlet weak var commentsStackView: CommentStackView!
     @IBOutlet weak var favoriteImageButton: UIButton!
     @IBOutlet weak var fovariteTextButton: UIButton!
     
     var heightStackView: CGFloat = 0
     var product: ProductModel?
+
+    var hideDescription = true
+    var hideEquipment = true
+    var hideSpecification = true
+    
+    let showImage = UIImage(named: "show")
+    let hideImage = UIImage(named: "hide")
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         settingsController()
+    }
+    
+    @IBAction func actionShowHideDescriptionButton(_ sender: UIButton) {
+        hideDescription = !hideDescription
+        tableView.reloadData()
+    }
+    
+    @IBAction func actionShowHideEquipmentButton(_ sender: UIButton) {
+        hideEquipment = !hideEquipment
+        tableView.reloadData()
+    }
+    
+    @IBAction func actionShowHideSpecificationButton(_ sender: UIButton) {
+        hideSpecification = !hideSpecification
+        tableView.reloadData()
     }
     
     private func settingsController() {
@@ -141,16 +173,42 @@ class ProductTableViewController: UITableViewController {
         return "\(number) руб."
     }
 
+    // MARK: - Height cell
+    
+    func returnHeightCell(showHideTag: Bool, button: UIButton, label: UILabel, constraint: NSLayoutConstraint) -> CGFloat {
+        if showHideTag {
+            button.setImage(showImage, for: .normal)
+            button.setTitle("  ПОДРОБНЕЕ", for: .normal)
+        } else {
+            button.setImage(hideImage, for: .normal)
+            button.setTitle("  СКРЫТЬ", for: .normal)
+        }
+        
+        let currentTag = label.text == "" ? true : false
+//        constraint.constant = currentTag ? 0 : 30
+        button.isEnabled = !currentTag
+        button.sizeToFit()
+        
+        if showHideTag {
+            return currentTag ? 87 : 135
+        } else {
+            label.sizeToFit()
+            return CGFloat(97) + label.frame.size.height
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.row {
         case 0: return (children[0] as? SliderImageViewController)!.heightFrame
         case 1: return 125
+        case 2: return returnHeightCell(showHideTag: hideDescription, button: showHideDescriptionButton, label: descriptionLabel, constraint: showHideDescriptionButtonConstraint)
+        case 3: return returnHeightCell(showHideTag: hideEquipment, button: showHideEquipmentButton, label: equipmentLabel, constraint: showHideEquipmentButtonConstraint)
+        case 4: return returnHeightCell(showHideTag: hideSpecification, button: showHideSpecificationButton, label: specificationLabel, constraint: showHideSpecificationButtonConstraint)
         case 5, 7: return 8
         case 6: return heightStackView + 57
         default:
             return UITableView.automaticDimension
         }
     }
-    
 }
 

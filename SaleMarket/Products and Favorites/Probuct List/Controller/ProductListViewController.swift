@@ -10,6 +10,12 @@ import NVActivityIndicatorView
 
 class ProductListViewController: UIViewController {
 
+    enum TypeNavigationProductList: Int {
+        case productList = 80
+        case favoritesList = 90
+        case searchList = 88
+    }
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var topViewConstraint: NSLayoutConstraint!
@@ -19,10 +25,11 @@ class ProductListViewController: UIViewController {
     var activityIndicator: NVActivityIndicatorView!
     var productListArray = [ProductListModel]()
     var productListArrayVisable = [ProductListModel]()
-//    var searchBar = UISearchBar(frame: CGRect.zero)
     var openProductIndex = -1
     var imageLoader = ImageLoader()
-    var isFovatites: Bool = false
+    
+    var currentTypeList: TypeNavigationProductList = .productList
+    var searchText = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,54 +37,31 @@ class ProductListViewController: UIViewController {
         activityIndicator = createActivitiIndicator(view: self.view, viewCenter: self.view.center, widhtHeight: 100, typeActivity: .ballPulse)
         activityIndicator.startAnimating()
         
-        newsViewConstraint.constant = 140
-        
-        let rect = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 140)
-        let view = NewsCollectionView(frame: rect, arrayNews: ["Test 1", "Test 2", "Test 3", "Test 4", "Test 5", "Test 6", "Test 7", "Test 8", "Test 9", "Test 10"])
-        newsView.addSubview(view)
+        createNewsView()
     
-        
         NotificationCenter.default.addObserver(self, selector: #selector(openProduct(notification:)), name: NSNotification.Name(rawValue: "OpenProduct"), object: nil)
-    }
-    
-    func createNavigationBar() {
-//        topView.isHidden = !isFovatites
-        topView.removeAllSubView()
-        if isFovatites {
-//            if (topView.subviews.first as? FavoritesNavigationBar) == nil {
-                topViewConstraint.constant = 90
-                let rect = CGRect(x: 0, y: 0, width: topView.frame.size.width, height: 90)
-                let view = FavoritesNavigationBar(frame: rect, count: 0)
-                topView.addSubview(view)
-//            }
-        } else {
-            
-            topViewConstraint.constant = 80
-            let rect = CGRect(x: 0, y: 0, width: topView.frame.size.width, height: 80)
-            let view = SearchNavigationBar(frame: rect)
-            view.delegate = self
-            topView.addSubview(view)
-            
-//            searchBar.placeholder = "Я ищу"
-//            searchBar.delegate = self
-//            navigationItem.titleView = searchBar
-        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
-//        navigationController?.setNavigationBarHidden(isFovatites, animated: animated)
-        tabBarController?.tabBar.isHidden = false
+        showAndHideTabBar(hide: false)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+
+        if tabBarController?.selectedIndex == 1 {
+            currentTypeList = .favoritesList
+        } else {
+            if searchText == "" {
+                currentTypeList = .productList
+            } else {
+                currentTypeList = .searchList
+            }
+        }
         
-        isFovatites = tabBarController?.selectedIndex == 1 ? true : false
-//        navigationController?.setNavigationBarHidden(isFovatites, animated: animated)
-        createNavigationBar()
-        featchData(wihtFavoriteUse: isFovatites)
+        updataNavigationBar()
+        featchData(wihtTypeList: currentTypeList)
     }
     
     @objc func openProduct(notification: Notification) {
@@ -87,7 +71,61 @@ class ProductListViewController: UIViewController {
         }
     }
     
-    private func featchData(wihtFavoriteUse favorite: Bool) {
+    private func setConstraintAndReturnRect(wihtHeight height: Int) -> CGRect {
+        topViewConstraint.constant = CGFloat(height)
+        let rect = CGRect(x: 0, y: 0, width: topView.frame.size.width, height: CGFloat(height))
+        
+        return rect
+    }
+    
+    private func showAndHideNewsView(hide: Bool) {
+        if hide {
+            newsViewConstraint.constant = 0
+            newsView.isHidden = true
+        } else {
+            newsViewConstraint.constant = 140
+            newsView.isHidden = false
+        }
+    }
+    
+    private func showAndHideTabBar(hide: Bool) {
+        tabBarController?.tabBar.isHidden = hide
+    }
+    
+    private func updataNavigationBar() {
+        
+        topView.removeAllSubView()
+        if currentTypeList == .favoritesList {
+            let view = FavoritesNavigationBar(frame: setConstraintAndReturnRect(wihtHeight: currentTypeList.rawValue), count: 0)
+            topView.addSubview(view)
+            showAndHideTabBar(hide: false)
+            showAndHideNewsView(hide: true)
+        } else if currentTypeList == .productList {
+            let view = SearchNavigationBar(frame: setConstraintAndReturnRect(wihtHeight: currentTypeList.rawValue))
+            view.delegate = self
+            topView.addSubview(view)
+            showAndHideTabBar(hide: false)
+            showAndHideNewsView(hide: false)
+        } else if currentTypeList == .searchList {
+            let view = ResultNavigationBar(frame: setConstraintAndReturnRect(wihtHeight: currentTypeList.rawValue),
+                                           searchWord: searchText,
+                                           count: productListArrayVisable.count)
+            view.delegate = self
+            topView.addSubview(view)
+            showAndHideTabBar(hide: true)
+            showAndHideNewsView(hide: true)
+        }
+    }
+    
+    private func createNewsView() {
+        
+        newsViewConstraint.constant = 140
+        let rect = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 140)
+        let view = NewsCollectionView(frame: rect, arrayNews: ["Test 1", "Test 2", "Test 3", "Test 4", "Test 5", "Test 6", "Test 7", "Test 8", "Test 9", "Test 10"])
+        newsView.addSubview(view)
+    }
+    
+    private func featchData(wihtTypeList typeList: TypeNavigationProductList) {
         ProductListNetworkManager.getProductList { (productArray) in
             guard let productArray = productArray else {
                 self.showAlert(withTitle: "Ошибка", withMessage: "Ошибка при получении данных. Повторите попытку позже.")
@@ -98,7 +136,7 @@ class ProductListViewController: UIViewController {
             DispatchQueue.main.async { [unowned self] in
                 self.productListArray = productArray
                 
-                if favorite {
+                if typeList == .favoritesList {
                     let arrayFavorite = FavoritesManager.shared.favoritesProduct
                     productListArrayVisable = productListArray.filter({arrayFavorite.contains($0.id)})
                     NotificationCenter.default.post(name: NSNotification.Name("UpdateCountFavorite"),
@@ -115,6 +153,7 @@ class ProductListViewController: UIViewController {
     }
     
     // MARK: - Segues
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showProduct" {
             if openProductIndex == -1 {
@@ -128,25 +167,40 @@ class ProductListViewController: UIViewController {
                 detailViewController.idProduct = openProductIndex
                 openProductIndex = -1
             }
-        } else if segue.identifier == "showSearch" {
-            
         }
     }
-}
-
-extension ProductListViewController: SearchNavigationBarDelegat {
-    func backToHome() {
-        filterContentForSearchText(searchText: "")
+    
+    // MARK: - Filter function
+    
+    private func filterContentForSearchText(searchText: String?) {
+        hideNotFoundView()
+        self.searchText = ""
+        if searchText == "" {
+            currentTypeList = .productList
+            productListArrayVisable = productListArray
+            tableView.reloadData()
+        } else {
+            currentTypeList = .searchList
+            if productListArray.count == 0 { return }
+            
+            if let searchString = searchText {
+                self.searchText = searchString
+                productListArrayVisable = searchString.isEmpty ? productListArray : productListArray.filter  { ($0.name.localizedCaseInsensitiveContains(searchString)) }
+                tableView.reloadData()
+                if productListArrayVisable.count == 0 {
+                    showNotFoundView()
+                }
+            }
+        }
+        updataNavigationBar()
     }
     
-    func searchNavigationBar(searchText: String) {
-        self.performSegue(withIdentifier: "showSearch", sender: self)
-        //filterContentForSearchText(searchText: searchText)
-    }
+    // MARK: - Show and hide view not found view
     
     private func showNotFoundView() {
         let rect = CGRect(x: 0, y: 0, width: self.tableView.frame.size.width, height: self.tableView.frame.size.height)
         let view = NotFoundView(frame: rect)
+        view.delegate = self
         self.view.addSubview(view)
     }
 
@@ -156,17 +210,14 @@ extension ProductListViewController: SearchNavigationBarDelegat {
             view.removeFromSuperview()
         }
     }
+}
+
+extension ProductListViewController: CustomNavigationBarDelegate {
+    func searchNavigationBar(searchText: String) {
+        filterContentForSearchText(searchText: searchText)
+    }
     
-    private func filterContentForSearchText(searchText: String?) {
-        if productListArray.count == 0 { return }
-        if let searchText = searchText {
-            productListArrayVisable = searchText.isEmpty ? productListArray : productListArray.filter  { ($0.name.localizedCaseInsensitiveContains(searchText)) }
-            tableView.reloadData()
-            if productListArrayVisable.count == 0 {
-                showNotFoundView()
-            } else {
-                hideNotFoundView()
-            }
-        }
+    func backToHome() {
+        filterContentForSearchText(searchText: "")
     }
 }
