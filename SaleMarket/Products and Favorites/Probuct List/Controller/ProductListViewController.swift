@@ -31,6 +31,8 @@ class ProductListViewController: UIViewController {
     var currentTypeList: TypeNavigationProductList = .productList
     var searchText = ""
     
+    var currentNews: NewsModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,6 +42,7 @@ class ProductListViewController: UIViewController {
         createNewsView()
     
         NotificationCenter.default.addObserver(self, selector: #selector(openProduct(notification:)), name: NSNotification.Name(rawValue: "OpenProduct"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(openNews(notification:)), name: NSNotification.Name(rawValue: "OpenNews"), object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -71,6 +74,17 @@ class ProductListViewController: UIViewController {
         }
     }
     
+    @objc func openNews(notification: Notification) {
+        if let news = notification.userInfo?["currentNews"] as? NewsModel {
+            currentNews = news
+            if news.type == .news {
+                self.performSegue(withIdentifier: "showNewsInWeb", sender: self)
+            } else if news.type == .test {
+                self.performSegue(withIdentifier: "showTestView", sender: self)
+            }
+        }
+    }
+    
     private func setConstraintAndReturnRect(wihtHeight height: Int) -> CGRect {
         topViewConstraint.constant = CGFloat(height)
         let rect = CGRect(x: 0, y: 0, width: topView.frame.size.width, height: CGFloat(height))
@@ -83,7 +97,7 @@ class ProductListViewController: UIViewController {
             newsViewConstraint.constant = 0
             newsView.isHidden = true
         } else {
-            newsViewConstraint.constant = 140
+            newsViewConstraint.constant = 190
             newsView.isHidden = false
         }
     }
@@ -119,9 +133,9 @@ class ProductListViewController: UIViewController {
     
     private func createNewsView() {
         
-        newsViewConstraint.constant = 140
-        let rect = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 140)
-        let view = NewsCollectionView(frame: rect, arrayNews: ["Test 1", "Test 2", "Test 3", "Test 4", "Test 5", "Test 6", "Test 7", "Test 8", "Test 9", "Test 10"])
+        newsViewConstraint.constant = 190
+        let rect = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 190)
+        let view = NewsCollectionView(frame: rect, arrayNews: featchNewsData())
         newsView.addSubview(view)
     }
     
@@ -167,6 +181,12 @@ class ProductListViewController: UIViewController {
                 detailViewController.idProduct = openProductIndex
                 openProductIndex = -1
             }
+        } else if segue.identifier == "showNewsInWeb" {
+            let webViewController = segue.destination as! WebViewController
+            webViewController.currentNews = currentNews
+        }  else if segue.identifier == "showTestView" {
+            let testViewController = segue.destination as! TestViewController
+            testViewController.currentNewsTest = currentNews
         }
     }
     

@@ -11,6 +11,14 @@
 		0B2FEBEE2577529A001EDC8E /* ProductNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B83503A2576770A00C4C1FA /* ProductNetworkManager.swift */; };
 		0B2FEBF425777C35001EDC8E /* ImageCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2FEBF325777C35001EDC8E /* ImageCollectionCell.swift */; };
 		0B53D304257A3F7D00649CD2 /* ProductTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B53D303257A3F7D00649CD2 /* ProductTableViewController.swift */; };
+		0B7080362594481E007A2A69 /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7080352594481E007A2A69 /* NewsModel.swift */; };
+		0B70803A25944EEC007A2A69 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B70803925944EEC007A2A69 /* WebViewController.swift */; };
+		0B70804425945B99007A2A69 /* WebViewStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B70804325945B99007A2A69 /* WebViewStoryboard.storyboard */; };
+		0B70804C25945DEE007A2A69 /* TestStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B70804B25945DEE007A2A69 /* TestStoryboard.storyboard */; };
+		0B70805025945DFF007A2A69 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B70804F25945DFF007A2A69 /* TestViewController.swift */; };
+		0B708054259473FD007A2A69 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B708053259473FD007A2A69 /* CheckBox.swift */; };
+		0B7080662594798C007A2A69 /* RadioButtonsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7080642594798C007A2A69 /* RadioButtonsController.swift */; };
+		0B7080672594798C007A2A69 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7080652594798C007A2A69 /* RadioButton.swift */; };
 		0B771AD0257CAC8D008ADD69 /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B771ACF257CAC8D008ADD69 /* CommentView.swift */; };
 		0B771AD3257CB5F1008ADD69 /* CommentStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B771AD2257CB5F1008ADD69 /* CommentStackView.swift */; };
 		0B788801257B933F007DF3D9 /* CommentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B788800257B933F007DF3D9 /* CommentView.xib */; };
@@ -103,6 +111,14 @@
 		0B2C03FE2577EFFA0037083B /* RatingStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingStackView.swift; sourceTree = "<group>"; };
 		0B2FEBF325777C35001EDC8E /* ImageCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionCell.swift; sourceTree = "<group>"; };
 		0B53D303257A3F7D00649CD2 /* ProductTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewController.swift; sourceTree = "<group>"; };
+		0B7080352594481E007A2A69 /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
+		0B70803925944EEC007A2A69 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		0B70804325945B99007A2A69 /* WebViewStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WebViewStoryboard.storyboard; sourceTree = "<group>"; };
+		0B70804B25945DEE007A2A69 /* TestStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TestStoryboard.storyboard; sourceTree = "<group>"; };
+		0B70804F25945DFF007A2A69 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		0B708053259473FD007A2A69 /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
+		0B7080642594798C007A2A69 /* RadioButtonsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioButtonsController.swift; sourceTree = "<group>"; };
+		0B7080652594798C007A2A69 /* RadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 		0B771ACF257CAC8D008ADD69 /* CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
 		0B771AD2257CB5F1008ADD69 /* CommentStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentStackView.swift; sourceTree = "<group>"; };
 		0B788800257B933F007DF3D9 /* CommentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentView.xib; sourceTree = "<group>"; };
@@ -196,8 +212,10 @@
 		0B2C03F82577EB600037083B /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				0B7080632594798C007A2A69 /* RadioButtonController */,
 				0BF0B3DC257E56F3000B0CAB /* ImageLoader.swift */,
 				CE88A205258A1C5E00092010 /* ActivityIndicator.swift */,
+				0B708053259473FD007A2A69 /* CheckBox.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -240,6 +258,81 @@
 				0B83503D25767BA600C4C1FA /* ProductModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		0B70803F25945B4F007A2A69 /* Web view */ = {
+			isa = PBXGroup;
+			children = (
+				0B70804225945B76007A2A69 /* Model */,
+				0B70804125945B6E007A2A69 /* View */,
+				0B70804025945B64007A2A69 /* Controller */,
+			);
+			path = "Web view";
+			sourceTree = "<group>";
+		};
+		0B70804025945B64007A2A69 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0B70803925944EEC007A2A69 /* WebViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0B70804125945B6E007A2A69 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0B70804325945B99007A2A69 /* WebViewStoryboard.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0B70804225945B76007A2A69 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0B70804725945DC1007A2A69 /* Test view */ = {
+			isa = PBXGroup;
+			children = (
+				0B70804A25945DD9007A2A69 /* Model */,
+				0B70804925945DD3007A2A69 /* View */,
+				0B70804825945DCA007A2A69 /* Controller */,
+			);
+			path = "Test view";
+			sourceTree = "<group>";
+		};
+		0B70804825945DCA007A2A69 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0B70804F25945DFF007A2A69 /* TestViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0B70804925945DD3007A2A69 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0B70804B25945DEE007A2A69 /* TestStoryboard.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0B70804A25945DD9007A2A69 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0B7080632594798C007A2A69 /* RadioButtonController */ = {
+			isa = PBXGroup;
+			children = (
+				0B7080642594798C007A2A69 /* RadioButtonsController.swift */,
+				0B7080652594798C007A2A69 /* RadioButton.swift */,
+			);
+			path = RadioButtonController;
 			sourceTree = "<group>";
 		};
 		0B771ACD257CAC2F008ADD69 /* Comments */ = {
@@ -409,6 +502,8 @@
 		0BC9BF482570C50100445DFC /* Products and Favorites */ = {
 			isa = PBXGroup;
 			children = (
+				0B70804725945DC1007A2A69 /* Test view */,
+				0B70803F25945B4F007A2A69 /* Web view */,
 				0BC9BF492570C50C00445DFC /* Probuct List */,
 				0B451D2E2573632D00BAA54B /* Product */,
 			);
@@ -453,6 +548,7 @@
 			isa = PBXGroup;
 			children = (
 				0BC9BF562570CE6F00445DFC /* ProductListModel.swift */,
+				0B7080352594481E007A2A69 /* NewsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -680,12 +776,14 @@
 			files = (
 				CE3449B52588B9FC002E0101 /* FavoritesNavigationBar.xib in Resources */,
 				0B8350342576460700C4C1FA /* Roboto-Bold.ttf in Resources */,
+				0B70804425945B99007A2A69 /* WebViewStoryboard.storyboard in Resources */,
 				0B8350312576460700C4C1FA /* Roboto-LightItalic.ttf in Resources */,
 				0B83502C2576460700C4C1FA /* Roboto-Regular.ttf in Resources */,
 				0B8350302576460700C4C1FA /* Roboto-BoldItalic.ttf in Resources */,
 				0B8350322576460700C4C1FA /* Roboto-Italic.ttf in Resources */,
 				0B788801257B933F007DF3D9 /* CommentView.xib in Resources */,
 				CEBE7288258C94B700798DA4 /* NewCollectionViewCell.xib in Resources */,
+				0B70804C25945DEE007A2A69 /* TestStoryboard.storyboard in Resources */,
 				CE9032C7258C71E500107810 /* NewsCollectionView.xib in Resources */,
 				0B8350352576460700C4C1FA /* Roboto-Thin.ttf in Resources */,
 				CE4EC31F2590568D00DBCE85 /* SearchNavigationBar.xib in Resources */,
@@ -726,7 +824,9 @@
 				CEBE7287258C94B700798DA4 /* NewCollectionViewCell.swift in Sources */,
 				0B771AD0257CAC8D008ADD69 /* CommentView.swift in Sources */,
 				0B2FEBEE2577529A001EDC8E /* ProductNetworkManager.swift in Sources */,
+				0B7080362594481E007A2A69 /* NewsModel.swift in Sources */,
 				CEBE72A5258CB35200798DA4 /* NotFoundView.swift in Sources */,
+				0B70805025945DFF007A2A69 /* TestViewController.swift in Sources */,
 				CE4EC3272590705000DBCE85 /* UIView+.swift in Sources */,
 				0BC9BF5A2570DAF700445DFC /* ProductListCell.swift in Sources */,
 				CE9032CB258C71FD00107810 /* NewsCollectionView.swift in Sources */,
@@ -739,6 +839,8 @@
 				0BC9BF522570C6B200445DFC /* NetworkManager.swift in Sources */,
 				CE3D12C92587849A00921FD9 /* Products.xcdatamodeld in Sources */,
 				CEB38C0C2591D9DF00242C08 /* CustomNavigationBarDelegate.swift in Sources */,
+				0B7080672594798C007A2A69 /* RadioButton.swift in Sources */,
+				0B7080662594798C007A2A69 /* RadioButtonsController.swift in Sources */,
 				CE8FADD4258B0F8100D00CC5 /* UIViewController+.swift in Sources */,
 				CE9032C0258C6CF300107810 /* ProductListViewController+UITableView.swift in Sources */,
 				0BC9BF672570EC9100445DFC /* ProductListNetworkManager.swift in Sources */,
@@ -746,6 +848,7 @@
 				CE88A206258A1C5E00092010 /* ActivityIndicator.swift in Sources */,
 				0BA94BEC2574BE5800A94DB1 /* SettingsAnalist.swift in Sources */,
 				CE3449B12588B166002E0101 /* TabBarViewController.swift in Sources */,
+				0B708054259473FD007A2A69 /* CheckBox.swift in Sources */,
 				0B9187A5257A253D00467C8B /* SliderImageViewController.swift in Sources */,
 				0BA94C062574C95500A94DB1 /* AnalyticsManager.swift in Sources */,
 				0B83503E25767BA600C4C1FA /* ProductModel.swift in Sources */,
@@ -754,6 +857,7 @@
 				0BC9BF302570BFF200445DFC /* SceneDelegate.swift in Sources */,
 				CE3D12BF2587842100921FD9 /* CoreDataManager.swift in Sources */,
 				CEA14BCA2591A4F9009D2F79 /* ResultNavigationBar.swift in Sources */,
+				0B70803A25944EEC007A2A69 /* WebViewController.swift in Sources */,
 				0B771AD3257CB5F1008ADD69 /* CommentStackView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

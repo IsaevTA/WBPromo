@@ -11,11 +11,11 @@ class NewsCollectionView: UIView {
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var arrayNewsString = [String]()
+    var arrayNewsString = [NewsModel]()
     let newsCollectionView = "NewsCollectionView"
     let newCollectionViewCell = "NewCollectionViewCell"
     
-    init(frame: CGRect, arrayNews: [String]) {
+    init(frame: CGRect, arrayNews: [NewsModel]) {
         super.init(frame: frame)
         
         arrayNewsString = arrayNews
@@ -44,17 +44,21 @@ extension NewsCollectionView: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: newCollectionViewCell, for: indexPath) as! NewCollectionViewCell
         
-        let product = arrayNewsString[indexPath.row]
-        cell.testLabel.text = product
+        let item = arrayNewsString[indexPath.row]
+        cell.configure(with: item)
+        
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 100, height: 130)
+        return CGSize(width: 134, height: 187)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let product = arrayNewsString[indexPath.row]
-        print("\(indexPath.row) - \(product)")
+        
+        NotificationCenter.default.post(name: NSNotification.Name("OpenNews"), object: nil, userInfo: ["currentNews": product])
+//        if product.type == .news {
+//        }
     }
 }

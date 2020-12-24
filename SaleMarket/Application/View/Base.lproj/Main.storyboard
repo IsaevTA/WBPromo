@@ -253,11 +253,33 @@
                         <outlet property="tableView" destination="xan-tO-Nfm" id="CKF-r8-IHu"/>
                         <outlet property="topView" destination="5IN-uV-93B" id="dwM-2g-2tn"/>
                         <outlet property="topViewConstraint" destination="XBb-um-Kf7" id="I3H-5A-ikH"/>
+                        <segue destination="jUR-nN-bsI" kind="show" identifier="showNewsInWeb" id="0VN-U3-5AX"/>
+                        <segue destination="sig-nh-bAB" kind="show" identifier="showTestView" id="85r-DH-Bhe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SKP-Xe-dwv" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2959" y="125"/>
+        </scene>
+        <!--WebViewStoryboard-->
+        <scene sceneID="LX1-sS-D39">
+            <objects>
+                <viewControllerPlaceholder storyboardName="WebViewStoryboard" id="jUR-nN-bsI" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="53p-TD-ntv"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eGd-7p-5K1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3530" y="-396"/>
+        </scene>
+        <!--TestStoryboard-->
+        <scene sceneID="taU-4F-zI7">
+            <objects>
+                <viewControllerPlaceholder storyboardName="TestStoryboard" id="sig-nh-bAB" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="w9E-kS-2Dn"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RN5-of-gV8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3509" y="-317"/>
         </scene>
         <!--Product View Controller-->
         <scene sceneID="dNN-X5-JQa">

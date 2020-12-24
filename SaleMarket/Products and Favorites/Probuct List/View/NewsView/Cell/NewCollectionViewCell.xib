@@ -8,21 +8,41 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Bold.ttf">
+            <string>Roboto-Bold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="NewCollectionViewCell" id="gTV-IL-0wX" customClass="NewCollectionViewCell" customModule="SaleMarket" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="100" height="130"/>
+            <rect key="frame" x="0.0" y="0.0" width="134" height="187"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="100" height="130"/>
+                <rect key="frame" x="0.0" y="0.0" width="134" height="187"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lah-0f-fyi">
-                        <rect key="frame" x="0.0" y="0.0" width="100" height="130"/>
-                        <color key="backgroundColor" systemColor="systemGray4Color"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iO7-gB-59K">
+                        <rect key="frame" x="0.0" y="0.0" width="134" height="187"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zcq-OO-7nL">
+                                <rect key="frame" x="0.0" y="0.0" width="134" height="187"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zcq-OO-7nL" firstAttribute="top" secondItem="iO7-gB-59K" secondAttribute="top" id="33F-NX-RsS"/>
+                            <constraint firstItem="zcq-OO-7nL" firstAttribute="leading" secondItem="iO7-gB-59K" secondAttribute="leading" id="BjF-dX-THP"/>
+                            <constraint firstAttribute="bottom" secondItem="zcq-OO-7nL" secondAttribute="bottom" id="ZY7-CZ-UYq"/>
+                            <constraint firstAttribute="trailing" secondItem="zcq-OO-7nL" secondAttribute="trailing" id="r9h-ep-xgO"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lah-0f-fyi">
+                        <rect key="frame" x="15" y="177" width="104" height="0.0"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="13"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -34,25 +54,30 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="Lah-0f-fyi" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="3Yb-L7-yY8"/>
-                <constraint firstAttribute="bottom" secondItem="Lah-0f-fyi" secondAttribute="bottom" id="TYu-cC-xVu"/>
-                <constraint firstAttribute="trailing" secondItem="Lah-0f-fyi" secondAttribute="trailing" id="cFp-6x-4pg"/>
-                <constraint firstItem="Lah-0f-fyi" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="kML-97-Oug"/>
+                <constraint firstItem="Lah-0f-fyi" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="BUr-Ft-b40"/>
+                <constraint firstAttribute="bottom" secondItem="Lah-0f-fyi" secondAttribute="bottom" constant="10" id="FQj-Md-kkM"/>
+                <constraint firstItem="iO7-gB-59K" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="b89-zF-Ml1"/>
+                <constraint firstAttribute="trailing" secondItem="iO7-gB-59K" secondAttribute="trailing" id="cbA-D6-PCi"/>
+                <constraint firstItem="iO7-gB-59K" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="gJE-Ax-r4i"/>
+                <constraint firstAttribute="bottom" secondItem="iO7-gB-59K" secondAttribute="bottom" id="gh8-MQ-HvI"/>
+                <constraint firstAttribute="trailing" secondItem="Lah-0f-fyi" secondAttribute="trailing" constant="15" id="gxJ-Pz-96s"/>
             </constraints>
             <userDefinedRuntimeAttributes>
                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                    <integer key="value" value="10"/>
+                    <integer key="value" value="4"/>
                 </userDefinedRuntimeAttribute>
             </userDefinedRuntimeAttributes>
             <connections>
-                <outlet property="testLabel" destination="Lah-0f-fyi" id="5xE-Sc-1Nf"/>
+                <outlet property="foneView" destination="iO7-gB-59K" id="Cun-EC-ilS"/>
+                <outlet property="imageView" destination="zcq-OO-7nL" id="NWt-Yr-kmf"/>
+                <outlet property="nameLabel" destination="Lah-0f-fyi" id="5xE-Sc-1Nf"/>
             </connections>
-            <point key="canvasLocation" x="-197.10144927536234" y="93.75"/>
+            <point key="canvasLocation" x="-197.82608695652175" y="93.415178571428569"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <systemColor name="systemGray4Color">
-            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>
