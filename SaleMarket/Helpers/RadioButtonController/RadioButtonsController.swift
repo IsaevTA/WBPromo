@@ -55,7 +55,7 @@ class RadioButtonsController : NSObject
 
     @objc func pressed(_ sender: UIButton) {
         var currentSelectedButton: UIButton? = nil
-        if(sender.isSelected) {
+        if (sender.isSelected) {
             if shouldLetDeSelect {
                 sender.isSelected = false
                 currentSelectedButton = nil

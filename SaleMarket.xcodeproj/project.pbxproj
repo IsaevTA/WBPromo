@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B12AF872594A65700144754 /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B12AF862594A65700144754 /* TestModel.swift */; };
+		0B12AF8B2594A6A700144754 /* test-1.json in Resources */ = {isa = PBXBuildFile; fileRef = 0B12AF8A2594A6A700144754 /* test-1.json */; };
+		0B12AF942594AA5200144754 /* TestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B12AF932594AA5200144754 /* TestView.xib */; };
+		0B12AFA02594AAF800144754 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B12AF9F2594AAF800144754 /* TestView.swift */; };
+		0B12AFA62594ABB400144754 /* TestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B12AFA42594ABB400144754 /* TestTableViewCell.swift */; };
+		0B12AFA72594ABB400144754 /* TestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B12AFA52594ABB400144754 /* TestTableViewCell.xib */; };
 		0B2C03FF2577EFFA0037083B /* RatingStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2C03FE2577EFFA0037083B /* RatingStackView.swift */; };
 		0B2FEBEE2577529A001EDC8E /* ProductNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B83503A2576770A00C4C1FA /* ProductNetworkManager.swift */; };
 		0B2FEBF425777C35001EDC8E /* ImageCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2FEBF325777C35001EDC8E /* ImageCollectionCell.swift */; };
@@ -108,6 +114,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0B12AF862594A65700144754 /* TestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModel.swift; sourceTree = "<group>"; };
+		0B12AF8A2594A6A700144754 /* test-1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "test-1.json"; sourceTree = "<group>"; };
+		0B12AF932594AA5200144754 /* TestView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestView.xib; sourceTree = "<group>"; };
+		0B12AF9F2594AAF800144754 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		0B12AFA42594ABB400144754 /* TestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableViewCell.swift; sourceTree = "<group>"; };
+		0B12AFA52594ABB400144754 /* TestTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestTableViewCell.xib; sourceTree = "<group>"; };
 		0B2C03FE2577EFFA0037083B /* RatingStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingStackView.swift; sourceTree = "<group>"; };
 		0B2FEBF325777C35001EDC8E /* ImageCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionCell.swift; sourceTree = "<group>"; };
 		0B53D303257A3F7D00649CD2 /* ProductTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewController.swift; sourceTree = "<group>"; };
@@ -209,6 +221,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B12AF8E2594A71000144754 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				0B12AF8A2594A6A700144754 /* test-1.json */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		0B12AF912594AA2B00144754 /* Resultat view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Resultat view";
+			sourceTree = "<group>";
+		};
+		0B12AF922594AA3700144754 /* Test view */ = {
+			isa = PBXGroup;
+			children = (
+				0B12AFA32594AB9F00144754 /* Cell */,
+				0B12AF932594AA5200144754 /* TestView.xib */,
+				0B12AF9F2594AAF800144754 /* TestView.swift */,
+			);
+			path = "Test view";
+			sourceTree = "<group>";
+		};
+		0B12AFA32594AB9F00144754 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0B12AFA42594ABB400144754 /* TestTableViewCell.swift */,
+				0B12AFA52594ABB400144754 /* TestTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		0B2C03F82577EB600037083B /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -314,6 +360,8 @@
 		0B70804925945DD3007A2A69 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0B12AF922594AA3700144754 /* Test view */,
+				0B12AF912594AA2B00144754 /* Resultat view */,
 				0B70804B25945DEE007A2A69 /* TestStoryboard.storyboard */,
 			);
 			path = View;
@@ -322,6 +370,8 @@
 		0B70804A25945DD9007A2A69 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0B12AF862594A65700144754 /* TestModel.swift */,
+				0B12AF8E2594A71000144754 /* Tests */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -786,12 +836,15 @@
 				0B70804C25945DEE007A2A69 /* TestStoryboard.storyboard in Resources */,
 				CE9032C7258C71E500107810 /* NewsCollectionView.xib in Resources */,
 				0B8350352576460700C4C1FA /* Roboto-Thin.ttf in Resources */,
+				0B12AFA72594ABB400144754 /* TestTableViewCell.xib in Resources */,
 				CE4EC31F2590568D00DBCE85 /* SearchNavigationBar.xib in Resources */,
 				0B83502B2576460700C4C1FA /* Roboto-Light.ttf in Resources */,
 				0B83502D2576460700C4C1FA /* Roboto-MediumItalic.ttf in Resources */,
 				0B8350362576460700C4C1FA /* Roboto-Black.ttf in Resources */,
 				CEBE72A9258CB36300798DA4 /* NotFoundView.xib in Resources */,
 				0BC9BF3A2570BFF500445DFC /* LaunchScreen.storyboard in Resources */,
+				0B12AF942594AA5200144754 /* TestView.xib in Resources */,
+				0B12AF8B2594A6A700144754 /* test-1.json in Resources */,
 				0BC9BF372570BFF500445DFC /* Assets.xcassets in Resources */,
 				0B8350332576460700C4C1FA /* Roboto-BlackItalic.ttf in Resources */,
 				0B83502F2576460700C4C1FA /* Roboto-ThinItalic.ttf in Resources */,
@@ -819,8 +872,10 @@
 				CE3D12C02587842100921FD9 /* CoreDataStack.swift in Sources */,
 				0BC9BF572570CE6F00445DFC /* ProductListModel.swift in Sources */,
 				0B9187A9257A255400467C8B /* ProductViewController.swift in Sources */,
+				0B12AF872594A65700144754 /* TestModel.swift in Sources */,
 				CE9032BC258C6CC800107810 /* ProductListViewController+UISearchBar.swift in Sources */,
 				0B2FEBF425777C35001EDC8E /* ImageCollectionCell.swift in Sources */,
+				0B12AFA02594AAF800144754 /* TestView.swift in Sources */,
 				CEBE7287258C94B700798DA4 /* NewCollectionViewCell.swift in Sources */,
 				0B771AD0257CAC8D008ADD69 /* CommentView.swift in Sources */,
 				0B2FEBEE2577529A001EDC8E /* ProductNetworkManager.swift in Sources */,
@@ -857,6 +912,7 @@
 				0BC9BF302570BFF200445DFC /* SceneDelegate.swift in Sources */,
 				CE3D12BF2587842100921FD9 /* CoreDataManager.swift in Sources */,
 				CEA14BCA2591A4F9009D2F79 /* ResultNavigationBar.swift in Sources */,
+				0B12AFA62594ABB400144754 /* TestTableViewCell.swift in Sources */,
 				0B70803A25944EEC007A2A69 /* WebViewController.swift in Sources */,
 				0B771AD3257CB5F1008ADD69 /* CommentStackView.swift in Sources */,
 			);
