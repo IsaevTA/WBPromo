@@ -15,7 +15,6 @@ class NewCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        print("ghbdtn")
         
         let layer0 = CAGradientLayer()
         layer0.colors = [

@@ -10,8 +10,5 @@ import UIKit
 extension UIView {
     func removeAllSubView() {
         let _ = self.subviews.map { $0.removeFromSuperview() }
-//        for item in self.subviews {
-//            item.removeFromSuperview()
-//        }
     }
 }

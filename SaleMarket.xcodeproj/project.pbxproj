@@ -73,6 +73,8 @@
 		CE4EC3232590569F00DBCE85 /* SearchNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4EC3222590569F00DBCE85 /* SearchNavigationBar.swift */; };
 		CE4EC3272590705000DBCE85 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4EC3262590705000DBCE85 /* UIView+.swift */; };
 		CE68AAA6258871B900C0EBA6 /* FavoritesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE68AAA5258871B900C0EBA6 /* FavoritesManager.swift */; };
+		CE6CA06B2595BD140035304C /* ResultTestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE6CA06A2595BD140035304C /* ResultTestView.xib */; };
+		CE6CA0712595BD330035304C /* ResultTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6CA0702595BD330035304C /* ResultTestView.swift */; };
 		CE88A202258A0D7B00092010 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88A201258A0D7B00092010 /* UIImage+.swift */; };
 		CE88A206258A1C5E00092010 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88A205258A1C5E00092010 /* ActivityIndicator.swift */; };
 		CE8FADD4258B0F8100D00CC5 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8FADD3258B0F8100D00CC5 /* UIViewController+.swift */; };
@@ -182,6 +184,8 @@
 		CE4EC3222590569F00DBCE85 /* SearchNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNavigationBar.swift; sourceTree = "<group>"; };
 		CE4EC3262590705000DBCE85 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		CE68AAA5258871B900C0EBA6 /* FavoritesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesManager.swift; sourceTree = "<group>"; };
+		CE6CA06A2595BD140035304C /* ResultTestView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ResultTestView.xib; path = "SaleMarket/Products and Favorites/Probuct List/Protocol/ResultTestView.xib"; sourceTree = SOURCE_ROOT; };
+		CE6CA0702595BD330035304C /* ResultTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ResultTestView.swift; path = "SaleMarket/Products and Favorites/Probuct List/Protocol/ResultTestView.swift"; sourceTree = SOURCE_ROOT; };
 		CE88A201258A0D7B00092010 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		CE88A205258A1C5E00092010 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		CE8FADD3258B0F8100D00CC5 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
@@ -229,11 +233,13 @@
 			path = Tests;
 			sourceTree = "<group>";
 		};
-		0B12AF912594AA2B00144754 /* Resultat view */ = {
+		0B12AF912594AA2B00144754 /* Result test view */ = {
 			isa = PBXGroup;
 			children = (
+				CE6CA06A2595BD140035304C /* ResultTestView.xib */,
+				CE6CA0702595BD330035304C /* ResultTestView.swift */,
 			);
-			path = "Resultat view";
+			path = "Result test view";
 			sourceTree = "<group>";
 		};
 		0B12AF922594AA3700144754 /* Test view */ = {
@@ -361,7 +367,7 @@
 			isa = PBXGroup;
 			children = (
 				0B12AF922594AA3700144754 /* Test view */,
-				0B12AF912594AA2B00144754 /* Resultat view */,
+				0B12AF912594AA2B00144754 /* Result test view */,
 				0B70804B25945DEE007A2A69 /* TestStoryboard.storyboard */,
 			);
 			path = View;
@@ -850,6 +856,7 @@
 				0B83502F2576460700C4C1FA /* Roboto-ThinItalic.ttf in Resources */,
 				CEA14BC62591A4E8009D2F79 /* ResultNavigationBar.xib in Resources */,
 				0BC9BF352570BFF200445DFC /* Main.storyboard in Resources */,
+				CE6CA06B2595BD140035304C /* ResultTestView.xib in Resources */,
 				0B83502A2576460700C4C1FA /* Roboto-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -884,6 +891,7 @@
 				0B70805025945DFF007A2A69 /* TestViewController.swift in Sources */,
 				CE4EC3272590705000DBCE85 /* UIView+.swift in Sources */,
 				0BC9BF5A2570DAF700445DFC /* ProductListCell.swift in Sources */,
+				CE6CA0712595BD330035304C /* ResultTestView.swift in Sources */,
 				CE9032CB258C71FD00107810 /* NewsCollectionView.swift in Sources */,
 				0BC9BF322570BFF200445DFC /* ProductListViewController.swift in Sources */,
 				0B2C03FF2577EFFA0037083B /* RatingStackView.swift in Sources */,

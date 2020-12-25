@@ -46,6 +46,16 @@ class RadioButtonsController : NSObject
         }
     }
 
+    func removeAllButton() {
+        buttonsArray.removeAll()
+    }
+    
+    func removeAllSelections() {
+        for button in buttonsArray {
+            button.isSelected = false
+        }
+    }
+    
     func setButtonsArray(_ aButtonsArray: [UIButton]) {
         for aButton in aButtonsArray {
             aButton.addTarget(self, action: #selector(RadioButtonsController.pressed(_:)), for: .touchUpInside)
