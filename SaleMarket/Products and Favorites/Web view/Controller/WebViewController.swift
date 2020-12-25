@@ -14,6 +14,7 @@ class WebViewController: UIViewController {
     @IBOutlet weak var viewWithWeb: UIView!
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
     
     var currentNews: NewsModel?
     var activityIndicator: NVActivityIndicatorView!
@@ -33,10 +34,18 @@ class WebViewController: UIViewController {
         self.view.addGestureRecognizer(swipeRight)
         
         titleLabel.text = currentNews?.name
+        imageView.image = UIImage(named: currentNews!.image)
         
-        if let url = URL(string: (currentNews?.urlNews)!) {
-            let request = URLRequest.init(url: url)
-            webView.load(request)
+        if let urlString = currentNews?.urlNews {
+            if urlString.isValidURL {
+                let request = URLRequest.init(url: URL(string: urlString)!)
+                webView.load(request)
+            } else {
+                let url = Bundle.main.url(forResource: urlString, withExtension: "html")!
+                webView.loadFileURL(url, allowingReadAccessTo: url)
+                let request = URLRequest(url: url)
+                webView.load(request)
+            }
         }
     }
     

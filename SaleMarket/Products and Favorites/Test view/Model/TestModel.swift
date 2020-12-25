@@ -17,7 +17,9 @@ struct TestModel: Codable {
 
 // MARK: - Result
 struct TestResult: Codable {
-    let image, text: String
+    let name: String
+    let image: String
+    let text: String
 }
 
 // MARK: - Test

@@ -20,12 +20,18 @@ class TestViewController: UIViewController {
         
         setupUI()
         startTest()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(backController), name: NSNotification.Name(rawValue: "BackHome"), object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         tabBarController?.tabBar.isHidden = true
+    }
+    
+    @objc private func backController() {
+        navigationController?.popViewController(animated: true)
     }
     
     private func startTest() {
@@ -51,7 +57,7 @@ class TestViewController: UIViewController {
         guard let currentTest = TestClass.shared.loadJson(testId: currentNewsTest?.testId) else { return }
         
         let rect = CGRect(x: 0, y: 0, width: testView.frame.size.width, height: testView.frame.size.height)
-        let view = ResultTestView(frame: rect, currentTest: currentTest, resultTest: result)
+        let view = ResultTestView(frame: rect, test: currentTest, result: result)
         view.translatesAutoresizingMaskIntoConstraints = false
         testView.addSubview(view)
 
@@ -77,9 +83,5 @@ class TestViewController: UIViewController {
     
     @IBAction func actionBackButton(_ sender: UIButton) {
         backController()
-    }
-    
-    private func backController() {
-        navigationController?.popViewController(animated: true)
     }
 }

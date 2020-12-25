@@ -17,7 +17,7 @@ struct ProductListModel: Decodable {
         self.id = Int(item.id)
         self.name = item.name!
         self.image = item.image!
-        self.percent = Int(item.percent)
+        self.percent = Int(item.percent) 
         self.price = item.price
         self.sale = item.sale
     }
