@@ -25,7 +25,7 @@ class WebViewController: UIViewController {
         webView.navigationDelegate = self
         webView.isHidden = true
         
-        activityIndicator = createActivitiIndicator(view: self.view, viewCenter: self.view.center, widhtHeight: 100, typeActivity: .ballRotateChase)
+        activityIndicator = createActivitiIndicator(view: self.view, viewCenter: self.view.center, widhtHeight: 100, typeActivity: .ballRotateChase, color: UIColor(red: 0.491, green: 0, blue: 0.722, alpha: 1))
         activityIndicator.startAnimating()
         
         //настройка свайпа назад

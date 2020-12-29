@@ -36,7 +36,7 @@ class ProductListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        activityIndicator = createActivitiIndicator(view: self.view, viewCenter: self.view.center, widhtHeight: 100, typeActivity: .ballPulse)
+        activityIndicator = createActivitiIndicator(view: self.view, viewCenter: self.view.center, widhtHeight: 100, typeActivity: .ballPulse, color: UIColor(red: 0.491, green: 0, blue: 0.722, alpha: 1))
         activityIndicator.startAnimating()
         
         createNewsView()

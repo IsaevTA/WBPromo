@@ -9,7 +9,6 @@ import UIKit
 
 class SliderImageViewController: UIViewController {
 
-//    var currentPromo: ProductModel?
     var imageNameArray = [String]()
     var heightFrame: CGFloat = 0.0
     
@@ -54,7 +53,6 @@ extension SliderImageViewController: UICollectionViewDelegate, UICollectionViewD
                 guard let index = sliderCollectionView.indexPath(for: visible)?.row else { return }
                 pageControl.currentPage = index
             }
-
         }
     }
 }

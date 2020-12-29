@@ -14,7 +14,7 @@ class ImageCollectionCell: UICollectionViewCell {
     var activityIndicator: NVActivityIndicatorView!
     
     func configure(with itemCell: String) {
-        self.activityIndicator = createActivitiIndicator(view: self, viewCenter: self.center, widhtHeight: 50, typeActivity: .ballClipRotateMultiple)
+        self.activityIndicator = createActivitiIndicator(view: self, viewCenter: self.center, widhtHeight: 50, typeActivity: .ballClipRotateMultiple, color: UIColor(red: 0.491, green: 0, blue: 0.722, alpha: 1))
         activityIndicator.startAnimating()
         
         let imageURL = URL(string: itemCell)

@@ -20,11 +20,14 @@ class ProductViewController: UIViewController {
     @IBOutlet weak var titleSaleLabel: UILabel!
     @IBOutlet weak var heightCustomBarConstraint: NSLayoutConstraint!
     @IBOutlet weak var inStoreButton: UIButton!
+    @IBOutlet weak var containerView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        activityIndicator = createActivitiIndicator(view: self.view, viewCenter: self.view.center, widhtHeight: 100, typeActivity: .ballPulse)
+        
+        containerView.isHidden = true
+        
+        activityIndicator = createActivitiIndicator(view: self.view, viewCenter: self.view.center, widhtHeight: 100, typeActivity: .ballPulse, color: UIColor.white)
         activityIndicator.startAnimating()
         
         NotificationCenter.default.addObserver(self, selector: #selector(backController), name: NSNotification.Name(rawValue: "BackProductList"), object: nil)
@@ -36,12 +39,10 @@ class ProductViewController: UIViewController {
         super.viewWillAppear(animated)
         
         tabBarController?.tabBar.isHidden = true
-//        navigationController?.setNavigationBarHidden(true, animated: animated)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-//        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     private func featchData() {
@@ -52,6 +53,8 @@ class ProductViewController: UIViewController {
                 NotificationCenter.default.post(name: NSNotification.Name("BackProductList"), object: nil)
                 self.showAlert(withTitle: "Ошибка", withMessage: "Ошибка при получении данных. Повторите попытку позже.")
                 self.activityIndicator.stopAnimating()
+                self.containerView.isHidden = false
+                
                 return
             }
             DispatchQueue.main.async {
@@ -60,6 +63,8 @@ class ProductViewController: UIViewController {
                 
                 self.activityIndicator.stopAnimating()
 
+                self.containerView.isHidden = false
+                
                 NotificationCenter.default.post(name: NSNotification.Name("FeatchProduct"), object: nil, userInfo: ["product": detailProduct])
             }
         }
@@ -89,15 +94,16 @@ class ProductViewController: UIViewController {
     @IBAction func inStoreButton(_ sender: UIButton) {
         
 //        if currentProduct?.available == true {
-            if let appScheme = currentProduct?.urlWildberies {
-                let appUrl = URL(string: appScheme)
-                
-                if UIApplication.shared.canOpenURL(appUrl! as URL){
-                    //Открываем сылку или в приложении или в safari
-                    AppsFlyerLib.shared().logEvent("af_wb_button_pressed", withValues: ["af_wb_button_pressed" : 1])
-                    UIApplication.shared.open(appUrl!)
-                }
-            }
+//            if let appScheme = currentProduct?.urlWildberies {
+//                let appUrl = URL(string: appScheme)
+//
+//                //Открытие в приложении
+//                if UIApplication.shared.canOpenURL(appUrl! as URL){
+//                    //Открываем сылку или в приложении или в safari
+//                    AppsFlyerLib.shared().logEvent("af_wb_button_pressed", withValues: ["af_wb_button_pressed" : 1])
+//                    UIApplication.shared.open(appUrl!)
+//                }
+//            }
 //        } else {
 //            self.showAlert(withTitle: "", withMessage: "Добавить \(String(describing: currentProduct?.name)) в лист ожидания?", preferredStyle: .actionSheet, titleAction1: "Добавить", titleAction2: "Отмена") {
 //                print("Нажата добавить")
@@ -109,4 +115,17 @@ class ProductViewController: UIViewController {
         return "\(number) руб."
     }
 
+    // MARK: - Segues
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showProductWeb" {
+            if let urlString = currentProduct?.urlWildberies {
+                let webViewController = segue.destination as! ProductWebViewController
+                webViewController.urlString = urlString
+                
+            }
+
+        }
+    }
+    
 }

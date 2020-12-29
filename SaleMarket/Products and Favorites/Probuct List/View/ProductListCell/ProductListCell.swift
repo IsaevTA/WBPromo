@@ -23,7 +23,7 @@ class ProductListCell: UITableViewCell {
     func configure(with itemCell: ProductListModel) {
         
         if self.activityIndicator == nil {
-            self.activityIndicator = createActivitiIndicator(view: self, viewCenter: self.imagePromoView.center, widhtHeight: 20, typeActivity: .ballClipRotateMultiple)
+            self.activityIndicator = createActivitiIndicator(view: self, viewCenter: self.imagePromoView.center, widhtHeight: 20, typeActivity: .ballClipRotateMultiple, color: UIColor(red: 0.491, green: 0, blue: 0.722, alpha: 1))
         }
         activityIndicator.startAnimating()
         
