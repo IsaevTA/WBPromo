@@ -84,5 +84,117 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "468F9A1A-B797-4F35-9662-203C67E096FE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ShareExtension/ShareViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  uuid = "468F9A1A-B797-4F35-9662-203C67E096FE - 624068e03f6c9283"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.NSSecureCoding&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in ShareExtension.ShareViewController.(handleIncomingText in _4427D30ACD817815319518FF03F5007F)(itemProvider: __C.NSItemProvider) -&gt; ()"
+                  moduleName = "ShareExtension"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/timurisaev/Documents/Programming/WebTeam/WBPromo/ShareExtension/ShareViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "93"
+                  endingLineNumber = "93"
+                  offsetFromSymbolStart = "124">
+               </Location>
+               <Location
+                  uuid = "468F9A1A-B797-4F35-9662-203C67E096FE - 624068e03f6c9283"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.NSSecureCoding&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in ShareExtension.ShareViewController.(handleIncomingText in _4427D30ACD817815319518FF03F5007F)(itemProvider: __C.NSItemProvider) -&gt; ()"
+                  moduleName = "ShareExtension"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/timurisaev/Documents/Programming/WebTeam/WBPromo/ShareExtension/ShareViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "93"
+                  endingLineNumber = "93"
+                  offsetFromSymbolStart = "212">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "74FA6F0E-92EB-4395-B7D6-35A8FEA91E28"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ShareExtension/ShareViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  uuid = "74FA6F0E-92EB-4395-B7D6-35A8FEA91E28 - a74e197d9ab78ef5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ShareExtension.ShareViewController.(handleIncomingURL in _4427D30ACD817815319518FF03F5007F)(itemProvider: __C.NSItemProvider) -&gt; ()"
+                  moduleName = "ShareExtension"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/timurisaev/Documents/Programming/WebTeam/WBPromo/ShareExtension/ShareViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "114"
+                  endingLineNumber = "114"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  uuid = "74FA6F0E-92EB-4395-B7D6-35A8FEA91E28 - 77d96eb8ff5d0a2e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.NSSecureCoding&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in ShareExtension.ShareViewController.(handleIncomingURL in _4427D30ACD817815319518FF03F5007F)(itemProvider: __C.NSItemProvider) -&gt; ()"
+                  moduleName = "ShareExtension"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/timurisaev/Documents/Programming/WebTeam/WBPromo/ShareExtension/ShareViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "115"
+                  endingLineNumber = "115"
+                  offsetFromSymbolStart = "76">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6DCD5A38-F201-4682-A9BB-5E41C21AF6CA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ShareExtension/ShareViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

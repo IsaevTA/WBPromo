@@ -22,6 +22,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.scene(scene, openURLContexts: connectionOptions.urlContexts)
 
         guard let _ = (scene as? UIWindowScene) else { return }
+        
+        if let url = connectionOptions.urlContexts.first?.url {
+            handleIncomingURL(url)
+        }
     }
     
     func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
@@ -30,6 +34,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
         if let url = URLContexts.first?.url {
+            handleIncomingURL(url)
             AppsFlyerLib.shared().handleOpen(url, options: nil)
         }
     }
@@ -43,4 +48,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneWillEnterForeground(_ scene: UIScene) {}
 
     func sceneDidEnterBackground(_ scene: UIScene) {}
+    
+    func handleIncomingURL(_ url: URL) {
+        if let scheme = url.scheme,
+            scheme.caseInsensitiveCompare("SaleMarket") == .orderedSame,
+            let page = url.host {
+
+            var parameters: [String: String] = [:]
+            URLComponents(url: url, resolvingAgainstBaseURL: false)?.queryItems?.forEach {
+                parameters[$0.name] = $0.value
+            }
+
+            print("redirect(to: \(page), with: \(parameters))")
+
+            for parameter in parameters where parameter.key.caseInsensitiveCompare("url") == .orderedSame {
+                UserDefaults().set(parameter.value, forKey: "incomingURL")
+            }
+        }
+    }
 }

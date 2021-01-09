@@ -20,28 +20,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        let onesignalInitSettings = [kOSSettingsKeyAutoPrompt: false, kOSSettingsKeyInAppLaunchURL: false]
-        OneSignal.initWithLaunchOptions(launchOptions,
-                                        appId: settingAnalyst.appId,
-                                        handleNotificationAction: nil,
-                                        settings: onesignalInitSettings)
-
-        OneSignal.inFocusDisplayType = OSNotificationDisplayType.notification;
-        OneSignal.promptForPushNotifications(userResponse: { accepted in
-            print("User accepted notifications: \(accepted)")
-        })
-        
-        AppsFlyerLib.shared().appsFlyerDevKey = settingAnalyst.appsFlyerDevKey
-        AppsFlyerLib.shared().appleAppID = settingAnalyst.appleAppID
-        AppsFlyerLib.shared().delegate = self
-        AppsFlyerLib.shared().isDebug = false
-        if #available(iOS 10, *) {
-            UNUserNotificationCenter.current().requestAuthorization(options: [.badge, .alert, .sound]) { _, _ in }
-            application.registerForRemoteNotifications()
-        } else {
-            UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: nil))
-            UIApplication.shared.registerForRemoteNotifications()
-        }
+//        let onesignalInitSettings = [kOSSettingsKeyAutoPrompt: false, kOSSettingsKeyInAppLaunchURL: false]
+//        OneSignal.initWithLaunchOptions(launchOptions,
+//                                        appId: settingAnalyst.appId,
+//                                        handleNotificationAction: nil,
+//                                        settings: onesignalInitSettings)
+//
+//        OneSignal.inFocusDisplayType = OSNotificationDisplayType.notification;
+//        OneSignal.promptForPushNotifications(userResponse: { accepted in
+//            print("User accepted notifications: \(accepted)")
+//        })
+//        
+//        AppsFlyerLib.shared().appsFlyerDevKey = settingAnalyst.appsFlyerDevKey
+//        AppsFlyerLib.shared().appleAppID = settingAnalyst.appleAppID
+//        AppsFlyerLib.shared().delegate = self
+//        AppsFlyerLib.shared().isDebug = false
+//        if #available(iOS 10, *) {
+//            UNUserNotificationCenter.current().requestAuthorization(options: [.badge, .alert, .sound]) { _, _ in }
+//            application.registerForRemoteNotifications()
+//        } else {
+//            UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: nil))
+//            UIApplication.shared.registerForRemoteNotifications()
+//        }
         
         if !settingAnalyst.wbInstalled { checkInstallWB() } // Проверка установлено ли приложение на телефоне
         
@@ -72,30 +72,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     private func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
         AppsFlyerLib.shared().continue(userActivity, restorationHandler: restorationHandler)
-    return true
+        return true
     }
     
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-        print("1")
-        print(url)
-        print(sourceApplication ?? "")
         AppsFlyerLib.shared().handleOpen(url, sourceApplication: sourceApplication, withAnnotation: annotation)
-    return true
+        return true
     }
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        print("2")
-        print(url)
+        if let scheme = url.scheme,
+            scheme.caseInsensitiveCompare("SaleMarket") == .orderedSame,
+            let page = url.host {
+
+            var parameters: [String: String] = [:]
+            URLComponents(url: url, resolvingAgainstBaseURL: false)?.queryItems?.forEach {
+                parameters[$0.name] = $0.value
+            }
+
+            print("redirect(to: \(page), with: \(parameters))")
+
+            for parameter in parameters where parameter.key.caseInsensitiveCompare("url") == .orderedSame {
+                UserDefaults().set(parameter.value, forKey: "incomingURL")
+            }
+        }
         AppsFlyerLib.shared().handleOpen(url, options: options)
-    return true
+        return true
     }
+    
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         AppsFlyerLib.shared().handlePushNotification(userInfo)
     }
     
     func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
         AppsFlyerLib.shared().continue(userActivity, restorationHandler: nil)
-    return true
+        return true
     }
 
     // MARK: UISceneSession Lifecycle

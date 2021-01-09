@@ -12,8 +12,7 @@ import UIKit
     @objc func didSelectButton(selectedButton: UIButton?)
 }
 
-class RadioButtonsController : NSObject
-{
+class RadioButtonsController : NSObject {
     fileprivate var buttonsArray = [UIButton]()
     weak var delegate : RadioButtonControllerDelegate? = nil
 

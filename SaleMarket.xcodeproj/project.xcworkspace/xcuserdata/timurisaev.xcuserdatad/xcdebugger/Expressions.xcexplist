@@ -3,7 +3,7 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "SliderImageViewController.updateUI(notification:):SliderImageViewController.swift">
+         contextName = "SliderImageViewController.viewDidLoad():SliderImageViewController.swift">
          <PersistentStrings>
             <PersistentString
                value = "self.view.frame">
@@ -11,10 +11,79 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "SliderImageViewController.viewDidLoad():SliderImageViewController.swift">
+         contextName = "RatingStackView.draw(_:):RatingStackView.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in RatingStackView.draw(_:):RatingStackView.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self.view.frame">
+               value = "self.starsRating">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DetailTableViewController.updateUI(notification:):DetailTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "notification.userInfo[0]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ShareViewController.didSelectPost():ShareViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "CommentsView.configurationView(wihtComment:):CommentsView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "ratingStackView.starsRating">
+            </PersistentString>
+            <PersistentString
+               value = "comment.image">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CommentsView.configurationView(wihtComment:andView:):CommentsView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "commentLabel.frame">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DetailTableViewController.updateUI(infoPromo:):DetailTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "commentsStackView.frame.size.height">
+            </PersistentString>
+            <PersistentString
+               value = "heightStackView">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in ShareViewController.handleIncomingText(itemProvider:):ShareViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "matches.first">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ShareViewController.viewDidAppear(_:):ShareViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "itemProvider.hasItemConformingToTypeIdentifier(typeURL)">
+            </PersistentString>
+            <PersistentString
+               value = "extensionContext">
+            </PersistentString>
+            <PersistentString
+               value = "itemProvider.hasItemConformingToTypeIdentifier(typeText)">
+            </PersistentString>
+            <PersistentString
+               value = "extensionContext?.inputItems">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -30,66 +99,24 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "RatingStackView.draw(_:):RatingStackView.swift">
-      </ContextState>
-      <ContextState
-         contextName = "CommentStackView.addItem(wihtComment:):CommentStackView.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "commentView.frame.size">
-            </PersistentString>
-            <PersistentString
-               value = "view.frame.size">
-            </PersistentString>
-            <PersistentString
-               value = "self.frame.size">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "DetailTableViewController.tableView(_:heightForRowAt:):DetailTableViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "heightStackView">
+               value = "commentsStackView.frame">
             </PersistentString>
             <PersistentString
                value = "(children[0] as? SliderImageViewController)!.heightFrame">
             </PersistentString>
             <PersistentString
-               value = "commentsStackView.frame">
+               value = "heightStackView">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "DetailTableViewController.updateUI(notification:):DetailTableViewController.swift">
+         contextName = "RatingStackView.setStarsRating(rating:):RatingStackView.swift">
          <PersistentStrings>
             <PersistentString
-               value = "notification.userInfo[0]">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DetailPromoViewController.collectionView(_:layout:sizeForItemAt:):DetailPromoViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "size.height">
-            </PersistentString>
-            <PersistentString
-               value = "sliderCollectionView.frame">
-            </PersistentString>
-            <PersistentString
-               value = "size.width">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "CommentsView.configurationView(wihtComment:):CommentsView.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "ratingStackView.starsRating">
-            </PersistentString>
-            <PersistentString
-               value = "comment.image">
+               value = "UIImage(named: starsEmptyPicName)">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -98,14 +125,6 @@
          <PersistentStrings>
             <PersistentString
                value = "starsRating">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "CommentsView.configurationView(wihtComment:andView:):CommentsView.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "commentLabel.frame">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -124,29 +143,16 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "closure #1 in RatingStackView.draw(_:):RatingStackView.swift">
+         contextName = "DetailPromoViewController.collectionView(_:layout:sizeForItemAt:):DetailPromoViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self.starsRating">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "RatingStackView.setStarsRating(rating:):RatingStackView.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "UIImage(named: starsEmptyPicName)">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DetailTableViewController.updateUI(infoPromo:):DetailTableViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "commentsStackView.frame.size.height">
+               value = "size.height">
             </PersistentString>
             <PersistentString
-               value = "heightStackView">
+               value = "sliderCollectionView.frame">
+            </PersistentString>
+            <PersistentString
+               value = "size.width">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -155,6 +161,45 @@
          <PersistentStrings>
             <PersistentString
                value = "indexPath.row">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SliderImageViewController.updateUI(notification:):SliderImageViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.view.frame">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CommentStackView.addItem(wihtComment:):CommentStackView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "commentView.frame.size">
+            </PersistentString>
+            <PersistentString
+               value = "view.frame.size">
+            </PersistentString>
+            <PersistentString
+               value = "self.frame.size">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ShareViewController.viewDidLoad():ShareViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "itemProvider.hasItemConformingToTypeIdentifier(typeURL)">
+            </PersistentString>
+            <PersistentString
+               value = "typeURL">
+            </PersistentString>
+            <PersistentString
+               value = "typeText">
+            </PersistentString>
+            <PersistentString
+               value = "itemProvider.hasItemConformingToTypeIdentifier(typeText)">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
