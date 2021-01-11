@@ -63,6 +63,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "TabBarViewController.setupCenterButton():TabBarViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "view.bounds">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "closure #1 in ShareViewController.handleIncomingText(itemProvider:):ShareViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -102,13 +110,13 @@
          contextName = "DetailTableViewController.tableView(_:heightForRowAt:):DetailTableViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "commentsStackView.frame">
+               value = "heightStackView">
             </PersistentString>
             <PersistentString
                value = "(children[0] as? SliderImageViewController)!.heightFrame">
             </PersistentString>
             <PersistentString
-               value = "heightStackView">
+               value = "commentsStackView.frame">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -117,6 +125,14 @@
          <PersistentStrings>
             <PersistentString
                value = "UIImage(named: starsEmptyPicName)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ShareViewController.fetchAndSetContentFromContext():ShareViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "itemProvider.hasItemConformingToTypeIdentifier(typeURL)">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -165,24 +181,18 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "SliderImageViewController.updateUI(notification:):SliderImageViewController.swift">
+         contextName = "TabBarViewController.addCenterButton():TabBarViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self.view.frame">
+               value = "button.center">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "CommentStackView.addItem(wihtComment:):CommentStackView.swift">
+         contextName = "SliderImageViewController.updateUI(notification:):SliderImageViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "commentView.frame.size">
-            </PersistentString>
-            <PersistentString
-               value = "view.frame.size">
-            </PersistentString>
-            <PersistentString
-               value = "self.frame.size">
+               value = "self.view.frame">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -200,6 +210,20 @@
             </PersistentString>
             <PersistentString
                value = "itemProvider.hasItemConformingToTypeIdentifier(typeText)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CommentStackView.addItem(wihtComment:):CommentStackView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "commentView.frame.size">
+            </PersistentString>
+            <PersistentString
+               value = "view.frame.size">
+            </PersistentString>
+            <PersistentString
+               value = "self.frame.size">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

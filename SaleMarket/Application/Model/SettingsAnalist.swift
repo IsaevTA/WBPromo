@@ -21,4 +21,9 @@ class SettingsAnalist {
         get { return UserDefaults.standard.bool(forKey: "WB_PRODUCT_INSTALLED") }
         set(newCenter) { UserDefaults.standard.set(newCenter, forKey: "WB_PRODUCT_INSTALLED") }
     }
+    
+    var firstStart: Bool {
+        get { return UserDefaults.standard.bool(forKey: "WB_FISRT_START") }
+        set(newCenter) { UserDefaults.standard.set(newCenter, forKey: "WB_FISRT_START") }
+    }
 }

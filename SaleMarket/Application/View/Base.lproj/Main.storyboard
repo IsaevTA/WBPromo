@@ -7,21 +7,21 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Главная-->
+        <!--Горящие-->
         <scene sceneID="ijX-GZ-caE">
             <objects>
                 <navigationController navigationBarHidden="YES" id="WwP-Hm-ziY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Главная" image="home" selectedImage="home_active" id="Sbh-Ui-oS2"/>
+                    <tabBarItem key="tabBarItem" title="Горящие" image="fire" selectedImage="fire_active" id="Sbh-Ui-oS2"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5zu-kC-PmW">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="oYB-T3-xpy" kind="relationship" relationship="rootViewController" destinationCreationSelector="1" id="4pd-YS-m2M"/>
+                        <segue destination="oYB-T3-xpy" kind="relationship" relationship="rootViewController" destinationCreationSelector="2" id="4pd-YS-m2M"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5fY-FC-UF3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1964" y="-212"/>
+            <point key="canvasLocation" x="1922" y="504"/>
         </scene>
         <!--Избранное-->
         <scene sceneID="5KX-xe-NSS">
@@ -32,12 +32,28 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="oYB-T3-xpy" kind="relationship" relationship="rootViewController" destinationCreationSelector="2" id="JeA-pE-LRT"/>
+                        <segue destination="oYB-T3-xpy" kind="relationship" relationship="rootViewController" destinationCreationSelector="3" id="JeA-pE-LRT"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cWW-MH-P4B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1964" y="471"/>
+            <point key="canvasLocation" x="1922" y="1175"/>
+        </scene>
+        <!--Избранное-->
+        <scene sceneID="Exe-Yf-2RB">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="dg4-oN-EoP" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Избранное" image="home" selectedImage="home_active" id="V1H-e1-aoi"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fhs-WH-7DI">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="oYB-T3-xpy" kind="relationship" relationship="rootViewController" destinationCreationSelector="1" id="z96-Im-dVW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EgV-qC-jre" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1922" y="-173"/>
         </scene>
         <!--ProductListStoryboard-->
         <scene sceneID="4yd-hS-1xA">
@@ -60,8 +76,8 @@
                         <color key="barTintColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="WwP-Hm-ziY" kind="relationship" relationship="viewControllers" id="OPq-jr-EBE"/>
-                        <segue destination="Bdh-xS-1Jl" kind="relationship" relationship="viewControllers" id="mnM-XO-ckS"/>
+                        <segue destination="dg4-oN-EoP" kind="relationship" relationship="viewControllers" id="C1c-iA-8am"/>
+                        <segue destination="WwP-Hm-ziY" kind="relationship" relationship="viewControllers" id="Ewu-p1-bT3"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MnF-31-EzU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -73,6 +89,8 @@
         <segue reference="JeA-pE-LRT"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="fire" width="25" height="25"/>
+        <image name="fire_active" width="25" height="25"/>
         <image name="home" width="25" height="24"/>
         <image name="home_active" width="25" height="24"/>
         <image name="like" width="25" height="23"/>

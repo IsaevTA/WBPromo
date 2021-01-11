@@ -41,12 +41,9 @@ class CoreDataManager {
         do {
             let results = try context.fetch(fetchRequest)
             if results.isEmpty {
-//                print("Данных в таблице нет")
+                print("Данных в таблице нет")
             } else {
-//                var arrayItems = [ProtuctListModel]()
-//                for item in results {
-//                    arrayItems.append(ProtuctListModel(wihtProductListItem: item))
-//                }
+
                 let arrayItems = results.map({ProductListModel(wihtProductListItem: $0)})
                 return arrayItems
             }
@@ -83,6 +80,70 @@ class CoreDataManager {
             try context.save()
         } catch {
             print ("There was an error")
+        }
+    }
+    
+    // MARK: - Core Data WBProduct
+    func saveWBProduct(withUrlProduct url: String) {
+        
+        guard let entity = NSEntityDescription.entity(forEntityName: "WBProductList", in: context) else { return }
+        
+        let newItem = WBProductList(entity: entity, insertInto: context)
+        newItem.wbUrlString = url
+        
+        do {
+            try context.save()
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+    }
+    
+    func loadWbProductFromCoreData() -> [WBProductList] {
+        let fetchRequest: NSFetchRequest<WBProductList> = WBProductList.fetchRequest()
+        
+        do {
+            let results = try context.fetch(fetchRequest)
+            if results.isEmpty {
+                print("Данных в таблице нет")
+            } else {
+                return results
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        return [WBProductList]()
+    }
+    
+    func deleteFromWBProductList(wihtURL url: String) {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "WBProductList")
+        fetchRequest.predicate = NSPredicate(format: "wbUrlString = %@", url)
+
+        do {
+            let results = try context.fetch(fetchRequest)
+            if results.isEmpty {
+                
+            } else {
+                let _ = results.map({context.delete($0 as! NSManagedObject)})
+            }
+        } catch {
+            return
+        }
+    }
+    
+    func checkInListWBProduct(wihtURL url: String) -> Bool {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "WBProductList")
+        fetchRequest.predicate = NSPredicate(format: "wbUrlString = %@", url)
+
+        do {
+            let results = try context.fetch(fetchRequest)
+            if results.isEmpty {
+                return false
+            } else {
+                return true
+            }
+        } catch {
+            return false
         }
     }
 }

@@ -12,6 +12,9 @@ struct ProductListModel: Decodable {
     let name, image: String
     let percent: Int
     let price, sale: Float
+    let rating: Int
+    
+    let url: String?
     
     init(wihtProductListItem item: Favorite) {
         self.id = Int(item.id)
@@ -20,5 +23,18 @@ struct ProductListModel: Decodable {
         self.percent = Int(item.percent) 
         self.price = item.price
         self.sale = item.sale
+        self.rating = 5
+        self.url = ""
+    }
+    
+    init(wihtWBProductListItem item: WBProductModel) {
+        self.id = 1
+        self.name = item.name
+        self.image = item.image
+        self.percent = item.oldPrice != 0 ? 100 - (item.price * 100 / item.oldPrice) : 0
+        self.price = Float(item.oldPrice)
+        self.sale = Float(item.price)
+        self.rating = item.rating
+        self.url = item.url
     }
 }

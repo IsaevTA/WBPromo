@@ -26,6 +26,24 @@ struct ProductModel: Codable {
         case urlWildberies = "link"
         case rating
     }
+    
+    init(wihtWBProductListItem item: WBProductModel) {
+        self.id = 1
+        self.name = item.name
+        self.images = item.gallery
+        self.percent = item.oldPrice != 0 ? 100 - (item.price * 100 / item.oldPrice) : 0
+        self.price = Float(item.oldPrice)
+        self.sale = Float(item.price)
+        self.rating = Float(item.rating)
+        self.urlWildberies = item.url
+        
+        self.available = true
+        self.description = ""
+        self.equipment = [NameValueType]()
+        self.specification = [NameValueType]()
+        self.comments = [Comments]()
+        
+    }
 }
 
 // MARK: - Comments

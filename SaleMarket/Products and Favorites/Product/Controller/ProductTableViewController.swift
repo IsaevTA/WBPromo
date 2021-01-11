@@ -32,6 +32,8 @@ class ProductTableViewController: UITableViewController {
     @IBOutlet weak var favoriteImageButton: UIButton!
     @IBOutlet weak var fovariteTextButton: UIButton!
     
+    @IBOutlet weak var dopStringView: UIView!
+    
     var heightStackView: CGFloat = 0
     var product: ProductModel?
 
@@ -89,10 +91,14 @@ class ProductTableViewController: UITableViewController {
     }
     
     @IBAction func actionFavoriteBUtton(_ sender: UIButton) {
-        if favoriteManager.checkFovarite(withId: product!.id) {
-            favoriteManager.deleteFavorite(wihtId: product!.id)
+//        if favoriteManager.checkFovarite(withId: product!.id) {
+        let favoriteCheck = CoreDataManager.shared.checkInListWBProduct(wihtURL: product!.urlWildberies)
+        if favoriteCheck {
+//            favoriteManager.deleteFavorite(wihtId: product!.id)
+            CoreDataManager.shared.deleteFromWBProductList(wihtURL: product!.urlWildberies)
         } else {
-            favoriteManager.addFavorite(wihtId: product!.id)
+//            favoriteManager.addFavorite(wihtId: product!.id)
+            CoreDataManager.shared.saveWBProduct(withUrlProduct: product!.urlWildberies)
         }
         
         updateFavoriteButton()
@@ -102,7 +108,8 @@ class ProductTableViewController: UITableViewController {
         let starImage = UIImage(named: "heart")
         let starFillImage = UIImage(named: "heartfill")
         
-        let favoriteCheck = favoriteManager.checkFovarite(withId: product!.id)
+        //let favoriteCheck = favoriteManager.checkFovarite(withId: product!.id)
+        let favoriteCheck = CoreDataManager.shared.checkInListWBProduct(wihtURL: product!.urlWildberies)
         if favoriteCheck {
             favoriteImageButton.setImage(starFillImage, for: .normal)
             fovariteTextButton.setTitle("Добавлено в избранное", for: .normal)
@@ -124,21 +131,26 @@ class ProductTableViewController: UITableViewController {
 
         ratingStackView.starsRating = Int(item.rating)
 
-        descriptionLabel.attributedText = setAttributeLineSpacingForLabel(withString: item.description, andSpacing: 4)
-        descriptionLabel.sizeToFit()
-
-        equipmentLabel.attributedText = setAttributeLineSpacingForLabel(withString: convertDictionaryToString(withDictionary: item.equipment), andSpacing: 5)
-        equipmentLabel.sizeToFit()
-
-        specificationLabel.attributedText = setAttributeLineSpacingForLabel(withString: convertDictionaryToString(withDictionary: item.specification), andSpacing: 5)
-        specificationLabel.sizeToFit()
-        
-        commentsStackView.frame.size.height = 0
-        for itemComment in item.comments {
-            commentsStackView.addItem(wihtComment: itemComment)
+        if item.price != 0 {
+            dopStringView.isHidden = false
+        } else {
+            dopStringView.isHidden = true
         }
+//        descriptionLabel.attributedText = setAttributeLineSpacingForLabel(withString: item.description, andSpacing: 4)
+//        descriptionLabel.sizeToFit()
+//
+//        equipmentLabel.attributedText = setAttributeLineSpacingForLabel(withString: convertDictionaryToString(withDictionary: item.equipment), andSpacing: 5)
+//        equipmentLabel.sizeToFit()
+//
+//        specificationLabel.attributedText = setAttributeLineSpacingForLabel(withString: convertDictionaryToString(withDictionary: item.specification), andSpacing: 5)
+//        specificationLabel.sizeToFit()
+//
+//        commentsStackView.frame.size.height = 0
+//        for itemComment in item.comments {
+//            commentsStackView.addItem(wihtComment: itemComment)
+//        }
         
-        heightStackView = commentsStackView.frame.size.height
+//        heightStackView = commentsStackView.frame.size.height
         updateFavoriteButton()
         tableView.reloadData()
     }

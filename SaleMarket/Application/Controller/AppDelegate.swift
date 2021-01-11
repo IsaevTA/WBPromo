@@ -44,6 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        }
         
         if !settingAnalyst.wbInstalled { checkInstallWB() } // Проверка установлено ли приложение на телефоне
+        if !settingAnalyst.firstStart { checkFirstStart() } // Проверка на первый запуск
         
         CoreDataManager.shared.context = (UIApplication.shared.delegate as? AppDelegate)?.coreDataStack.persistentContainer.viewContext
         
@@ -61,6 +62,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
+    private func checkFirstStart() {
+        AppsFlyerLib.shared().logEvent("af_install_app", withValues: ["af_install_app" : true])
+        settingAnalyst.firstStart = true
+    }
+
     func applicationDidBecomeActive(_ application: UIApplication) {
         AppsFlyerLib.shared().start()
     }
