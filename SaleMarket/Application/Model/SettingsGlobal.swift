@@ -8,9 +8,11 @@
 import Foundation
 
 class SettingsGlobal {
-    let shared = SettingsGlobal()
+    static let shared = SettingsGlobal()
     
     let appURL = "SaleMarket://"
     let groupName = "group.SaleMarket"
     let urlDefaultName = "incomingURL"
+    
+    var showNowNews = false
 }

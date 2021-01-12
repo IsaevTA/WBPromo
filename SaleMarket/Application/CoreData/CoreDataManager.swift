@@ -125,6 +125,7 @@ class CoreDataManager {
                 
             } else {
                 let _ = results.map({context.delete($0 as! NSManagedObject)})
+                try context.save()
             }
         } catch {
             return

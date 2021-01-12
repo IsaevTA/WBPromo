@@ -20,28 +20,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-//        let onesignalInitSettings = [kOSSettingsKeyAutoPrompt: false, kOSSettingsKeyInAppLaunchURL: false]
-//        OneSignal.initWithLaunchOptions(launchOptions,
-//                                        appId: settingAnalyst.appId,
-//                                        handleNotificationAction: nil,
-//                                        settings: onesignalInitSettings)
-//
-//        OneSignal.inFocusDisplayType = OSNotificationDisplayType.notification;
-//        OneSignal.promptForPushNotifications(userResponse: { accepted in
-//            print("User accepted notifications: \(accepted)")
-//        })
-//        
-//        AppsFlyerLib.shared().appsFlyerDevKey = settingAnalyst.appsFlyerDevKey
-//        AppsFlyerLib.shared().appleAppID = settingAnalyst.appleAppID
-//        AppsFlyerLib.shared().delegate = self
-//        AppsFlyerLib.shared().isDebug = false
-//        if #available(iOS 10, *) {
-//            UNUserNotificationCenter.current().requestAuthorization(options: [.badge, .alert, .sound]) { _, _ in }
-//            application.registerForRemoteNotifications()
-//        } else {
-//            UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: nil))
-//            UIApplication.shared.registerForRemoteNotifications()
-//        }
+        let onesignalInitSettings = [kOSSettingsKeyAutoPrompt: false, kOSSettingsKeyInAppLaunchURL: false]
+        OneSignal.initWithLaunchOptions(launchOptions,
+                                        appId: settingAnalyst.appId,
+                                        handleNotificationAction: nil,
+                                        settings: onesignalInitSettings)
+
+        OneSignal.inFocusDisplayType = OSNotificationDisplayType.notification;
+        OneSignal.promptForPushNotifications(userResponse: { accepted in
+            print("User accepted notifications: \(accepted)")
+        })
+        
+        AppsFlyerLib.shared().appsFlyerDevKey = settingAnalyst.appsFlyerDevKey
+        AppsFlyerLib.shared().appleAppID = settingAnalyst.appleAppID
+        AppsFlyerLib.shared().delegate = self
+        AppsFlyerLib.shared().isDebug = false
+        if #available(iOS 10, *) {
+            UNUserNotificationCenter.current().requestAuthorization(options: [.badge, .alert, .sound]) { _, _ in }
+            application.registerForRemoteNotifications()
+        } else {
+            UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: nil))
+            UIApplication.shared.registerForRemoteNotifications()
+        }
         
         if !settingAnalyst.wbInstalled { checkInstallWB() } // Проверка установлено ли приложение на телефоне
         if !settingAnalyst.firstStart { checkFirstStart() } // Проверка на первый запуск

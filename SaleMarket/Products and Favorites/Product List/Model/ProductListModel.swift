@@ -28,7 +28,7 @@ struct ProductListModel: Decodable {
     }
     
     init(wihtWBProductListItem item: WBProductModel) {
-        self.id = 1
+        self.id = item.article
         self.name = item.name
         self.image = item.image
         self.percent = item.oldPrice != 0 ? 100 - (item.price * 100 / item.oldPrice) : 0

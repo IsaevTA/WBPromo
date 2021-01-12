@@ -13,9 +13,9 @@ struct WBProductModel: Codable {
     let name: String
     let price: Int
     let availableProduct: String
-    let oldPrice, rating, countReviews: Int
-    let article, description: String
-    let properties, searchWithProduct: [String]
+    let oldPrice, rating, countReviews, article: Int
+    let description: String
+    let properties, searchWithProduct: [String]?
     let image: String
     let gallery: [String]
 

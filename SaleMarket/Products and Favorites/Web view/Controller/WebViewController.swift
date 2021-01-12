@@ -52,6 +52,11 @@ class WebViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        if !SettingsGlobal.shared.showNowNews {
+            self.navigationController?.popViewController(animated: false)
+            self.dismiss(animated: true, completion: nil)
+        }
+        
         tabBarController?.tabBar.isHidden = true
     }
     
@@ -64,7 +69,11 @@ class WebViewController: UIViewController {
     }
     
     private func backController() {
-        navigationController?.popViewController(animated: true)
+        SettingsGlobal.shared.showNowNews = false
+//        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
+//        dismiss(animated: true, completion: nil)
+//        navigationController?.popViewController(animated: true)
     }
 }
 

@@ -26,4 +26,9 @@ class SettingsAnalist {
         get { return UserDefaults.standard.bool(forKey: "WB_FISRT_START") }
         set(newCenter) { UserDefaults.standard.set(newCenter, forKey: "WB_FISRT_START") }
     }
+    
+    var firstStartForHelp: Bool {
+        get { return UserDefaults.standard.bool(forKey: "WB_FISRT_START_FOR_HELP") }
+        set(newCenter) { UserDefaults.standard.set(newCenter, forKey: "WB_FISRT_START_FOR_HELP") }
+    }
 }

@@ -95,6 +95,12 @@
 		CE6CA0802595D3480035304C /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6CA07F2595D3480035304C /* String+.swift */; };
 		CE6CA0872595D7B40035304C /* index-1.html in Resources */ = {isa = PBXBuildFile; fileRef = CE6CA0852595D7B40035304C /* index-1.html */; };
 		CE6CA0882595D7B40035304C /* index-2.html in Resources */ = {isa = PBXBuildFile; fileRef = CE6CA0862595D7B40035304C /* index-2.html */; };
+		CE71C59425AD5680000187A6 /* DefaultNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE71C59325AD5680000187A6 /* DefaultNavigationBar.swift */; };
+		CE71C59925AD568C000187A6 /* DefaultNavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE71C59825AD568C000187A6 /* DefaultNavigationBar.xib */; };
+		CE71C59E25AD5F4F000187A6 /* HelpStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE71C59D25AD5F4F000187A6 /* HelpStoryboard.storyboard */; };
+		CE71C5A325AD601C000187A6 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE71C5A225AD601C000187A6 /* HelpViewController.swift */; };
+		CE71C5B625ADA3DA000187A6 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE71C5B525ADA3DA000187A6 /* EmptyView.swift */; };
+		CE71C5BE25ADA3E2000187A6 /* EmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE71C5BD25ADA3E2000187A6 /* EmptyView.xib */; };
 		CE7B3A912599CA3200482965 /* ProductStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE7B3A902599CA3200482965 /* ProductStoryboard.storyboard */; };
 		CE88A202258A0D7B00092010 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88A201258A0D7B00092010 /* UIImage+.swift */; };
 		CE88A206258A1C5E00092010 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88A205258A1C5E00092010 /* ActivityIndicator.swift */; };
@@ -227,6 +233,12 @@
 		CE6CA07F2595D3480035304C /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		CE6CA0852595D7B40035304C /* index-1.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "index-1.html"; sourceTree = "<group>"; };
 		CE6CA0862595D7B40035304C /* index-2.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "index-2.html"; sourceTree = "<group>"; };
+		CE71C59325AD5680000187A6 /* DefaultNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultNavigationBar.swift; sourceTree = "<group>"; };
+		CE71C59825AD568C000187A6 /* DefaultNavigationBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DefaultNavigationBar.xib; sourceTree = "<group>"; };
+		CE71C59D25AD5F4F000187A6 /* HelpStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HelpStoryboard.storyboard; sourceTree = "<group>"; };
+		CE71C5A225AD601C000187A6 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		CE71C5B525ADA3DA000187A6 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		CE71C5BD25ADA3E2000187A6 /* EmptyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyView.xib; sourceTree = "<group>"; };
 		CE7B3A902599CA3200482965 /* ProductStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProductStoryboard.storyboard; sourceTree = "<group>"; };
 		CE88A201258A0D7B00092010 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		CE88A205258A1C5E00092010 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
@@ -511,6 +523,8 @@
 		0B7EAC7F25A99DC400714D77 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CE71C5B425ADA370000187A6 /* EmptyView */,
+				CE71C59225AD564C000187A6 /* DefaultNavigationBar */,
 				0B7EAC8025A99DC400714D77 /* FavoritesNavigationBar */,
 				0B7EAC8325A99DC400714D77 /* NotFoundView */,
 				0B7EAC8725A99DC400714D77 /* SearchNavigationBar */,
@@ -745,6 +759,7 @@
 		0BC9BF482570C50100445DFC /* Products and Favorites */ = {
 			isa = PBXGroup;
 			children = (
+				CE71C58125AD4D3A000187A6 /* Help */,
 				0B70804725945DC1007A2A69 /* Test view */,
 				0B70803F25945B4F007A2A69 /* Web view */,
 				0B7EAC7225A99DC400714D77 /* Product List */,
@@ -778,6 +793,57 @@
 				CE6CA0862595D7B40035304C /* index-2.html */,
 			);
 			path = WebPages;
+			sourceTree = "<group>";
+		};
+		CE71C58125AD4D3A000187A6 /* Help */ = {
+			isa = PBXGroup;
+			children = (
+				CE71C58425AD4D5C000187A6 /* Modal */,
+				CE71C58325AD4D53000187A6 /* View */,
+				CE71C58225AD4D47000187A6 /* Controller */,
+			);
+			path = Help;
+			sourceTree = "<group>";
+		};
+		CE71C58225AD4D47000187A6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CE71C5A225AD601C000187A6 /* HelpViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CE71C58325AD4D53000187A6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CE71C59D25AD5F4F000187A6 /* HelpStoryboard.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CE71C58425AD4D5C000187A6 /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modal;
+			sourceTree = "<group>";
+		};
+		CE71C59225AD564C000187A6 /* DefaultNavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				CE71C59325AD5680000187A6 /* DefaultNavigationBar.swift */,
+				CE71C59825AD568C000187A6 /* DefaultNavigationBar.xib */,
+			);
+			path = DefaultNavigationBar;
+			sourceTree = "<group>";
+		};
+		CE71C5B425ADA370000187A6 /* EmptyView */ = {
+			isa = PBXGroup;
+			children = (
+				CE71C5B525ADA3DA000187A6 /* EmptyView.swift */,
+				CE71C5BD25ADA3E2000187A6 /* EmptyView.xib */,
+			);
+			path = EmptyView;
 			sourceTree = "<group>";
 		};
 		CE88A200258A0D5400092010 /* Extensions */ = {
@@ -919,6 +985,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE71C59925AD568C000187A6 /* DefaultNavigationBar.xib in Resources */,
 				0B8350342576460700C4C1FA /* Roboto-Bold.ttf in Resources */,
 				0B70804425945B99007A2A69 /* WebViewStoryboard.storyboard in Resources */,
 				0B8350312576460700C4C1FA /* Roboto-LightItalic.ttf in Resources */,
@@ -936,6 +1003,7 @@
 				0B83502B2576460700C4C1FA /* Roboto-Light.ttf in Resources */,
 				0B7EACA425A99DC400714D77 /* ProductListStoryboard.storyboard in Resources */,
 				0B83502D2576460700C4C1FA /* Roboto-MediumItalic.ttf in Resources */,
+				CE71C59E25AD5F4F000187A6 /* HelpStoryboard.storyboard in Resources */,
 				0B8350362576460700C4C1FA /* Roboto-Black.ttf in Resources */,
 				0B7EACA825A99DC400714D77 /* ResultNavigationBar.xib in Resources */,
 				0BC9BF3A2570BFF500445DFC /* LaunchScreen.storyboard in Resources */,
@@ -945,6 +1013,7 @@
 				0BC9BF372570BFF500445DFC /* Assets.xcassets in Resources */,
 				0B7EACA625A99DC400714D77 /* SearchNavigationBar.xib in Resources */,
 				0B8350332576460700C4C1FA /* Roboto-BlackItalic.ttf in Resources */,
+				CE71C5BE25ADA3E2000187A6 /* EmptyView.xib in Resources */,
 				0B7EACAB25A99DC400714D77 /* NewCollectionViewCell.xib in Resources */,
 				CE6CA0872595D7B40035304C /* index-1.html in Resources */,
 				0B83502F2576460700C4C1FA /* Roboto-ThinItalic.ttf in Resources */,
@@ -984,11 +1053,14 @@
 				0B12AF872594A65700144754 /* TestModel.swift in Sources */,
 				0B2FEBF425777C35001EDC8E /* ImageCollectionCell.swift in Sources */,
 				0B7EAC9825A99DC400714D77 /* ProductListViewController+UITableView.swift in Sources */,
+				CE71C59425AD5680000187A6 /* DefaultNavigationBar.swift in Sources */,
 				CE50BA6F25ABFFD000D1D717 /* ResultTestView.swift in Sources */,
 				0B12AFA02594AAF800144754 /* TestView.swift in Sources */,
 				0B771AD0257CAC8D008ADD69 /* CommentView.swift in Sources */,
+				CE71C5B625ADA3DA000187A6 /* EmptyView.swift in Sources */,
 				0B7EACA525A99DC400714D77 /* SearchNavigationBar.swift in Sources */,
 				0B7EACA025A99DC400714D77 /* FavoritesNavigationBar.swift in Sources */,
+				CE71C5A325AD601C000187A6 /* HelpViewController.swift in Sources */,
 				0B7EABEF25A99A6200714D77 /* UIButton+.swift in Sources */,
 				0B2FEBEE2577529A001EDC8E /* ProductNetworkManager.swift in Sources */,
 				CE6CA0802595D3480035304C /* String+.swift in Sources */,
@@ -1073,7 +1145,7 @@
 				CODE_SIGN_ENTITLEMENTS = ShareExtension/ShareExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = XW29RT8E9D;
 				INFOPLIST_FILE = ShareExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1097,7 +1169,7 @@
 				CODE_SIGN_ENTITLEMENTS = ShareExtension/ShareExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = XW29RT8E9D;
 				INFOPLIST_FILE = ShareExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1119,7 +1191,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = XW29RT8E9D;
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1140,7 +1212,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = XW29RT8E9D;
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1282,7 +1354,7 @@
 				CODE_SIGN_ENTITLEMENTS = WBPromo.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = XW29RT8E9D;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1311,7 +1383,7 @@
 				CODE_SIGN_ENTITLEMENTS = WBPromo.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = XW29RT8E9D;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
