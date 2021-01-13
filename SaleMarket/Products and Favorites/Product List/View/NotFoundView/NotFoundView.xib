@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Bold.ttf">
+            <string>Roboto-Bold</string>
+        </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NotFoundView" customModule="SaleMarket" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="85n-UL-BdZ"/>
+                <outlet property="topView" destination="tvS-Yh-YRU" id="Uy0-ll-0DH"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tvS-Yh-YRU">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aft-ZP-MRP">
+                            <rect key="frame" x="20" y="11" width="26.5" height="22"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="26.5" id="0i7-WT-Ics"/>
+                                <constraint firstAttribute="height" constant="22" id="Jo6-Vh-dVZ"/>
+                            </constraints>
+                            <state key="normal" image="backGray"/>
+                            <connections>
+                                <action selector="actionBackToHomeButton:" destination="-1" eventType="touchUpInside" id="c8n-Ae-lvt"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Главная" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sp7-In-Buf">
+                            <rect key="frame" x="58.5" y="13.5" width="54" height="17"/>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
+                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xj8-zM-Q6S">
+                            <rect key="frame" x="120.5" y="0.0" width="245.5" height="44"/>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
+                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AkJ-x0-rsg">
+                            <rect key="frame" x="374" y="12" width="20" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="20" id="K91-nb-6FD"/>
+                                <constraint firstAttribute="height" constant="20" id="xqS-1F-VfC"/>
+                            </constraints>
+                            <state key="normal" image="search"/>
+                        </button>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="7ZF-io-LdG"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="xj8-zM-Q6S" firstAttribute="top" secondItem="tvS-Yh-YRU" secondAttribute="top" id="1hl-tc-tX6"/>
+                        <constraint firstItem="Sp7-In-Buf" firstAttribute="centerY" secondItem="tvS-Yh-YRU" secondAttribute="centerY" id="2of-NY-Lho"/>
+                        <constraint firstItem="AkJ-x0-rsg" firstAttribute="centerY" secondItem="tvS-Yh-YRU" secondAttribute="centerY" id="CUU-xm-8Ep"/>
+                        <constraint firstItem="xj8-zM-Q6S" firstAttribute="centerY" secondItem="Sp7-In-Buf" secondAttribute="centerY" id="IMF-H3-DOU"/>
+                        <constraint firstItem="aft-ZP-MRP" firstAttribute="leading" secondItem="tvS-Yh-YRU" secondAttribute="leading" constant="20" id="cqr-gi-wvg"/>
+                        <constraint firstItem="xj8-zM-Q6S" firstAttribute="leading" secondItem="Sp7-In-Buf" secondAttribute="trailing" constant="8" id="djK-uE-BDQ"/>
+                        <constraint firstAttribute="trailing" secondItem="AkJ-x0-rsg" secondAttribute="trailing" constant="20" id="dnd-zy-8Bt"/>
+                        <constraint firstItem="AkJ-x0-rsg" firstAttribute="leading" secondItem="xj8-zM-Q6S" secondAttribute="trailing" constant="8" id="jdw-WM-hC8"/>
+                        <constraint firstItem="Sp7-In-Buf" firstAttribute="leading" secondItem="aft-ZP-MRP" secondAttribute="trailing" constant="12" id="lHo-pE-0wF"/>
+                        <constraint firstAttribute="bottom" secondItem="xj8-zM-Q6S" secondAttribute="bottom" id="mq6-CJ-jVH"/>
+                        <constraint firstItem="aft-ZP-MRP" firstAttribute="centerY" secondItem="tvS-Yh-YRU" secondAttribute="centerY" id="reG-Oa-2HW"/>
+                        <constraint firstAttribute="height" constant="44" id="zjJ-y8-2kF"/>
+                    </constraints>
+                </view>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notfound" translatesAutoresizingMaskIntoConstraints="NO" id="hTF-n0-88H">
+                    <rect key="frame" x="0.0" y="64" width="414" height="312"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Мы добавляем более 20 Хит-товаров каждый день, возможно настанет его час" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sP5-1c-Afu">
+                    <rect key="frame" x="20" y="396" width="374" height="37.5"/>
+                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i4K-2b-lTV">
+                    <rect key="frame" x="127" y="453.5" width="160" height="40"/>
+                    <color key="backgroundColor" red="0.72549019607843135" green="0.0" blue="0.90980392156862744" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="UXQ-MY-5fa"/>
+                        <constraint firstAttribute="width" constant="160" id="mKR-pm-4yO"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="16"/>
+                    <state key="normal" title="НА ГЛАВНУЮ">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="i4K-2b-lTV" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="5Yq-aR-SbU"/>
+                <constraint firstItem="i4K-2b-lTV" firstAttribute="top" secondItem="sP5-1c-Afu" secondAttribute="bottom" constant="20" id="6OP-oc-Ntn"/>
+                <constraint firstItem="hTF-n0-88H" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Dhl-P3-eFt"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="tvS-Yh-YRU" secondAttribute="trailing" id="HkA-ec-acD"/>
+                <constraint firstItem="tvS-Yh-YRU" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Kbb-Yg-fMT"/>
+                <constraint firstItem="hTF-n0-88H" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="LUc-7L-wgW"/>
+                <constraint firstItem="sP5-1c-Afu" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="PTd-Eo-Ppw"/>
+                <constraint firstItem="tvS-Yh-YRU" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="XgO-3H-fh0"/>
+                <constraint firstItem="hTF-n0-88H" firstAttribute="top" secondItem="tvS-Yh-YRU" secondAttribute="bottom" constant="20" id="hur-LD-IJc"/>
+                <constraint firstItem="sP5-1c-Afu" firstAttribute="top" secondItem="hTF-n0-88H" secondAttribute="bottom" constant="20" id="xqV-Be-sLL"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="sP5-1c-Afu" secondAttribute="trailing" constant="20" id="yty-m4-Ndo"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="131.19999999999999" y="131.33433283358323"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="backGray" width="26.5" height="15"/>
+        <image name="notfound" width="196" height="312"/>
+        <image name="search" width="21" height="21"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

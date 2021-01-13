@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "HelpViewController.viewWillAppear(_:):HelpViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.view.bounds">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "WebViewController.viewWillAppear(_:):WebViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "SettingsGlobal.shared.showNowNews">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ProductListViewController.openNews(notification:):ProductListViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in closure #1 in ProductListViewController.featchDataOutProduct():ProductListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "currentTypeNagigation">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ProductListViewController.viewDidAppear(_:):ProductListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "currentTypeNagigation">
+            </PersistentString>
+            <PersistentString
+               value = "SettingsAnalist.shared.firstStartForHelp">
+            </PersistentString>
+            <PersistentString
+               value = "currentTypeList">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

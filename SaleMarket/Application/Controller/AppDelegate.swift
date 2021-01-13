@@ -128,13 +128,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate: AppsFlyerLibDelegate{
     func onConversionDataSuccess(_ installData: [AnyHashable: Any]) {
         print("onConversionDataSuccess data:")
-        for (key, value) in installData {
-            print(key, ":", value)
-        }
+//        for (key, value) in installData {
+//            print(key, ":", value)
+//        }
 
-        if let idProduct = installData["id_wb_product"] as? Int {
-            NotificationCenter.default.post(name: NSNotification.Name("OpenProduct"), object: nil, userInfo: ["idProduct": idProduct])
-        }
+        AnalyticsManager.shared.featchDeepLinkAppsFlyer(withData: installData)
+//        if let idProduct = installData["id_wb_product"] as? Int {
+//            NotificationCenter.default.post(name: NSNotification.Name("OpenProduct"), object: nil, userInfo: ["idProduct": idProduct])
+//        }
     }
     
     func onConversionDataFail(_ error: Error) {
@@ -143,9 +144,13 @@ extension AppDelegate: AppsFlyerLibDelegate{
     
     func onAppOpenAttribution(_ attributionData: [AnyHashable : Any]) {
         print("onAppOpenAttribution data:")
-        for (key, value) in attributionData {
-            print(key, ":",value)
-        }
+//        for (key, value) in attributionData {
+//            print(key, ":",value)
+//        }
+        AnalyticsManager.shared.featchDeepLinkAppsFlyer(withData: attributionData)
+//        if let idProduct = attributionData["id_wb_product"] as? Int {
+//            NotificationCenter.default.post(name: NSNotification.Name("OpenProduct"), object: nil, userInfo: ["idProduct": idProduct])
+//        }
     }
     
     func onAppOpenAttributionFailure(_ error: Error) {

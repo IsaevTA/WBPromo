@@ -2,7 +2,7 @@
 //  HelpViewController.swift
 //  SaleMarket
 //
-//  Created by UserDev on 12.01.2021.
+//  Created by Timur Isaev on 12.01.2021.
 //
 
 import UIKit
@@ -17,9 +17,6 @@ class HelpViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-//        scrollView.contentSize = CGSize(width: self.view.bounds.size.width, height: self.view.bounds.size.height + 200)
-        
         tabBarController?.tabBar.isHidden = true
     }
     
