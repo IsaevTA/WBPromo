@@ -130,7 +130,7 @@ class ProductViewController: UIViewController {
                 let appUrl = URL(string: appScheme)
 
                 //Открытие в приложении
-                if UIApplication.shared.canOpenURL(appUrl! as URL){
+                if UIApplication.shared.canOpenURL(appUrl! as URL) {
                     //Открываем сылку или в приложении или в safari
                     AppsFlyerLib.shared().logEvent("af_wb_button_pressed", withValues: ["af_wb_button_pressed" : 1])
                     UIApplication.shared.open(appUrl!)

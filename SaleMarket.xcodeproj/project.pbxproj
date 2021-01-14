@@ -106,6 +106,7 @@
 		CE88A206258A1C5E00092010 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88A205258A1C5E00092010 /* ActivityIndicator.swift */; };
 		CE8FADD4258B0F8100D00CC5 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8FADD3258B0F8100D00CC5 /* UIViewController+.swift */; };
 		CEA31165259B294100546D5E /* ProductWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA31164259B294100546D5E /* ProductWebViewController.swift */; };
+		CEAC7A3225B05E5000662260 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = CEAC7A3125B05E5000662260 /* Charts */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +137,16 @@
 				0B7B9846257E1193005D504C /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEAC7A1B25B052FE00662260 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -266,6 +277,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEAC7A3225B05E5000662260 /* Charts in Frameworks */,
 				CE4887C92587175B0023D5B8 /* NVActivityIndicatorView in Frameworks */,
 				0BA94BD62574B49400A94DB1 /* OneSignal in Frameworks */,
 				0BF0B3EF257E8A48000B0CAB /* AppsFlyerLib.framework in Frameworks */,
@@ -906,6 +918,7 @@
 				0BC9BF272570BFF200445DFC /* Frameworks */,
 				0BC9BF282570BFF200445DFC /* Resources */,
 				0B7B984A257E1193005D504C /* Embed App Extensions */,
+				CEAC7A1B25B052FE00662260 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -917,6 +930,7 @@
 			packageProductDependencies = (
 				0BA94BD52574B49400A94DB1 /* OneSignal */,
 				CE4887C82587175B0023D5B8 /* NVActivityIndicatorView */,
+				CEAC7A3125B05E5000662260 /* Charts */,
 			);
 			productName = WBPromo;
 			productReference = 0BC9BF2A2570BFF200445DFC /* SaleMarket.app */;
@@ -954,6 +968,7 @@
 			packageReferences = (
 				0BA94BD42574B49400A94DB1 /* XCRemoteSwiftPackageReference "OneSignal-iOS-SDK" */,
 				CE4887C72587175B0023D5B8 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
+				CEAC7A3025B05E5000662260 /* XCRemoteSwiftPackageReference "Charts" */,
 			);
 			productRefGroup = 0BC9BF2B2570BFF200445DFC /* Products */;
 			projectDirPath = "";
@@ -1461,6 +1476,14 @@
 				minimumVersion = 5.1.1;
 			};
 		};
+		CEAC7A3025B05E5000662260 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts.git";
+			requirement = {
+				kind = exactVersion;
+				version = 3.6.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1478,6 +1501,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CE4887C72587175B0023D5B8 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
 			productName = NVActivityIndicatorView;
+		};
+		CEAC7A3125B05E5000662260 /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CEAC7A3025B05E5000662260 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = Charts;
 		};
 /* End XCSwiftPackageProductDependency section */
 

@@ -200,11 +200,11 @@ class ProductTableViewController: UITableViewController {
 //        constraint.constant = currentTag ? 0 : 30
         button.isEnabled = !currentTag
         button.sizeToFit()
+        label.sizeToFit()
         
         if showHideTag {
             return currentTag ? 87 : 135
         } else {
-            label.sizeToFit()
             return CGFloat(97) + label.frame.size.height
         }
     }
