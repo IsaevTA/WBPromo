@@ -7,6 +7,7 @@
 
 import UIKit
 import NVActivityIndicatorView
+import Charts
 
 class ProductListViewController: UIViewController {
 
@@ -22,7 +23,7 @@ class ProductListViewController: UIViewController {
         case fire = 1
         case favorite = 2
     }
-    
+
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var topViewConstraint: NSLayoutConstraint!
@@ -46,6 +47,10 @@ class ProductListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Настройки для ячеек
+        tableView.estimatedRowHeight = 180.0
+        tableView.rowHeight = UITableView.automaticDimension
+        
         activityIndicator = createActivitiIndicator(view: self.view, viewCenter: self.view.center, widhtHeight: 100, typeActivity: .ballPulse, color: UIColor(red: 0.491, green: 0, blue: 0.722, alpha: 1))
         activityIndicator.startAnimating()
         
@@ -53,6 +58,7 @@ class ProductListViewController: UIViewController {
     
         NotificationCenter.default.addObserver(self, selector: #selector(openProduct(notification:)), name: NSNotification.Name(rawValue: "OpenProduct"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(openNews(notification:)), name: NSNotification.Name(rawValue: "OpenNews"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateTableWB), name: NSNotification.Name(rawValue: "UpdateTableWB"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateTable), name: NSNotification.Name(rawValue: "UpdateTable"), object: nil)
     }
     
@@ -117,9 +123,13 @@ class ProductListViewController: UIViewController {
         }
     }
     
-    @objc func updateTable() {
+    @objc func updateTableWB() {
         featchDataWBProduct()
         tabBarController?.selectedIndex = SelectedTab.home.rawValue
+    }
+    
+    @objc func updateTable() {
+        tableView.reloadData()
     }
     
     private func setConstraintAndReturnRect(wihtHeight height: Int) -> CGRect {

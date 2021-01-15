@@ -68,7 +68,7 @@ class TabBarViewController: UITabBarController {
             CoreDataManager.shared.saveWBProduct(withUrlProduct: url)
             UserDefaults(suiteName: groupName)?.set(nil, forKey: self.wbProductUrl)
             UserDefaults(suiteName: groupName)?.removeObject(forKey: self.wbProductUrl)
-            NotificationCenter.default.post(name: NSNotification.Name("UpdateTable"), object: nil)
+            NotificationCenter.default.post(name: NSNotification.Name("UpdateTableWB"), object: nil)
         }
     }
     

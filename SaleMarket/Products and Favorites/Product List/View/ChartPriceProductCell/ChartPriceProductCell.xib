@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Bold.ttf">
+            <string>Roboto-Bold</string>
+        </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChartPriceProductCell" customModule="SaleMarket" customModuleProvider="target">
+            <connections>
+                <outlet property="chartView" destination="5Mn-Vn-n68" id="vCG-eF-VtP"/>
+                <outlet property="contentView" destination="xCc-st-Wu1" id="1XC-Cv-Lbd"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="xCc-st-Wu1">
+            <rect key="frame" x="0.0" y="0.0" width="476" height="302"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z7K-sl-aZf">
+                    <rect key="frame" x="10" y="74" width="456" height="40"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7Xj-ka-LOh">
+                            <rect key="frame" x="222" y="2.5" width="224" height="35.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2755,00 руб." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="foB-lG-5mm">
+                                    <rect key="frame" x="0.0" y="0.0" width="224" height="19"/>
+                                    <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="16"/>
+                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15 декабря 2020 - 15 января 2021 " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rPk-lf-xuO">
+                                    <rect key="frame" x="0.0" y="19" width="224" height="16.5"/>
+                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
+                                    <color key="textColor" red="0.48627450979999998" green="0.48627450979999998" blue="0.48627450979999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="7Xj-ka-LOh" secondAttribute="trailing" constant="10" id="AhD-Qa-tDd"/>
+                        <constraint firstItem="7Xj-ka-LOh" firstAttribute="centerY" secondItem="z7K-sl-aZf" secondAttribute="centerY" id="cXl-dL-1Vh"/>
+                        <constraint firstAttribute="height" constant="40" id="rkJ-zA-ctO"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Mn-Vn-n68" customClass="BarChartView" customModule="Charts">
+                    <rect key="frame" x="10" y="119" width="456" height="99"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ttH-nP-PWc">
+                    <rect key="frame" x="10" y="44" width="456" height="20"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Hvb-Ma-ybL">
+                            <rect key="frame" x="146" y="0.5" width="164.5" height="19"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Цена упала:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJ8-XZ-qed">
+                                    <rect key="frame" x="0.0" y="0.0" width="78.5" height="19"/>
+                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
+                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-2300 руб." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jrb-4d-I27">
+                                    <rect key="frame" x="86.5" y="0.0" width="78" height="19"/>
+                                    <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="Hvb-Ma-ybL" firstAttribute="centerX" secondItem="ttH-nP-PWc" secondAttribute="centerX" id="0os-OJ-5GK"/>
+                        <constraint firstItem="Hvb-Ma-ybL" firstAttribute="centerY" secondItem="ttH-nP-PWc" secondAttribute="centerY" id="LLi-at-Buh"/>
+                        <constraint firstAttribute="height" constant="20" id="uzK-Cg-rg2"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rfT-B7-VPt">
+                    <rect key="frame" x="10" y="228" width="456" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="UC7-W8-lZH"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
+                    <state key="normal" title="  СВЕРНУТЬ" image="hide">
+                        <color key="titleColor" red="0.72549019609999998" green="0.0" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="actionHideChartButton:" destination="-1" eventType="touchUpInside" id="yEi-Kd-IUU"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="Dvi-07-PHR"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="ttH-nP-PWc" firstAttribute="leading" secondItem="Dvi-07-PHR" secondAttribute="leading" constant="10" id="2A6-Ma-mkN"/>
+                <constraint firstItem="Dvi-07-PHR" firstAttribute="trailing" secondItem="ttH-nP-PWc" secondAttribute="trailing" constant="10" id="4kb-CF-9Dg"/>
+                <constraint firstItem="Dvi-07-PHR" firstAttribute="trailing" secondItem="5Mn-Vn-n68" secondAttribute="trailing" constant="10" id="9Pf-mG-O5Q"/>
+                <constraint firstItem="z7K-sl-aZf" firstAttribute="top" secondItem="ttH-nP-PWc" secondAttribute="bottom" constant="10" id="B5Z-lD-24I"/>
+                <constraint firstItem="rfT-B7-VPt" firstAttribute="top" secondItem="5Mn-Vn-n68" secondAttribute="bottom" constant="10" id="BIy-Oe-fue"/>
+                <constraint firstItem="Dvi-07-PHR" firstAttribute="trailing" secondItem="z7K-sl-aZf" secondAttribute="trailing" constant="10" id="G17-8T-l2y"/>
+                <constraint firstItem="Dvi-07-PHR" firstAttribute="trailing" secondItem="rfT-B7-VPt" secondAttribute="trailing" constant="10" id="LMx-tS-Qyw"/>
+                <constraint firstItem="ttH-nP-PWc" firstAttribute="top" secondItem="Dvi-07-PHR" secondAttribute="top" id="YAs-Ff-ixQ"/>
+                <constraint firstItem="5Mn-Vn-n68" firstAttribute="top" secondItem="z7K-sl-aZf" secondAttribute="bottom" constant="5" id="YU8-Kw-8WN"/>
+                <constraint firstItem="z7K-sl-aZf" firstAttribute="leading" secondItem="Dvi-07-PHR" secondAttribute="leading" constant="10" id="l0A-No-tPv"/>
+                <constraint firstItem="5Mn-Vn-n68" firstAttribute="leading" secondItem="Dvi-07-PHR" secondAttribute="leading" constant="10" id="lGO-Jw-SrJ"/>
+                <constraint firstItem="rfT-B7-VPt" firstAttribute="leading" secondItem="Dvi-07-PHR" secondAttribute="leading" constant="10" id="tNO-us-dqN"/>
+                <constraint firstItem="Dvi-07-PHR" firstAttribute="bottom" secondItem="rfT-B7-VPt" secondAttribute="bottom" constant="10" id="xAe-hF-PB6"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="114.49275362318842" y="-1181.25"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="hide" width="15" height="9"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

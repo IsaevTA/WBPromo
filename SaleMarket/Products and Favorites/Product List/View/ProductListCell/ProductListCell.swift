@@ -10,6 +10,9 @@ import NVActivityIndicatorView
 
 class ProductListCell: UITableViewCell {
 
+    @IBOutlet weak var chartView: UIView!
+    @IBOutlet weak var heighChartView: NSLayoutConstraint!
+    
     @IBOutlet weak var viewCell: UIView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
@@ -19,8 +22,9 @@ class ProductListCell: UITableViewCell {
     @IBOutlet weak var favoritesImage: UIImageView!
     @IBOutlet weak var ratingStackView: RatingStackView!
     
+    var showChartPriceBool = false
     var activityIndicator: NVActivityIndicatorView!
-    
+
     func configure(with itemCell: ProductListModel) {
         
         if self.activityIndicator == nil {
@@ -60,9 +64,50 @@ class ProductListCell: UITableViewCell {
 //        } else {
 //            self.favoritesImage.image = UIImage.returnImageStar()
 //        }
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(closeChart), name: NSNotification.Name(rawValue: "CloseChartView"), object: nil)
     }
 
+    @IBAction func actionShowChartButton(_ sender: UIButton) {
+        showChartPriceBool = !showChartPriceBool
+        updateUIChart()
+    }
+
+    @objc func closeChart() {
+        updateUIChart()
+    }
+    
+    private func updateUIChart() {
+        
+        if showChartPriceBool {
+            showChartView()
+        } else {
+            chartView.removeAllSubView()
+            heighChartView.constant = 0
+        }
+        
+        NotificationCenter.default.post(name: NSNotification.Name("UpdateTable"), object: nil)
+    }
+    
     private func getFormattMoney(withNUmber number: Float) -> String {
         return "\(number) руб."
     }
+    
+    private func setConstraintAndReturnRect() -> CGRect {
+        var height: CGFloat = 0
+        if showChartPriceBool {
+            height = 240
+        }
+        
+        heighChartView.constant = height
+        let rect = CGRect(x: 0, y: 0, width: chartView.frame.size.width, height: CGFloat(height))
+        
+        return rect
+    }
+    
+    private func showChartView() {
+        let view = ChartPriceProductCell(frame: setConstraintAndReturnRect(), cell: self)
+        chartView.addSubview(view)
+    }
 }
+

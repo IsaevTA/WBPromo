@@ -3,10 +3,10 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "HelpViewController.viewWillAppear(_:):HelpViewController.swift">
+         contextName = "closure #1 in closure #1 in ProductListViewController.featchDataOutProduct():ProductListViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self.view.bounds">
+               value = "currentTypeNagigation">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -19,13 +19,21 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "ProductListViewController.tableView(_:heightForRowAt:):ProductListViewController+UITableView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "cell.showChartPriceBool">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "ProductListViewController.openNews(notification:):ProductListViewController.swift">
       </ContextState>
       <ContextState
-         contextName = "closure #1 in closure #1 in ProductListViewController.featchDataOutProduct():ProductListViewController.swift">
+         contextName = "HelpViewController.viewWillAppear(_:):HelpViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "currentTypeNagigation">
+               value = "self.view.bounds">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -36,10 +44,21 @@
                value = "currentTypeNagigation">
             </PersistentString>
             <PersistentString
-               value = "SettingsAnalist.shared.firstStartForHelp">
+               value = "currentTypeList">
             </PersistentString>
             <PersistentString
-               value = "currentTypeList">
+               value = "SettingsAnalist.shared.firstStartForHelp">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ProductListCell.setData():ProductListCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "set1.stackLabels">
+            </PersistentString>
+            <PersistentString
+               value = "set1.label">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

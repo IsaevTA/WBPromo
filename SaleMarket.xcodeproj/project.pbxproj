@@ -101,12 +101,15 @@
 		CE71C5A325AD601C000187A6 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE71C5A225AD601C000187A6 /* HelpViewController.swift */; };
 		CE71C5B625ADA3DA000187A6 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE71C5B525ADA3DA000187A6 /* EmptyView.swift */; };
 		CE71C5BE25ADA3E2000187A6 /* EmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE71C5BD25ADA3E2000187A6 /* EmptyView.xib */; };
+		CE7A9D9725B186C800E82855 /* ChartPriceProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE7A9D9625B186C800E82855 /* ChartPriceProductCell.xib */; };
+		CE7A9D9B25B1890100E82855 /* ChartPriceProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7A9D9A25B1890100E82855 /* ChartPriceProductCell.swift */; };
 		CE7B3A912599CA3200482965 /* ProductStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE7B3A902599CA3200482965 /* ProductStoryboard.storyboard */; };
 		CE88A202258A0D7B00092010 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88A201258A0D7B00092010 /* UIImage+.swift */; };
 		CE88A206258A1C5E00092010 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88A205258A1C5E00092010 /* ActivityIndicator.swift */; };
 		CE8FADD4258B0F8100D00CC5 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8FADD3258B0F8100D00CC5 /* UIViewController+.swift */; };
 		CEA31165259B294100546D5E /* ProductWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA31164259B294100546D5E /* ProductWebViewController.swift */; };
 		CEAC7A3225B05E5000662260 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = CEAC7A3125B05E5000662260 /* Charts */; };
+		CEAC7A3725B066A300662260 /* TinyConstraints in Frameworks */ = {isa = PBXBuildFile; productRef = CEAC7A3625B066A300662260 /* TinyConstraints */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -250,6 +253,8 @@
 		CE71C5A225AD601C000187A6 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		CE71C5B525ADA3DA000187A6 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		CE71C5BD25ADA3E2000187A6 /* EmptyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyView.xib; sourceTree = "<group>"; };
+		CE7A9D9625B186C800E82855 /* ChartPriceProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChartPriceProductCell.xib; sourceTree = "<group>"; };
+		CE7A9D9A25B1890100E82855 /* ChartPriceProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartPriceProductCell.swift; sourceTree = "<group>"; };
 		CE7B3A902599CA3200482965 /* ProductStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProductStoryboard.storyboard; sourceTree = "<group>"; };
 		CE88A201258A0D7B00092010 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		CE88A205258A1C5E00092010 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
@@ -282,6 +287,7 @@
 				0BA94BD62574B49400A94DB1 /* OneSignal in Frameworks */,
 				0BF0B3EF257E8A48000B0CAB /* AppsFlyerLib.framework in Frameworks */,
 				0BA94BC72574B11400A94DB1 /* iAd.framework in Frameworks */,
+				CEAC7A3725B066A300662260 /* TinyConstraints in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -535,6 +541,7 @@
 		0B7EAC7F25A99DC400714D77 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CE7A9D9325B186A000E82855 /* ChartPriceProductCell */,
 				CE71C5B425ADA370000187A6 /* EmptyView */,
 				CE71C59225AD564C000187A6 /* DefaultNavigationBar */,
 				0B7EAC8025A99DC400714D77 /* FavoritesNavigationBar */,
@@ -858,6 +865,15 @@
 			path = EmptyView;
 			sourceTree = "<group>";
 		};
+		CE7A9D9325B186A000E82855 /* ChartPriceProductCell */ = {
+			isa = PBXGroup;
+			children = (
+				CE7A9D9625B186C800E82855 /* ChartPriceProductCell.xib */,
+				CE7A9D9A25B1890100E82855 /* ChartPriceProductCell.swift */,
+			);
+			path = ChartPriceProductCell;
+			sourceTree = "<group>";
+		};
 		CE88A200258A0D5400092010 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -931,6 +947,7 @@
 				0BA94BD52574B49400A94DB1 /* OneSignal */,
 				CE4887C82587175B0023D5B8 /* NVActivityIndicatorView */,
 				CEAC7A3125B05E5000662260 /* Charts */,
+				CEAC7A3625B066A300662260 /* TinyConstraints */,
 			);
 			productName = WBPromo;
 			productReference = 0BC9BF2A2570BFF200445DFC /* SaleMarket.app */;
@@ -969,6 +986,7 @@
 				0BA94BD42574B49400A94DB1 /* XCRemoteSwiftPackageReference "OneSignal-iOS-SDK" */,
 				CE4887C72587175B0023D5B8 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
 				CEAC7A3025B05E5000662260 /* XCRemoteSwiftPackageReference "Charts" */,
+				CEAC7A3525B066A300662260 /* XCRemoteSwiftPackageReference "TinyConstraints" */,
 			);
 			productRefGroup = 0BC9BF2B2570BFF200445DFC /* Products */;
 			projectDirPath = "";
@@ -1035,6 +1053,7 @@
 				0B7EACAE25A99DC400714D77 /* ProductListCell.xib in Resources */,
 				0BC9BF352570BFF200445DFC /* Main.storyboard in Resources */,
 				CE7B3A912599CA3200482965 /* ProductStoryboard.storyboard in Resources */,
+				CE7A9D9725B186C800E82855 /* ChartPriceProductCell.xib in Resources */,
 				0B83502A2576460700C4C1FA /* Roboto-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1115,6 +1134,7 @@
 				0B12AFA62594ABB400144754 /* TestTableViewCell.swift in Sources */,
 				0B70803A25944EEC007A2A69 /* WebViewController.swift in Sources */,
 				0B7EACA225A99DC400714D77 /* NotFoundView.swift in Sources */,
+				CE7A9D9B25B1890100E82855 /* ChartPriceProductCell.swift in Sources */,
 				0B771AD3257CB5F1008ADD69 /* CommentStackView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1484,6 +1504,14 @@
 				version = 3.6.0;
 			};
 		};
+		CEAC7A3525B066A300662260 /* XCRemoteSwiftPackageReference "TinyConstraints" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/roberthein/TinyConstraints.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1506,6 +1534,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CEAC7A3025B05E5000662260 /* XCRemoteSwiftPackageReference "Charts" */;
 			productName = Charts;
+		};
+		CEAC7A3625B066A300662260 /* TinyConstraints */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CEAC7A3525B066A300662260 /* XCRemoteSwiftPackageReference "TinyConstraints" */;
+			productName = TinyConstraints;
 		};
 /* End XCSwiftPackageProductDependency section */
 
