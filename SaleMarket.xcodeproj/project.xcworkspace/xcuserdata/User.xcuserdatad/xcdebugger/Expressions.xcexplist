@@ -3,18 +3,26 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "closure #1 in closure #1 in ProductListViewController.featchDataOutProduct():ProductListViewController.swift">
+         contextName = "closure #1 in CoreDataManager.saveProductList(withProductItem:):CoreDataManager+ProductList.swift">
          <PersistentStrings>
             <PersistentString
-               value = "currentTypeNagigation">
+               value = "item">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "WebViewController.viewWillAppear(_:):WebViewController.swift">
+         contextName = "HelpViewController.viewWillAppear(_:):HelpViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "SettingsGlobal.shared.showNowNews">
+               value = "self.view.bounds">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ProductListViewController.featchDataWBProduct():ProductListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "productListArrayVisable.count">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -27,27 +35,16 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "ProductListViewController.openNews(notification:):ProductListViewController.swift">
-      </ContextState>
-      <ContextState
-         contextName = "HelpViewController.viewWillAppear(_:):HelpViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.view.bounds">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "ProductListViewController.viewDidAppear(_:):ProductListViewController.swift">
          <PersistentStrings>
             <PersistentString
                value = "currentTypeNagigation">
             </PersistentString>
             <PersistentString
-               value = "currentTypeList">
+               value = "SettingsAnalist.shared.firstStartForHelp">
             </PersistentString>
             <PersistentString
-               value = "SettingsAnalist.shared.firstStartForHelp">
+               value = "currentTypeList">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -59,6 +56,49 @@
             </PersistentString>
             <PersistentString
                value = "set1.label">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ProductListModel.init(wihtProductListItem:):ProductListModel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "item.productList">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in closure #1 in ProductListViewController.featchDataOutProduct():ProductListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "currentTypeNagigation">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ProductListViewController.openNews(notification:):ProductListViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ProductListViewController.showEmptyView():ProductListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.tableView.frame">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in closure #1 in ProductListViewController.updateWBProductList():ProductListViewController+UITableView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.wbProdictList">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "WebViewController.viewWillAppear(_:):WebViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "SettingsGlobal.shared.showNowNews">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

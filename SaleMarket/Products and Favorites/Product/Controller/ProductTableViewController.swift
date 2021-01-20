@@ -91,14 +91,11 @@ class ProductTableViewController: UITableViewController {
     }
     
     @IBAction func actionFavoriteBUtton(_ sender: UIButton) {
-//        if favoriteManager.checkFovarite(withId: product!.id) {
-        let favoriteCheck = CoreDataManager.shared.checkInListWBProduct(wihtURL: product!.urlWildberies)
+        let favoriteCheck = CoreDataManager.shared.checkInProductList(wihtURL: product!.urlWildberies)
         if favoriteCheck {
-//            favoriteManager.deleteFavorite(wihtId: product!.id)
-            CoreDataManager.shared.deleteFromWBProductList(wihtURL: product!.urlWildberies)
+            CoreDataManager.shared.deleteFromProductList(wihtURL: product!.urlWildberies)
         } else {
-//            favoriteManager.addFavorite(wihtId: product!.id)
-            CoreDataManager.shared.saveWBProduct(withUrlProduct: product!.urlWildberies)
+            CoreDataManager.shared.saveProductList(withUrlProduct: product!.urlWildberies, updateUI: false)
         }
         
         updateFavoriteButton()
@@ -107,9 +104,8 @@ class ProductTableViewController: UITableViewController {
     private func updateFavoriteButton() {
         let starImage = UIImage(named: "heart")
         let starFillImage = UIImage(named: "heartfill")
-        
-        //let favoriteCheck = favoriteManager.checkFovarite(withId: product!.id)
-        let favoriteCheck = CoreDataManager.shared.checkInListWBProduct(wihtURL: product!.urlWildberies)
+
+        let favoriteCheck = CoreDataManager.shared.checkInProductList(wihtURL: product!.urlWildberies)
         if favoriteCheck {
             favoriteImageButton.setImage(starFillImage, for: .normal)
             fovariteTextButton.setTitle("Добавлено в избранное", for: .normal)

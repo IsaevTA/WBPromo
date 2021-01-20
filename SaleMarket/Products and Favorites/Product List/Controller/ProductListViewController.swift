@@ -24,6 +24,8 @@ class ProductListViewController: UIViewController {
         case favorite = 2
     }
 
+    let coreDataManager = CoreDataManager.shared
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var topViewConstraint: NSLayoutConstraint!
@@ -33,7 +35,15 @@ class ProductListViewController: UIViewController {
     var activityIndicator: NVActivityIndicatorView!
     var wbProdictList = [ProductListModel]()
     var productListArray = [ProductListModel]()
-    var productListArrayVisable = [ProductListModel]()
+    var productListArrayVisable = [ProductListModel]()  {
+        didSet {
+            hideEmptyView()
+            if productListArrayVisable.count == 0 {
+                showEmptyView()
+            }
+        }
+    }
+    
     var openProductIndex = -1
     var imageLoader = ImageLoader()
     
@@ -41,8 +51,9 @@ class ProductListViewController: UIViewController {
     var currentTypeList: SelectedTab = .home
     
     var searchText = ""
-    
     var currentNews: NewsModel?
+    
+    var firstStartApp = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,7 +66,7 @@ class ProductListViewController: UIViewController {
         activityIndicator.startAnimating()
         
         createNewsView()
-    
+        
         NotificationCenter.default.addObserver(self, selector: #selector(openProduct(notification:)), name: NSNotification.Name(rawValue: "OpenProduct"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(openNews(notification:)), name: NSNotification.Name(rawValue: "OpenNews"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateTableWB), name: NSNotification.Name(rawValue: "UpdateTableWB"), object: nil)
@@ -91,12 +102,8 @@ class ProductListViewController: UIViewController {
         }
         
         updataNavigationBar()
-        //featchData(wihtTypeList: currentTypeNagigation)
-        if currentTypeList == .home {
-            featchDataWBProduct()
-        } else {
-            featchDataOutProduct()
-        }
+
+        updateTable()
         
         if !SettingsAnalist.shared.firstStartForHelp {
             self.performSegue(withIdentifier: "showHelp", sender: self)
@@ -124,12 +131,16 @@ class ProductListViewController: UIViewController {
     }
     
     @objc func updateTableWB() {
-        featchDataWBProduct()
         tabBarController?.selectedIndex = SelectedTab.home.rawValue
+        featchDataWBProduct()
     }
     
     @objc func updateTable() {
-        tableView.reloadData()
+        if currentTypeList == .home {
+            featchDataWBProduct()
+        } else {
+            featchDataOutProduct()
+        }
     }
     
     private func setConstraintAndReturnRect(wihtHeight height: Int) -> CGRect {
@@ -163,7 +174,7 @@ class ProductListViewController: UIViewController {
             let starImage = UIImage(systemName: "info.circle")
             view.leftButton.setImage(starImage, for: .normal)
             view.delegate = self
-
+            
             topView.addSubview(view)
             showAndHideNewsView(hide: false)
         } else {
@@ -227,31 +238,14 @@ class ProductListViewController: UIViewController {
     }
     
     private func featchDataWBProduct() {
-        ProductListNetworkManager.featchWBProductList { (productArray) in
-            guard let productArray = productArray else {
-                self.showAlert(withTitle: "Ошибка", withMessage: "Ошибка при получении данных. Повторите попытку позже.")
-                self.activityIndicator.stopAnimating()
-                return
-            }
-            
-            DispatchQueue.main.async { [unowned self] in
-                
-                if productArray.count != 0 {
-                    hideEmptyView()
-                    self.wbProdictList = productArray.sorted(by: { $0.name < $1.name })
-                    productListArray = self.wbProdictList
-                    productListArrayVisable = productListArray
-                    tableView.reloadData()
-                } else {
-                    showEmptyView()
-                }
-                
-                self.activityIndicator.stopAnimating()
-            }
-        }
+
+        productListArrayVisable = coreDataManager.loadProductListFromCoreData()
+        tableView.reloadData()
+
+        self.activityIndicator.stopAnimating()
     }
+
     // MARK: - Segues
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showProduct" {
             if openProductIndex == -1 {
@@ -259,7 +253,7 @@ class ProductListViewController: UIViewController {
                     let product = productListArrayVisable[indexPath.row]
                     let detailViewController = segue.destination as! ProductViewController
                     detailViewController.idProduct = product.id
-                    detailViewController.urlProduct = product.url
+                    detailViewController.urlProduct = product.externalLink
                 }
             } else {
                 let detailViewController = segue.destination as! ProductViewController
@@ -316,12 +310,19 @@ class ProductListViewController: UIViewController {
         }
     }
     
-    private func showEmptyView() {
-        let view = EmptyView(frame: self.tableView.frame)
+    func showEmptyView() {
+        var ot: CGFloat = 0.0
+        if firstStartApp {
+            ot = 44.0
+            firstStartApp = false
+        }
+        
+        let rect = CGRect(x: 0, y: self.tableView.frame.origin.y + ot, width: self.tableView.frame.size.width, height: self.tableView.frame.size.height - ot)
+        let view = EmptyView(frame: rect)
         self.view.addSubview(view)
     }
 
-    private func hideEmptyView() {
+    func hideEmptyView() {
         let notFoundViews = self.view.subviews.filter{$0 is EmptyView}
         for view in notFoundViews {
             view.removeFromSuperview()

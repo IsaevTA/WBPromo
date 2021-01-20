@@ -39,6 +39,11 @@
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Приложение использует ваш Location для повышение точности взаимодействия SDK с нашим приложением</string>
 	<key>UIAppFonts</key>

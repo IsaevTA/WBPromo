@@ -21,11 +21,15 @@ class ProductListCell: UITableViewCell {
     @IBOutlet weak var percentLabel: UILabel!
     @IBOutlet weak var favoritesImage: UIImageView!
     @IBOutlet weak var ratingStackView: RatingStackView!
+    @IBOutlet weak var showHistoryButton: UIButton!
     
     var showChartPriceBool = false
     var activityIndicator: NVActivityIndicatorView!
 
+    var currentItem: ProductListModel?
+    
     func configure(with itemCell: ProductListModel) {
+        currentItem = itemCell
         
         if self.activityIndicator == nil {
             self.activityIndicator = createActivitiIndicator(view: self, viewCenter: self.imagePromoView.center, widhtHeight: 20, typeActivity: .ballClipRotateMultiple, color: UIColor(red: 0.491, green: 0, blue: 0.722, alpha: 1))
@@ -64,6 +68,12 @@ class ProductListCell: UITableViewCell {
 //        } else {
 //            self.favoritesImage.image = UIImage.returnImageStar()
 //        }
+        
+        if itemCell.history == nil {
+            showHistoryButton.isHidden = true
+        } else {
+            showHistoryButton.isHidden = false
+        }
         
         NotificationCenter.default.addObserver(self, selector: #selector(closeChart), name: NSNotification.Name(rawValue: "CloseChartView"), object: nil)
     }

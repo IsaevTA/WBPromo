@@ -22,6 +22,8 @@ class TabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        CoreDataManager.shared.updateAllItems()
+        
         setupNotification()
         setupCenterButton()
     }
@@ -65,10 +67,11 @@ class TabBarViewController: UITabBarController {
     @objc func setUrl() {
         if let url = UserDefaults(suiteName: self.groupName)?.value(forKey: self.wbProductUrl) as? String {
             print("setUrl - \(url)")
-            CoreDataManager.shared.saveWBProduct(withUrlProduct: url)
+//            CoreDataManager.shared.saveWBProduct(withUrlProduct: url)
+            CoreDataManager.shared.saveProductList(withUrlProduct: url, updateUI: true)
             UserDefaults(suiteName: groupName)?.set(nil, forKey: self.wbProductUrl)
             UserDefaults(suiteName: groupName)?.removeObject(forKey: self.wbProductUrl)
-            NotificationCenter.default.post(name: NSNotification.Name("UpdateTableWB"), object: nil)
+            //NotificationCenter.default.post(name: NSNotification.Name("UpdateTableWB"), object: nil)
         }
     }
     

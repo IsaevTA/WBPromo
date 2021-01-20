@@ -20,14 +20,18 @@ class NetworkManager {
     
     //Создание HTTP POST запроса
     func createPOSTRequest(metod: MetodRequest, url: URL, parameters: [String: Any]?) -> URLRequest {
-//        print("URL: \(url)")
+//        debugPrint("**********************")
+//        debugPrint("URL: \(url)")
+//        debugPrint("**********************")
         var request = URLRequest(url: url, timeoutInterval: Double.infinity)
         request.httpMethod = metod.rawValue
         
-        if let parameters = parameters {
-//            print(parameters)
+        if let parametersTemp = parameters {
+//            debugPrint("**********************")
+//            debugPrint(parametersTemp)
+//            debugPrint("**********************")
             do {
-                request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
+                request.httpBody = try JSONSerialization.data(withJSONObject: parametersTemp, options: .prettyPrinted)
             } catch {
                 print(error.localizedDescription)
             }
@@ -42,17 +46,22 @@ class NetworkManager {
     
     func getData(metod: MetodRequest, url: URL, parameters: [String: Any]?, completionHandler: @escaping (Data?, Error?) -> ()) {
         
-        DispatchQueue.global(qos: .userInteractive).async
-        {
+        DispatchQueue.global(qos: .userInteractive).async {
             let session = URLSession.shared
             let request = self.createPOSTRequest(metod: metod, url: url, parameters: parameters)
+            
+//            debugPrint("**********************")
+//            debugPrint(request)
+//            debugPrint("**********************")
             
             session.dataTask(with: request) { (data, response, error) in
                 if let error = error {
                     completionHandler(nil, error)
                 }
                 guard let data = data else { return }
-//                print(String(data: data, encoding: .utf8)!)
+//                debugPrint("**********************")
+//                debugPrint(String(data: data, encoding: .utf8)!)
+//                debugPrint("**********************")
                 completionHandler(data, nil)
             }.resume()
         }

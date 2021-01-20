@@ -34,17 +34,41 @@ class ProductListNetworkManager {
         }
     }
     
-    static func featchWBProductList(completion: @escaping([ProductListModel]?) -> ()) {
+    static func featchWBProductList(withURL wbURL: [String], completion: @escaping([ProductListModel]?) -> ()) {
         guard let url = URL(string: urlFeatchWBProductList) else { return }
-        
-        let urlWBListData = CoreDataManager.shared.loadWbProductFromCoreData()
-        
-        if urlWBListData.count == 0 {
-            completion([ProductListModel]())
-            return
+
+//        let urlWBListData = CoreDataManager.shared.loadWbProductFromCoreData()
+//
+//        if urlWBListData.count == 0 {
+//            completion([ProductListModel]())
+//            return
+//        }
+
+//        let array = urlWBListData.map({String($0.wbUrlString!)})
+        NetworkManager.shared.getData(metod: .post, url: url, parameters: ["product_link": wbURL]) { (data, error) in
+            if error != nil {
+                completion(nil)
+            }
+
+            guard let data = data else { return }
+            do {
+                let decoder = JSONDecoder()
+                let dataModel = try decoder.decode([WBProductModel].self, from: data)
+                let dataParser = dataModel.map({ProductListModel(wihtWBProductListItem: $0)})
+                completion(dataParser)
+            } catch {
+                print(error)
+                completion(nil)
+            }
         }
+    }
+    
+    static func featchWBProductList(withURL wbURL: String, completion: @escaping(ProductListModel?) -> ()) {
+        guard let url = URL(string: urlFeatchWBProductList) else { return }
+
+        var array: [String] = []
+        array.append(wbURL)
         
-        let array = urlWBListData.map({String($0.wbUrlString!)})
         NetworkManager.shared.getData(metod: .post, url: url, parameters: ["product_link": array]) { (data, error) in
             if error != nil {
                 completion(nil)
@@ -55,7 +79,7 @@ class ProductListNetworkManager {
                 let decoder = JSONDecoder()
                 let dataModel = try decoder.decode([WBProductModel].self, from: data)
                 let dataParser = dataModel.map({ProductListModel(wihtWBProductListItem: $0)})
-                completion(dataParser)
+                completion(dataParser.first)
             } catch {
                 print(error)
                 completion(nil)

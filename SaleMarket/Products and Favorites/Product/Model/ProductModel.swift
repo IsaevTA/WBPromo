@@ -31,7 +31,7 @@ struct ProductModel: Codable {
         self.id = 1
         self.name = item.name
         self.images = item.gallery
-        self.percent = item.oldPrice != 0 ? 100 - (item.price * 100 / item.oldPrice) : 0
+        self.percent = Int(item.oldPrice != 0.0 ? 100.0 - (item.price * 100.0 / item.oldPrice) : 0.0)
         self.price = Float(item.oldPrice)
         self.sale = Float(item.price)
         self.rating = Float(item.rating)

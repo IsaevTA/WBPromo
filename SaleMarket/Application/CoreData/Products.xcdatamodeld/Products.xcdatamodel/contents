@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20C69" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Favorite" representedClassName="Favorite" syncable="YES" codeGenerationType="class">
-        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="image" optional="YES" attributeType="String"/>
+    <entity name="HistoryPrice" representedClassName="HistoryPrice" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String"/>
-        <attribute name="percent" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="price" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="sale" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="value" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="productItem" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ProductList" inverseName="historyList" inverseEntity="ProductList"/>
     </entity>
-    <entity name="WBProductList" representedClassName="WBProductList" syncable="YES" codeGenerationType="class">
-        <attribute name="wbUrlString" optional="YES" attributeType="String"/>
+    <entity name="ProductList" representedClassName="ProductList" syncable="YES" codeGenerationType="class">
+        <attribute name="externalLink" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="image" optional="YES" attributeType="String" allowsExternalBinaryDataStorage="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="percent" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="price" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="rating" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="sale" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="historyList" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="HistoryPrice" inverseName="productItem" inverseEntity="HistoryPrice"/>
     </entity>
     <elements>
-        <element name="Favorite" positionX="-63" positionY="-18" width="128" height="133"/>
-        <element name="WBProductList" positionX="-63" positionY="27" width="128" height="44"/>
+        <element name="HistoryPrice" positionX="-304.457763671875" positionY="-93.11270141601562" width="128" height="88"/>
+        <element name="ProductList" positionX="-86.76220703125" positionY="-184.3640747070312" width="128" height="178"/>
     </elements>
 </model>
