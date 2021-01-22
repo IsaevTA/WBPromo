@@ -12,6 +12,7 @@ import NVActivityIndicatorView
 class ProductViewController: UIViewController {
     
     var idProduct: Int?
+    var itemProductList: ProductListModel?
     var urlProduct: String?
     var currentProduct: ProductModel?
     var activityIndicator: NVActivityIndicatorView!
@@ -21,6 +22,7 @@ class ProductViewController: UIViewController {
     @IBOutlet weak var titleSaleLabel: UILabel!
     @IBOutlet weak var heightCustomBarConstraint: NSLayoutConstraint!
     @IBOutlet weak var inStoreButton: UIButton!
+    @IBOutlet weak var isTrackingButton: UIButton!
     @IBOutlet weak var containerView: UIView!
     
     override func viewDidLoad() {
@@ -33,11 +35,24 @@ class ProductViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(backController), name: NSNotification.Name(rawValue: "BackProductList"), object: nil)
         
-        if let url = urlProduct {
+        if let item = itemProductList, let _ = item.galleryString {
+            updataUIWitnCoreData(item: item)
+        } else if let url = urlProduct {
             featchWBProductData(wihtURL: url)
         } else {
             featchData()
         }
+    }
+    
+    private func updataUIWitnCoreData(item: ProductListModel) {
+        let detailProduct = ProductModel.init(wihtProductListItem: item)
+        self.currentProduct = detailProduct
+        self.updateUI(infoPromo: detailProduct)
+        
+        self.activityIndicator.stopAnimating()
+
+        self.containerView.isHidden = false
+        NotificationCenter.default.post(name: NSNotification.Name("FeatchProduct"), object: nil, userInfo: ["product": detailProduct, "itemProductList": self.itemProductList as Any])
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -70,7 +85,7 @@ class ProductViewController: UIViewController {
 
                 self.containerView.isHidden = false
                 
-                NotificationCenter.default.post(name: NSNotification.Name("FeatchProduct"), object: nil, userInfo: ["product": detailProduct])
+                NotificationCenter.default.post(name: NSNotification.Name("FeatchProduct"), object: nil, userInfo: ["product": detailProduct, "itemProductList": self.itemProductList as Any])
             }
         }
     }
@@ -93,7 +108,7 @@ class ProductViewController: UIViewController {
 
                 self.containerView.isHidden = false
                 
-                NotificationCenter.default.post(name: NSNotification.Name("FeatchProduct"), object: nil, userInfo: ["product": detailProduct])
+                NotificationCenter.default.post(name: NSNotification.Name("FeatchProduct"), object: nil, userInfo: ["product": detailProduct, "itemProductList": self.itemProductList as Any])
             }
         }
     }
@@ -109,7 +124,10 @@ class ProductViewController: UIViewController {
 //        }
         
         inStoreButton.setImage(nil, for: .normal)
-        inStoreButton.setTitle("ОТКРЫТЬ НА WILDBERRIES", for: .normal)
+        inStoreButton.setTitle("Открыть на Wildberries", for: .normal)
+        
+        isTrackingButton.setImage(nil, for: .normal)
+        isTrackingButton.setTitle("Следить за ценой", for: .normal)
         
         titleNameLabel.text = item.name
         titleSaleLabel.text = "\(getFormattMoney(withNUmber: item.sale))"
@@ -141,6 +159,17 @@ class ProductViewController: UIViewController {
 //                print("Нажата добавить")
 //            }
 //        }
+    }
+    
+    @IBAction func actionInTrackingButton(_ sender: UIButton) {
+        let favoriteCheck = CoreDataManager.shared.checkInProductList(wihtURL: urlProduct!)
+        if !favoriteCheck {
+            CoreDataManager.shared.saveProductList(withUrlProduct: urlProduct!, updateUI: false)
+            
+            self.showAlert(withTitle: titleNameLabel.text!, withMessage: "Товар добавлен в список отслеживания")
+        } else {
+            self.showAlert(withTitle: titleNameLabel.text!, withMessage: "Товар уже находится в списке отслеживания")
+        }
     }
     
     private func getFormattMoney(withNUmber number: Float) -> String {

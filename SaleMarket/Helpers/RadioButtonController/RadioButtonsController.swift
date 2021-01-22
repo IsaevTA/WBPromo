@@ -8,13 +8,13 @@
 import Foundation
 import UIKit
 
-@objc protocol RadioButtonControllerDelegate {
-    @objc func didSelectButton(selectedButton: UIButton?)
+protocol RadioButtonControllerDelegate {
+    func didSelectButton(selectedButton: UIButton?)
 }
 
 class RadioButtonsController : NSObject {
     fileprivate var buttonsArray = [UIButton]()
-    weak var delegate : RadioButtonControllerDelegate? = nil
+    var delegate : RadioButtonControllerDelegate? = nil
 
     var shouldLetDeSelect = false
 

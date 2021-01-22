@@ -10,6 +10,7 @@ import UIKit
 class SliderImageViewController: UIViewController {
 
     var imageNameArray = [String]()
+    var imagesDataList: [Data]?
     var heightFrame: CGFloat = 0.0
     
     @IBOutlet weak var sliderCollectionView: UICollectionView!
@@ -24,6 +25,7 @@ class SliderImageViewController: UIViewController {
     @objc func updateUI(notification: Notification) {
         if let product = notification.userInfo?["product"] as? ProductModel {
             imageNameArray = product.images
+//            imagesDataList = product.galleryData
             
             pageControl.numberOfPages = imageNameArray.count
             pageControl.currentPage = 0
@@ -41,8 +43,12 @@ extension SliderImageViewController: UICollectionViewDelegate, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCell", for: indexPath) as! ImageCollectionCell
-        let promo = imageNameArray[indexPath.row]
-        cell.configure(with: promo)
+        if let item = imagesDataList?[indexPath.row] {
+            cell.imageView.image = UIImage(data: item)
+        } else {
+            let promo = imageNameArray[indexPath.row]
+            cell.configure(with: promo)
+        }
         return cell
     }
     

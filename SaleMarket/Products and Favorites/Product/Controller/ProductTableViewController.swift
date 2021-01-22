@@ -36,13 +36,16 @@ class ProductTableViewController: UITableViewController {
     
     var heightStackView: CGFloat = 0
     var product: ProductModel?
-
+    var itemProductList: ProductListModel?
+    
     var hideDescription = true
     var hideEquipment = true
     var hideSpecification = true
     
     let showImage = UIImage(named: "show")
     let hideImage = UIImage(named: "hide")
+    
+    @IBOutlet weak var chartView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,6 +73,11 @@ class ProductTableViewController: UITableViewController {
         tableView.estimatedRowHeight = 800.0
         tableView.rowHeight = UITableView.automaticDimension
         
+        tableView.tableFooterView = UIView(frame: CGRect(x: 0,
+                                                         y: 0,
+                                                         width: tableView.frame.size.width,
+                                                         height: 1))
+        
         //настройка свайпа назад
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(respondToSwipeGesture))
         swipeRight.direction = UISwipeGestureRecognizer.Direction.right
@@ -85,6 +93,9 @@ class ProductTableViewController: UITableViewController {
     
     @objc func updateUI(notification: Notification) {
         if let product = notification.userInfo?["product"] as? ProductModel {
+            if let itemList = notification.userInfo?["itemProductList"] as? ProductListModel {
+                self.itemProductList = itemList
+            }
             self.product = product
             self.updateUI(infoPromo: product)
         }
@@ -117,7 +128,7 @@ class ProductTableViewController: UITableViewController {
     
     private func updateUI(infoPromo item: ProductModel) {
 
-        saleLabel.text = "\(getFormattMoney(withNUmber: item.sale))"
+//        saleLabel.text = "\(getFormattMoney(withNUmber: item.sale))"
         
         let attributeString: NSMutableAttributedString =  NSMutableAttributedString(string: "\(getFormattMoney(withNUmber: item.price))")
         attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 2, range: NSMakeRange(0, attributeString.length))
@@ -148,6 +159,15 @@ class ProductTableViewController: UITableViewController {
         
 //        heightStackView = commentsStackView.frame.size.height
         updateFavoriteButton()
+        
+        if let itemList = itemProductList, let _ = itemList.history {
+            let rect = CGRect(x: 0, y: 0, width: chartView.frame.size.width, height: CGFloat(300))
+            let view = ChartPriceProductCell(frame: rect, item: itemList)
+            view.hideButton.isHidden = true
+            chartView.addSubview(view)
+        }
+        
+        
         tableView.reloadData()
     }
     
@@ -208,8 +228,9 @@ class ProductTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.row {
         case 0: return (children[0] as? SliderImageViewController)!.heightFrame
-        case 1: return 125
-        case 2: return returnHeightCell(showHideTag: hideDescription, button: showHideDescriptionButton, label: descriptionLabel, constraint: showHideDescriptionButtonConstraint)
+        case 1: return 80
+        case 2: if let _ = itemProductList?.history { return 310 } else { return 0 }
+//        case 2: return returnHeightCell(showHideTag: hideDescription, button: showHideDescriptionButton, label: descriptionLabel, constraint: showHideDescriptionButtonConstraint)
         case 3: return returnHeightCell(showHideTag: hideEquipment, button: showHideEquipmentButton, label: equipmentLabel, constraint: showHideEquipmentButtonConstraint)
         case 4: return returnHeightCell(showHideTag: hideSpecification, button: showHideSpecificationButton, label: specificationLabel, constraint: showHideSpecificationButtonConstraint)
         case 5, 7: return 8

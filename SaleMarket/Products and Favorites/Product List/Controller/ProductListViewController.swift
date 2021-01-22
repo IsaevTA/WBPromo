@@ -252,6 +252,7 @@ class ProductListViewController: UIViewController {
                 if let indexPath = self.tableView.indexPathForSelectedRow {
                     let product = productListArrayVisable[indexPath.row]
                     let detailViewController = segue.destination as! ProductViewController
+                    detailViewController.itemProductList = product
                     detailViewController.idProduct = product.id
                     detailViewController.urlProduct = product.externalLink
                 }

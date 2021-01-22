@@ -14,10 +14,10 @@ enum MetodRequest: String {
 
 class NetworkManager {
     
-    private init() {}
-    
     static let shared = NetworkManager()
     
+    private init() {}
+        
     //Создание HTTP POST запроса
     func createPOSTRequest(metod: MetodRequest, url: URL, parameters: [String: Any]?) -> URLRequest {
 //        debugPrint("**********************")

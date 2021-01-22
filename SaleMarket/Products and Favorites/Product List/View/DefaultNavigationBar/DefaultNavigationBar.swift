@@ -2,7 +2,7 @@
 //  DefaultNavigationBar.swift
 //  SaleMarket
 //
-//  Created by UserDev on 12.01.2021.
+//  Created by Timur Isaev on 12.01.2021.
 //
 
 import UIKit

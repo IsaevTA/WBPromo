@@ -34,7 +34,6 @@ class ProductListCell: UITableViewCell {
         if self.activityIndicator == nil {
             self.activityIndicator = createActivitiIndicator(view: self, viewCenter: self.imagePromoView.center, widhtHeight: 20, typeActivity: .ballClipRotateMultiple, color: UIColor(red: 0.491, green: 0, blue: 0.722, alpha: 1))
         }
-        activityIndicator.startAnimating()
         
         self.nameLabel.text = itemCell.name
         
@@ -84,6 +83,7 @@ class ProductListCell: UITableViewCell {
     }
 
     @objc func closeChart() {
+        showChartPriceBool = false
         updateUIChart()
     }
     
@@ -116,7 +116,7 @@ class ProductListCell: UITableViewCell {
     }
     
     private func showChartView() {
-        let view = ChartPriceProductCell(frame: setConstraintAndReturnRect(), cell: self)
+        let view = ChartPriceProductCell(frame: setConstraintAndReturnRect(), item: currentItem!)
         chartView.addSubview(view)
     }
 }

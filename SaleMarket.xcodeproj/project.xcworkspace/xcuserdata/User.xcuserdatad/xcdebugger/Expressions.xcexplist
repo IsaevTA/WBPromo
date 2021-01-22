@@ -19,6 +19,17 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "closure #3 in ProductListModel.init(wihtProductListItem:):ProductListModel.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ProductModel.init(wihtProductListItem:):ProductModel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "item.galleryString">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "ProductListViewController.featchDataWBProduct():ProductListViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -41,10 +52,10 @@
                value = "currentTypeNagigation">
             </PersistentString>
             <PersistentString
-               value = "SettingsAnalist.shared.firstStartForHelp">
+               value = "currentTypeList">
             </PersistentString>
             <PersistentString
-               value = "currentTypeList">
+               value = "SettingsAnalist.shared.firstStartForHelp">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -65,6 +76,9 @@
             <PersistentString
                value = "item.productList">
             </PersistentString>
+            <PersistentString
+               value = "item.imageList">
+            </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
@@ -76,7 +90,12 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "ProductListViewController.openNews(notification:):ProductListViewController.swift">
+         contextName = "ProductTableViewController.updateUI(infoPromo:):ProductTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "itemProductList">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "ProductListViewController.showEmptyView():ProductListViewController.swift">
@@ -95,10 +114,30 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "ProductListViewController.openNews(notification:):ProductListViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "CoreDataManager.loadProductListFromCoreData():CoreDataManager+ProductList.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in closure #1 in CoreDataManager.saveProductList(withProductItem:updateUI:):CoreDataManager+ProductList.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ProductViewController.viewDidLoad():ProductViewController.swift">
+      </ContextState>
+      <ContextState
          contextName = "WebViewController.viewWillAppear(_:):WebViewController.swift">
          <PersistentStrings>
             <PersistentString
                value = "SettingsGlobal.shared.showNowNews">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CoreDataManager.saveProductList(withProductItem:updateUI:):CoreDataManager+ProductList.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "item.galleryString">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

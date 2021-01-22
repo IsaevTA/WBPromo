@@ -58,7 +58,5 @@ extension NewsCollectionView: UICollectionViewDelegate, UICollectionViewDataSour
         let product = arrayNewsString[indexPath.row]
         
         NotificationCenter.default.post(name: NSNotification.Name("OpenNews"), object: nil, userInfo: ["currentNews": product])
-//        if product.type == .news {
-//        }
     }
 }

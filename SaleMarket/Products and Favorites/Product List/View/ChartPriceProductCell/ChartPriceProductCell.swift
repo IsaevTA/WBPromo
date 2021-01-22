@@ -2,7 +2,7 @@
 //  CahrtPriceProductCell.swift
 //  SaleMarket
 //
-//  Created by UserDev on 15.01.2021.
+//  Created by Timur Isaev on 15.01.2021.
 //
 
 import UIKit
@@ -18,31 +18,26 @@ class ChartPriceProductCell: UIView {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
-    var currentCell: ProductListCell
+    @IBOutlet weak var hideButton: UIButton!
     var currentItem: ProductListModel
   
     var yValues = [BarChartDataEntry]()
-//    var yValues: [BarChartDataEntry] = [
-//        BarChartDataEntry(x: 0.0, y: 30.0, data: "123"),
-//        BarChartDataEntry(x: 1.0, y: 10.0, data: "234"),
-//        BarChartDataEntry(x: 2.0, y: 5.0, data: "345"),
-//        BarChartDataEntry(x: 3.0, y: 20.0, data: "456")
-//    ]
     
-    init(frame: CGRect, cell: ProductListCell) {
-        self.currentCell = cell
-        self.currentItem = cell.currentItem!
-        
+    init(frame: CGRect, item: ProductListModel) {
+        self.currentItem = item
+            
         super.init(frame: frame)
         
         UINib(nibName: "ChartPriceProductCell", bundle: nil).instantiate(withOwner: self, options: nil)
         addSubview(contentView)
         contentView.frame = self.bounds
         
-        var indexArray = 0.0
-        for item in currentItem.history! {
-            yValues.append(BarChartDataEntry(x: indexArray, y: Double(item.value), data: item.name))
-            indexArray += 1
+        if let arrayHistory = currentItem.history {
+            var indexArray = 0.0
+            for item in arrayHistory {
+                yValues.append(BarChartDataEntry(x: indexArray, y: Double(item.value), data: item.name))
+                indexArray += 1
+            }
         }
         setupUI()
     }
@@ -85,20 +80,9 @@ class ChartPriceProductCell: UIView {
         
         chartView.chartDescription!.enabled = false
         chartView.legend.enabled = false
-        
-//        let marker = XYMarkerView(color: UIColor(white: 180/250, alpha: 1),
-//                                  font: .systemFont(ofSize: 12),
-//                                  textColor: .white,
-//                                  insets: UIEdgeInsets(top: 8, left: 8, bottom: 20, right: 8),
-//                                  xAxisValueFormatter: chartView.xAxis.valueFormatter!)
-//        marker.chartView = chartView
-//        marker.minimumSize = CGSize(width: 80, height: 40)
-//        chartView.marker = marker
-
     }
     
     @IBAction func actionHideChartButton(_ sender: UIButton) {
-        currentCell.showChartPriceBool = false
         NotificationCenter.default.post(name: NSNotification.Name("CloseChartView"), object: nil)
     }
 }
@@ -116,7 +100,7 @@ extension ChartPriceProductCell: ChartViewDelegate {
     }
     
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
-        debugPrint("x: \(entry.x), y: \(entry.y), data: \(String(describing: entry.data!))")
+        //debugPrint("x: \(entry.x), y: \(entry.y), data: \(String(describing: entry.data!))")
         
         priceLabel.text = "\(entry.y) руб."
         dateLabel.text = "\(entry.data!)"

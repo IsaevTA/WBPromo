@@ -33,7 +33,6 @@
 		0B7B9852257E11C4005D504C /* OneSignal in Frameworks */ = {isa = PBXBuildFile; productRef = 0B7B9851257E11C4005D504C /* OneSignal */; };
 		0B7EABEF25A99A6200714D77 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7EABEE25A99A6200714D77 /* UIButton+.swift */; };
 		0B7EAC9825A99DC400714D77 /* ProductListViewController+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7EAC7425A99DC400714D77 /* ProductListViewController+UITableView.swift */; };
-		0B7EAC9925A99DC400714D77 /* ProductListViewController+UISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7EAC7525A99DC400714D77 /* ProductListViewController+UISearchBar.swift */; };
 		0B7EAC9B25A99DC400714D77 /* CustomNavigationBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7EAC7825A99DC400714D77 /* CustomNavigationBarDelegate.swift */; };
 		0B7EAC9D25A99DC400714D77 /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7EAC7B25A99DC400714D77 /* ProductListViewController.swift */; };
 		0B7EAC9E25A99DC400714D77 /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7EAC7D25A99DC400714D77 /* NewsModel.swift */; };
@@ -91,7 +90,6 @@
 		CE4EC3272590705000DBCE85 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4EC3262590705000DBCE85 /* UIView+.swift */; };
 		CE50BA6E25ABFFD000D1D717 /* ResultTestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE50BA6C25ABFFD000D1D717 /* ResultTestView.xib */; };
 		CE50BA6F25ABFFD000D1D717 /* ResultTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE50BA6D25ABFFD000D1D717 /* ResultTestView.swift */; };
-		CE58F00325B7E91D004E0BB2 /* CoreDataManager+WBProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE58F00225B7E91D004E0BB2 /* CoreDataManager+WBProduct.swift */; };
 		CE58F00725B7E977004E0BB2 /* CoreDataManager+ProductList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE58F00625B7E977004E0BB2 /* CoreDataManager+ProductList.swift */; };
 		CE68AAA6258871B900C0EBA6 /* FavoritesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE68AAA5258871B900C0EBA6 /* FavoritesManager.swift */; };
 		CE6CA0802595D3480035304C /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6CA07F2595D3480035304C /* String+.swift */; };
@@ -112,8 +110,7 @@
 		CEA31165259B294100546D5E /* ProductWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA31164259B294100546D5E /* ProductWebViewController.swift */; };
 		CEAC7A3225B05E5000662260 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = CEAC7A3125B05E5000662260 /* Charts */; };
 		CEAC7A3725B066A300662260 /* TinyConstraints in Frameworks */ = {isa = PBXBuildFile; productRef = CEAC7A3625B066A300662260 /* TinyConstraints */; };
-		CEDDDFFB25B583660000B599 /* XYMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDDDFFA25B583660000B599 /* XYMarkerView.swift */; };
-		CEDDDFFF25B583860000B599 /* BalloonMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDDDFFE25B583850000B599 /* BalloonMarker.swift */; };
+		CECBC6ED25B96C1F00AEBCFF /* TestClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECBC6EC25B96C1F00AEBCFF /* TestClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -186,7 +183,6 @@
 		0B7B9843257E1193005D504C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B7EABEE25A99A6200714D77 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 		0B7EAC7425A99DC400714D77 /* ProductListViewController+UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProductListViewController+UITableView.swift"; sourceTree = "<group>"; };
-		0B7EAC7525A99DC400714D77 /* ProductListViewController+UISearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProductListViewController+UISearchBar.swift"; sourceTree = "<group>"; };
 		0B7EAC7825A99DC400714D77 /* CustomNavigationBarDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationBarDelegate.swift; sourceTree = "<group>"; };
 		0B7EAC7B25A99DC400714D77 /* ProductListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductListViewController.swift; sourceTree = "<group>"; };
 		0B7EAC7D25A99DC400714D77 /* NewsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
@@ -247,7 +243,6 @@
 		CE4EC3262590705000DBCE85 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		CE50BA6C25ABFFD000D1D717 /* ResultTestView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultTestView.xib; sourceTree = "<group>"; };
 		CE50BA6D25ABFFD000D1D717 /* ResultTestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultTestView.swift; sourceTree = "<group>"; };
-		CE58F00225B7E91D004E0BB2 /* CoreDataManager+WBProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataManager+WBProduct.swift"; sourceTree = "<group>"; };
 		CE58F00625B7E977004E0BB2 /* CoreDataManager+ProductList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataManager+ProductList.swift"; sourceTree = "<group>"; };
 		CE68AAA5258871B900C0EBA6 /* FavoritesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesManager.swift; sourceTree = "<group>"; };
 		CE6CA07F2595D3480035304C /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
@@ -266,8 +261,7 @@
 		CE88A205258A1C5E00092010 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		CE8FADD3258B0F8100D00CC5 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		CEA31164259B294100546D5E /* ProductWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductWebViewController.swift; sourceTree = "<group>"; };
-		CEDDDFFA25B583660000B599 /* XYMarkerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XYMarkerView.swift; sourceTree = "<group>"; };
-		CEDDDFFE25B583850000B599 /* BalloonMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalloonMarker.swift; sourceTree = "<group>"; };
+		CECBC6EC25B96C1F00AEBCFF /* TestClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -465,6 +459,7 @@
 			isa = PBXGroup;
 			children = (
 				0B12AF862594A65700144754 /* TestModel.swift */,
+				CECBC6EC25B96C1F00AEBCFF /* TestClass.swift */,
 				0B12AF8E2594A71000144754 /* Tests */,
 			);
 			path = Model;
@@ -515,7 +510,6 @@
 			isa = PBXGroup;
 			children = (
 				0B7EAC7425A99DC400714D77 /* ProductListViewController+UITableView.swift */,
-				0B7EAC7525A99DC400714D77 /* ProductListViewController+UISearchBar.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -602,8 +596,8 @@
 		0B7EAC8D25A99DC400714D77 /* NewsView */ = {
 			isa = PBXGroup;
 			children = (
-				0B7EAC8E25A99DC400714D77 /* NewsCollectionView.xib */,
 				0B7EAC8F25A99DC400714D77 /* Cell */,
+				0B7EAC8E25A99DC400714D77 /* NewsCollectionView.xib */,
 				0B7EAC9225A99DC400714D77 /* NewsCollectionView.swift */,
 			);
 			path = NewsView;
@@ -817,7 +811,6 @@
 		CE58F00125B7E8F8004E0BB2 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				CE58F00225B7E91D004E0BB2 /* CoreDataManager+WBProduct.swift */,
 				CE58F00625B7E977004E0BB2 /* CoreDataManager+ProductList.swift */,
 			);
 			path = Extension;
@@ -886,8 +879,6 @@
 		CE7A9D9325B186A000E82855 /* ChartPriceProductCell */ = {
 			isa = PBXGroup;
 			children = (
-				CEDDDFFE25B583850000B599 /* BalloonMarker.swift */,
-				CEDDDFFA25B583660000B599 /* XYMarkerView.swift */,
 				CE7A9D9625B186C800E82855 /* ChartPriceProductCell.xib */,
 				CE7A9D9A25B1890100E82855 /* ChartPriceProductCell.swift */,
 			);
@@ -1129,7 +1120,6 @@
 				0B7EAC9E25A99DC400714D77 /* NewsModel.swift in Sources */,
 				0B7EACAF25A99DC400714D77 /* ProductListNetworkManager.swift in Sources */,
 				CE68AAA6258871B900C0EBA6 /* FavoritesManager.swift in Sources */,
-				CEDDDFFF25B583860000B599 /* BalloonMarker.swift in Sources */,
 				0BC9BF2E2570BFF200445DFC /* AppDelegate.swift in Sources */,
 				0B7EAC9F25A99DC400714D77 /* ProductListModel.swift in Sources */,
 				0BC9BF522570C6B200445DFC /* NetworkManager.swift in Sources */,
@@ -1142,16 +1132,14 @@
 				0BF0B3DD257E56F3000B0CAB /* ImageLoader.swift in Sources */,
 				CE88A206258A1C5E00092010 /* ActivityIndicator.swift in Sources */,
 				0BA94BEC2574BE5800A94DB1 /* SettingsAnalist.swift in Sources */,
+				CECBC6ED25B96C1F00AEBCFF /* TestClass.swift in Sources */,
 				CE3449B12588B166002E0101 /* TabBarViewController.swift in Sources */,
 				0B9187A5257A253D00467C8B /* SliderImageViewController.swift in Sources */,
 				0BA94C062574C95500A94DB1 /* AnalyticsManager.swift in Sources */,
 				0B7EACAC25A99DC400714D77 /* NewsCollectionView.swift in Sources */,
-				CEDDDFFB25B583660000B599 /* XYMarkerView.swift in Sources */,
-				CE58F00325B7E91D004E0BB2 /* CoreDataManager+WBProduct.swift in Sources */,
 				0B83503E25767BA600C4C1FA /* ProductModel.swift in Sources */,
 				CEA31165259B294100546D5E /* ProductWebViewController.swift in Sources */,
 				0B53D304257A3F7D00649CD2 /* ProductTableViewController.swift in Sources */,
-				0B7EAC9925A99DC400714D77 /* ProductListViewController+UISearchBar.swift in Sources */,
 				0B7EACAD25A99DC400714D77 /* ProductListCell.swift in Sources */,
 				0BC9BF302570BFF200445DFC /* SceneDelegate.swift in Sources */,
 				CE3D12BF2587842100921FD9 /* CoreDataManager.swift in Sources */,
@@ -1204,7 +1192,7 @@
 				CODE_SIGN_ENTITLEMENTS = ShareExtension/ShareExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = XW29RT8E9D;
 				INFOPLIST_FILE = ShareExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1228,7 +1216,7 @@
 				CODE_SIGN_ENTITLEMENTS = ShareExtension/ShareExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = XW29RT8E9D;
 				INFOPLIST_FILE = ShareExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1250,7 +1238,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = XW29RT8E9D;
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1271,7 +1259,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = XW29RT8E9D;
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1413,7 +1401,7 @@
 				CODE_SIGN_ENTITLEMENTS = WBPromo.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = XW29RT8E9D;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1442,7 +1430,7 @@
 				CODE_SIGN_ENTITLEMENTS = WBPromo.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = XW29RT8E9D;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

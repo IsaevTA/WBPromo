@@ -39,11 +39,11 @@
             </objects>
             <point key="canvasLocation" x="1922" y="1175"/>
         </scene>
-        <!--Избранное-->
+        <!--Отслеживание-->
         <scene sceneID="Exe-Yf-2RB">
             <objects>
                 <navigationController navigationBarHidden="YES" id="dg4-oN-EoP" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Избранное" image="home" selectedImage="home_active" id="V1H-e1-aoi"/>
+                    <tabBarItem key="tabBarItem" title="Отслеживание" image="home" selectedImage="home_active" id="V1H-e1-aoi"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fhs-WH-7DI">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -86,7 +86,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="JeA-pE-LRT"/>
+        <segue reference="z96-Im-dVW"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="fire" width="25" height="25"/>

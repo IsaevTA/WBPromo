@@ -22,10 +22,6 @@ class ImageLoader {
                 completionHandler(image)
             }
         } else {
-//            let placeholder = #imageLiteral(resourceName: "basket")
-//            DispatchQueue.main.async {
-//                completionHandler(placeholder)
-//            }
             let url: URL! = URL(string: imagePath)
             session.downloadTask(with: url, completionHandler: { (location, response, error) in
                 if let data = try? Data(contentsOf: url) {

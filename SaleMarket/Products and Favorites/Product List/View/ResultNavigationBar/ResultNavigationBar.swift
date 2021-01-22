@@ -2,7 +2,7 @@
 //  NavigationBar.swift
 //  SaleMarket
 //
-//  Created by UserDev on 22.12.2020.
+//  Created by Timur Isaev on 22.12.2020.
 //
 
 import UIKit

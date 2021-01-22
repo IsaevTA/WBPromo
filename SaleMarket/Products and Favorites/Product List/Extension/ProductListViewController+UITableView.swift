@@ -18,12 +18,18 @@ extension ProductListViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProductListCell", for: indexPath) as! ProductListCell
         let promo = productListArrayVisable[indexPath.row]
         cell.configure(with: promo)
-        imageLoader.obtainImageWithPath(imagePath: promo.image) { (image) in
-            if let updateCell = tableView.cellForRow(at: indexPath) as? ProductListCell {
-                updateCell.imagePromoView.image = image
-                updateCell.activityIndicator?.stopAnimating()
+        if let imageData = promo.image {
+            cell.imagePromoView.image = UIImage(data: imageData)
+        } else {
+            cell.activityIndicator.startAnimating()
+            imageLoader.obtainImageWithPath(imagePath: promo.urlImage) { (image) in
+                if let updateCell = tableView.cellForRow(at: indexPath) as? ProductListCell {
+                    updateCell.imagePromoView.image = image
+                    updateCell.activityIndicator?.stopAnimating()
+                }
             }
         }
+        
         return cell
     }
     

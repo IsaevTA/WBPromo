@@ -12,6 +12,7 @@ struct ProductModel: Codable {
     let id: Int
     let name: String
     let images: [String]
+//    let galleryData: [Data]?
     let percent: Int
     let price, sale: Float
     let available: Bool
@@ -28,14 +29,34 @@ struct ProductModel: Codable {
     }
     
     init(wihtWBProductListItem item: WBProductModel) {
-        self.id = 1
+        self.id = item.article
         self.name = item.name
         self.images = item.gallery
+//        self.galleryData = nil
         self.percent = Int(item.oldPrice != 0.0 ? 100.0 - (item.price * 100.0 / item.oldPrice) : 0.0)
         self.price = Float(item.oldPrice)
         self.sale = Float(item.price)
         self.rating = Float(item.rating)
         self.urlWildberies = item.url
+        
+        self.available = true
+        self.description = ""
+        self.equipment = [NameValueType]()
+        self.specification = [NameValueType]()
+        self.comments = [Comments]()
+        
+    }
+    
+    init(wihtProductListItem item: ProductListModel) {
+        self.id = item.id
+        self.name = item.name
+        self.images = item.galleryString ?? [String]()
+//        self.galleryData = item.galleryData
+        self.percent = Int(item.price != 0.0 ? 100.0 - (item.sale * 100.0 / item.price) : 0.0)
+        self.price = Float(item.price)
+        self.sale = Float(item.sale)
+        self.rating = Float(item.rating)
+        self.urlWildberies = item.externalLink
         
         self.available = true
         self.description = ""

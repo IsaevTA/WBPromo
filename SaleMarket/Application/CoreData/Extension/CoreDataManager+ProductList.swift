@@ -2,7 +2,7 @@
 //  CoreDataManager+ProductList.swift
 //  SaleMarket
 //
-//  Created by UserDev on 20.01.2021.
+//  Created by Timur Isaev on 20.01.2021.
 //
 
 import Foundation
@@ -15,16 +15,19 @@ extension CoreDataManager {
         
         guard let entityProduct = NSEntityDescription.entity(forEntityName: "ProductList", in: context) else { return }
         guard let entityHistory = NSEntityDescription.entity(forEntityName: "HistoryPrice", in: context) else { return }
+        guard let entityImage = NSEntityDescription.entity(forEntityName: "ImageProduct", in: context) else { return }
         
         let newItem = ProductList(entity: entityProduct, insertInto: context)
         newItem.id = Int64(item.id)
         newItem.name = item.name
-        newItem.image = item.image
+        newItem.urlImage = item.urlImage
         newItem.externalLink = item.externalLink
         newItem.percent = Int16(item.percent)
         newItem.price = item.price
         newItem.rating = Int16(item.rating)
         newItem.sale = item.sale
+    
+        featchAndSaveImageProductList(withUrlString: item.urlImage, coreDataItem: newItem)
 
         if let array = item.history {
             for currentItem in array {
@@ -34,7 +37,16 @@ extension CoreDataManager {
                 newItem.addToHistoryList(newItemHistory)
             }
         }
-
+        
+        if let array = item.galleryString {
+            for currentItem in array {
+                let newItemImage = ImageProduct(entity: entityImage, insertInto: context)
+                newItemImage.urlImage = currentItem
+//                featchAndSaveImageInList(withUrlString: item.urlImage, coreDataItem: newItemImage)
+                newItem.addToImageList(newItemImage)
+            }
+        }
+    
         do {
             try context.save()
             if item.history != nil {
@@ -43,7 +55,6 @@ extension CoreDataManager {
         } catch let error as NSError {
             print(error.localizedDescription)
         }
-        
     }
     
     func saveProductList(withUrlProduct url: String, updateUI: Bool = false) {
@@ -127,6 +138,8 @@ extension CoreDataManager {
     
     func updadaItem(withItem item: ProductListModel, updataUI: Bool = false) {
         guard let entityHistory = NSEntityDescription.entity(forEntityName: "HistoryPrice", in: context) else { return }
+        guard let entityImage = NSEntityDescription.entity(forEntityName: "ImageProduct", in: context) else { return }
+        
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "ProductList")
         fetchRequest.predicate = NSPredicate(format: "externalLink = %@", item.externalLink)
 
@@ -136,13 +149,15 @@ extension CoreDataManager {
                 let updataItem = results?.first
                 updataItem!.id = Int64(item.id)
                 updataItem!.name = item.name
-                updataItem!.image = item.image
+                updataItem!.urlImage = item.urlImage
                 updataItem!.externalLink = item.externalLink
                 updataItem!.percent = Int16(item.percent)
                 updataItem!.price = item.price
                 updataItem!.rating = Int16(item.rating)
                 updataItem!.sale = item.sale
 
+                featchAndSaveImageProductList(withUrlString: item.urlImage, coreDataItem: updataItem!)
+                
                 let _ = updataItem?.historyList.map({ updataItem?.removeFromHistoryList($0) })
 
                 if let array = item.history {
@@ -151,6 +166,17 @@ extension CoreDataManager {
                         newItemHistory.name = currentItem.name
                         newItemHistory.value = currentItem.value
                         updataItem!.addToHistoryList(newItemHistory)
+                    }
+                }
+                
+                let _ = updataItem?.imageList.map({ updataItem?.removeFromImageList($0) })
+                
+                if let array = item.galleryString {
+                    for currentItem in array {
+                        let newItemImage = ImageProduct(entity: entityImage, insertInto: context)
+                        newItemImage.urlImage = currentItem
+//                        featchAndSaveImageInList(withUrlString: item.urlImage, coreDataItem: newItemImage)
+                        updataItem!.addToImageList(newItemImage)
                     }
                 }
             }
@@ -168,8 +194,6 @@ extension CoreDataManager {
         catch {
             print("Saving Core Data Failed: \(error)")
         }
-        
-        
     }
     
     func updateAllItems() {
@@ -194,6 +218,18 @@ extension CoreDataManager {
             }
         } catch {
             print(error.localizedDescription)
+        }
+    }
+    
+    func deleteAllProductList() {
+        let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "ProductList")
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)
+
+        do {
+            try context.execute(deleteRequest)
+            try context.save()
+        } catch {
+            print ("There was an error")
         }
     }
 }

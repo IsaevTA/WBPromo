@@ -2,7 +2,7 @@
 //  String+.swift
 //  SaleMarket
 //
-//  Created by UserDev on 25.12.2020.
+//  Created by Timur Isaev on 25.12.2020.
 //
 
 import Foundation

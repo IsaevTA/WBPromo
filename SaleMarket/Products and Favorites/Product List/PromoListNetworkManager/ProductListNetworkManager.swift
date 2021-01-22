@@ -37,14 +37,6 @@ class ProductListNetworkManager {
     static func featchWBProductList(withURL wbURL: [String], completion: @escaping([ProductListModel]?) -> ()) {
         guard let url = URL(string: urlFeatchWBProductList) else { return }
 
-//        let urlWBListData = CoreDataManager.shared.loadWbProductFromCoreData()
-//
-//        if urlWBListData.count == 0 {
-//            completion([ProductListModel]())
-//            return
-//        }
-
-//        let array = urlWBListData.map({String($0.wbUrlString!)})
         NetworkManager.shared.getData(metod: .post, url: url, parameters: ["product_link": wbURL]) { (data, error) in
             if error != nil {
                 completion(nil)

@@ -12,7 +12,6 @@ class TabBarViewController: UITabBarController {
 
     private let appURL = "SaleMarket://"
     private let groupName = "group.SaleMarket"
-//    private let wbProductName = "WB_PRODUCT_NAME"
     private let wbProductUrl = "WB_PRODUCT_URL"
     
     deinit {
@@ -27,12 +26,6 @@ class TabBarViewController: UITabBarController {
         setupNotification()
         setupCenterButton()
     }
-
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        self.view.bringSubviewToFront(self.tabBar)
-//        self.addCenterButton()
-//    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -66,12 +59,10 @@ class TabBarViewController: UITabBarController {
     
     @objc func setUrl() {
         if let url = UserDefaults(suiteName: self.groupName)?.value(forKey: self.wbProductUrl) as? String {
-            print("setUrl - \(url)")
-//            CoreDataManager.shared.saveWBProduct(withUrlProduct: url)
+
             CoreDataManager.shared.saveProductList(withUrlProduct: url, updateUI: true)
             UserDefaults(suiteName: groupName)?.set(nil, forKey: self.wbProductUrl)
             UserDefaults(suiteName: groupName)?.removeObject(forKey: self.wbProductUrl)
-            //NotificationCenter.default.post(name: NSNotification.Name("UpdateTableWB"), object: nil)
         }
     }
     

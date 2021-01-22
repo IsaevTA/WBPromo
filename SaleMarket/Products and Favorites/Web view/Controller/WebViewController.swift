@@ -70,10 +70,7 @@ class WebViewController: UIViewController {
     
     private func backController() {
         SettingsGlobal.shared.showNowNews = false
-//        self.dismiss(animated: true, completion: nil)
         self.navigationController?.popViewController(animated: true)
-//        dismiss(animated: true, completion: nil)
-//        navigationController?.popViewController(animated: true)
     }
 }
 
