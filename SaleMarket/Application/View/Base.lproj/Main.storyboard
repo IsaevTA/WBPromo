@@ -23,22 +23,6 @@
             </objects>
             <point key="canvasLocation" x="1922" y="504"/>
         </scene>
-        <!--Избранное-->
-        <scene sceneID="5KX-xe-NSS">
-            <objects>
-                <navigationController navigationBarHidden="YES" id="Bdh-xS-1Jl" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Избранное" image="like" selectedImage="like_active" id="BDg-ru-0Ci"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="M8Z-ES-IDO">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="oYB-T3-xpy" kind="relationship" relationship="rootViewController" destinationCreationSelector="3" id="JeA-pE-LRT"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cWW-MH-P4B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1922" y="1175"/>
-        </scene>
         <!--Отслеживание-->
         <scene sceneID="Exe-Yf-2RB">
             <objects>
@@ -93,7 +77,5 @@
         <image name="fire_active" width="25" height="25"/>
         <image name="home" width="25" height="24"/>
         <image name="home_active" width="25" height="24"/>
-        <image name="like" width="25" height="23"/>
-        <image name="like_active" width="25" height="23"/>
     </resources>
 </document>

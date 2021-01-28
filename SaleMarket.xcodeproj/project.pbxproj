@@ -107,7 +107,6 @@
 		CE88A202258A0D7B00092010 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88A201258A0D7B00092010 /* UIImage+.swift */; };
 		CE88A206258A1C5E00092010 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88A205258A1C5E00092010 /* ActivityIndicator.swift */; };
 		CE8FADD4258B0F8100D00CC5 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8FADD3258B0F8100D00CC5 /* UIViewController+.swift */; };
-		CEA31165259B294100546D5E /* ProductWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA31164259B294100546D5E /* ProductWebViewController.swift */; };
 		CEAC7A3225B05E5000662260 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = CEAC7A3125B05E5000662260 /* Charts */; };
 		CEAC7A3725B066A300662260 /* TinyConstraints in Frameworks */ = {isa = PBXBuildFile; productRef = CEAC7A3625B066A300662260 /* TinyConstraints */; };
 		CECBC6ED25B96C1F00AEBCFF /* TestClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECBC6EC25B96C1F00AEBCFF /* TestClass.swift */; };
@@ -260,7 +259,6 @@
 		CE88A201258A0D7B00092010 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		CE88A205258A1C5E00092010 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		CE8FADD3258B0F8100D00CC5 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
-		CEA31164259B294100546D5E /* ProductWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductWebViewController.swift; sourceTree = "<group>"; };
 		CECBC6EC25B96C1F00AEBCFF /* TestClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -359,7 +357,6 @@
 				0B9187A3257A250A00467C8B /* SliderImageView */,
 				0B9187A8257A255400467C8B /* ProductViewController.swift */,
 				0B53D303257A3F7D00649CD2 /* ProductTableViewController.swift */,
-				CEA31164259B294100546D5E /* ProductWebViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1138,7 +1135,6 @@
 				0BA94C062574C95500A94DB1 /* AnalyticsManager.swift in Sources */,
 				0B7EACAC25A99DC400714D77 /* NewsCollectionView.swift in Sources */,
 				0B83503E25767BA600C4C1FA /* ProductModel.swift in Sources */,
-				CEA31165259B294100546D5E /* ProductWebViewController.swift in Sources */,
 				0B53D304257A3F7D00649CD2 /* ProductTableViewController.swift in Sources */,
 				0B7EACAD25A99DC400714D77 /* ProductListCell.swift in Sources */,
 				0BC9BF302570BFF200445DFC /* SceneDelegate.swift in Sources */,

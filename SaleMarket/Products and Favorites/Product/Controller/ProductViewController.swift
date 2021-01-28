@@ -179,11 +179,6 @@ class ProductViewController: UIViewController {
     // MARK: - Segues
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showProductWeb" {
-            if let urlString = currentProduct?.urlWildberies {
-                let webViewController = segue.destination as! ProductWebViewController
-                webViewController.urlString = urlString
-            }
-        }
+
     }
 }
